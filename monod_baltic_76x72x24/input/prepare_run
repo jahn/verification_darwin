@@ -3,3 +3,9 @@ rm -f grid.t001.nc grid.t002.nc grid.t003.nc grid.t004.nc phiHyd.0000188388.t001
 if ! [ -e forcing ]; then
   ln -s "$MITGCM_DATA_DIR" forcing
 fi
+ln -s forcing/MITgcm/darwin/verification/baltic/pickup.0000188388.data .
+ln -s forcing/MITgcm/darwin/verification/baltic/pickup.0000188388.meta .
+ln -s forcing/MITgcm/darwin/verification/baltic/pickup_ptracers.0000188388.data .
+ln -s forcing/MITgcm/darwin/verification/baltic/pickup_ptracers.0000188388.meta .
+ln -s forcing/MITgcm/darwin/verification/baltic/pickup_seaice.0000188388.data .
+ln -s forcing/MITgcm/darwin/verification/baltic/pickup_seaice.0000188388.meta .
