@@ -1,0 +1,23 @@
+ &DARWIN_FORCING_PARAMS
+ iceFile='../input/input_ocmip/fice.bin',
+ ironFile='../input/input_ocmip/mah_flux_smooth.bin',
+ PARFile='../input/input_ocmip/par_ocmip.bin_mth-2d.bin',
+ icePeriod= -12.,
+ ironPeriod= -12.,
+ PARPeriod= -12.,
+ darwin_inscal_iron= 1000.,
+ darwin_inscal_PAR= 11.574074074074,
+ /
+ &DARWIN_PARAMS
+ darwin_seed=801,
+ darwin_read_phos=T,
+ PARmin=1.0,
+ /
+ &DARWIN_RADTRANS_PARAMS
+ /
+ &DARWIN_RANDOM_PARAMS
+ oldTwoGrazers= .TRUE.,
+ diatom_growfac= 1.0,
+ /
+ &DARWIN_TRAIT_PARAMS
+ /

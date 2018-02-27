@@ -1,0 +1,26 @@
+ &PTRACERS_PARM01
+ PTRACERS_numInUse= ,
+ PTRACERS_Iter0= 26352,
+#
+ PTRACERS_advScheme(:)= 33,
+ PTRACERS_diffKh(:)= 0.0,
+ PTRACERS_diffKr(:)= 1D-06,
+ PTRACERS_useKPP(:)= .TRUE.,
+#
+ ptracers_units(DIC )= 'mmol C/m^3',
+ ptracers_units(NO3 )= 'mmol N/m^3',
+ ptracers_units(NO2 )= 'mmol N/m^3',
+ ptracers_units(NH4 )= 'mmol N/m^3',
+ ptracers_units(PO4 )= 'mmol P/m^3',
+ ptracers_units(FeT )= 'mmol Fe/m^3',
+ ptracers_units(SiO2)= 'mmol Si/m^3',
+ ptracers_units(DOC )= 'mmol C/m^3',
+ ptracers_units(DON )= 'mmol N/m^3',
+ ptracers_units(DOP )= 'mmol P/m^3',
+ ptracers_units(DOFe)= 'mmol Fe/m^3',
+ ptracers_units(POC )= 'mmol C/m^3',
+ ptracers_units(PON )= 'mmol N/m^3',
+ ptracers_units(POP )= 'mmol P/m^3',
+ ptracers_units(POSi)= 'mmol Si/m^3',
+ ptracers_units(POFe)= 'mmol Fe/m^3',
+ /

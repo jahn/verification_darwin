@@ -1,0 +1,30 @@
+ &DARWIN_FORCING_PARAMS
+  useDarwinYearlyFields= .TRUE.,
+# iceFile='gud/nasa_icefraction_mth-2d.bin',
+#
+  ironFile='../input/input/Fe_const_76x72_12_',
+# emulate silly 30-day period from monod
+  ironStartDate1=19920116,
+  ironStartDate2=000000,
+  ironPeriod= 2592000.,
+  darwin_inscal_iron= 1000.,
+#
+# darwin_PARFile='gud/par_ecco.bin_mth-2d.bin',
+# darwin_nutWVelFile='',
+ /
+ &DARWIN_INTERP_PARAMS
+  iron_interpMethod= 0,
+ /
+ &DARWIN_PARAMS
+  darwin_seed=11231,
+#  darwin_read_phos=T,
+  PARmin= 1.0,
+ /
+ &DARWIN_RADTRANS_PARAMS
+ /
+ &DARWIN_RANDOM_PARAMS
+ oldTwoGrazers= .TRUE.,
+ diatom_growfac= 1.0,
+ /
+ &DARWIN_TRAIT_PARAMS
+ /

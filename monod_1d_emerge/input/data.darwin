@@ -1,0 +1,21 @@
+ &DARWIN_FORCING_PARAMS
+ ironFile='../input/input/loc1_FeFlux_monsurf.bin',
+ PARFile='../input/input/loc1_PAR_monsurf.bin',
+ ironPeriod= -12.,
+ PARPeriod= -12.,
+ darwin_inscal_iron= 1000.,
+ darwin_inscal_PAR= 11.574074074074,
+ /
+ &DARWIN_PARAMS
+ darwin_seed= 11231,
+ darwin_read_phos= T,
+ PARmin= 1.0,
+ /
+ &DARWIN_RADTRANS_PARAMS
+ /
+ &DARWIN_RANDOM_PARAMS
+ oldTwoGrazers= .TRUE.,
+ diatom_growfac= 1.0,
+ /
+ &DARWIN_TRAIT_PARAMS
+ /
