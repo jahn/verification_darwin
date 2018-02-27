@@ -3,3 +3,6 @@ rm -f darwin.0005644800.t001.nc darwin.0005644800.t002.nc grid.t001.nc grid.t002
 if ! [ -e forcing ]; then
   ln -s "$MITGCM_DATA_DIR" forcing
 fi
+ln -s forcing/MITgcm/darwin/verification/global/pickup.0005644800.data .
+ln -s forcing/MITgcm/darwin/verification/global/pickup.0005644800.meta .
+ln -s forcing/MITgcm/darwin/verification/global/pickup_cd.0005644800.data .
