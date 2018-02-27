@@ -84,14 +84,14 @@
 
 # Input datasets
  &PARM05
- bathyFile=      'forcing/MITgcm/darwin/verification/monod_global_128x64x15_ocmip/depth_g77.bin',
- hydrogThetaFile='forcing/MITgcm/darwin/verification/monod_global_128x64x15_ocmip/lev_clim_temp.bin',
- hydrogSaltFile= 'forcing/MITgcm/darwin/verification/monod_global_128x64x15_ocmip/lev_clim_salt.bin',
- zonalWindFile=  'forcing/MITgcm/darwin/verification/monod_global_128x64x15_ocmip/tren_taux.bin',
- meridWindFile=  'forcing/MITgcm/darwin/verification/monod_global_128x64x15_ocmip/tren_tauy.bin',
- thetaClimFile=  'forcing/MITgcm/darwin/verification/monod_global_128x64x15_ocmip/lev_monthly_temp.bin',
- saltClimFile=   'forcing/MITgcm/darwin/verification/monod_global_128x64x15_ocmip/lev_monthly_salt.bin',
- surfQFile=      'forcing/MITgcm/darwin/verification/monod_global_128x64x15_ocmip/shi_qnet.bin',
- EmPmRFile=      'forcing/MITgcm/darwin/verification/monod_global_128x64x15_ocmip/shi_empmr_year.bin',
+ bathyFile=      'forcing/MITgcm/darwin/verification/monod_global_128x64x15/depth_g77.bin',
+ hydrogThetaFile='forcing/MITgcm/darwin/verification/monod_global_128x64x15/lev_clim_temp.bin',
+ hydrogSaltFile= 'forcing/MITgcm/darwin/verification/monod_global_128x64x15/lev_clim_salt.bin',
+ zonalWindFile=  'forcing/MITgcm/darwin/verification/monod_global_128x64x15/tren_taux.bin',
+ meridWindFile=  'forcing/MITgcm/darwin/verification/monod_global_128x64x15/tren_tauy.bin',
+ thetaClimFile=  'forcing/MITgcm/darwin/verification/monod_global_128x64x15/lev_monthly_temp.bin',
+ saltClimFile=   'forcing/MITgcm/darwin/verification/monod_global_128x64x15/lev_monthly_salt.bin',
+ surfQFile=      'forcing/MITgcm/darwin/verification/monod_global_128x64x15/shi_qnet.bin',
+ EmPmRFile=      'forcing/MITgcm/darwin/verification/monod_global_128x64x15/shi_empmr_year.bin',
  the_run_name=   'Gud12',
  &
