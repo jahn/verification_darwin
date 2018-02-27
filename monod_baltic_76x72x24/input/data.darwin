@@ -2,7 +2,7 @@
   useDarwinYearlyFields= .TRUE.,
 # iceFile='gud/nasa_icefraction_mth-2d.bin',
 #
-  ironFile='../input/input/Fe_const_76x72_12_',
+  ironFile='forcing/MITgcm/darwin/verification/baltic/Fe_const_76x72_12_',
 # emulate silly 30-day period from monod
   ironStartDate1=19920116,
   ironStartDate2=000000,

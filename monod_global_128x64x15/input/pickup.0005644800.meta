@@ -1,8 +1,1 @@
- nDims = [   2 ];
- dimList = [
-   128,    1,  128,
-    64,    1,   64
- ];
- dataprec = [ 'float64' ];
- nrecords = [   123 ];
- timeStepNumber = [    5644800 ];
+forcing/MITgcm/darwin/verification/global/pickup.0005644800.meta

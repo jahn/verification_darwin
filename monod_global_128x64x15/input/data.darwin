@@ -1,7 +1,7 @@
  &DARWIN_FORCING_PARAMS
- iceFile='../input/input_ocmip/fice.bin',
- ironFile='../input/input_ocmip/mah_flux_smooth.bin',
- PARFile='../input/input_ocmip/par_ocmip.bin_mth-2d.bin',
+ iceFile='forcing/MITgcm/darwin/verification/monod_global_128x64x15_ocmip/fice.bin',
+ ironFile='forcing/MITgcm/darwin/verification/monod_global_128x64x15_ocmip/mah_flux_smooth.bin',
+ PARFile='forcing/MITgcm/darwin/verification/monod_global_128x64x15_ocmip/par_ocmip.bin_mth-2d.bin',
  icePeriod= -12.,
  ironPeriod= -12.,
  PARPeriod= -12.,

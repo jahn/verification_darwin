@@ -12,15 +12,15 @@
  &
 #
  &EXF_NML_02
- atempfile         = '../input/input/RG_tmp2m',
- aqhfile           = '../input/input/RG_spfh2m',
- precipfile        = '../input/input/RG_rain',
- runofffile        = '../input/input/runoff-360x180x12.bin',
- uwindfile         = '../input/input/RG_u10m',
- vwindfile         = '../input/input/RG_v10m',
- swdownfile        = '../input/input/RG_dsw',
- lwdownfile        = '../input/input/RG_dlw',
- climsssfile       = '../input/input/LEV01_SSS_360x180x12.bin',
+ atempfile         = 'forcing/MITgcm/darwin/verification/baltic/RG_tmp2m',
+ aqhfile           = 'forcing/MITgcm/darwin/verification/baltic/RG_spfh2m',
+ precipfile        = 'forcing/MITgcm/darwin/verification/baltic/RG_rain',
+ runofffile        = 'forcing/MITgcm/darwin/verification/baltic/runoff-360x180x12.bin',
+ uwindfile         = 'forcing/MITgcm/darwin/verification/baltic/RG_u10m',
+ vwindfile         = 'forcing/MITgcm/darwin/verification/baltic/RG_v10m',
+ swdownfile        = 'forcing/MITgcm/darwin/verification/baltic/RG_dsw',
+ lwdownfile        = 'forcing/MITgcm/darwin/verification/baltic/RG_dlw',
+ climsssfile       = 'forcing/MITgcm/darwin/verification/baltic/LEV01_SSS_360x180x12.bin',
 #
  atempstartdate1   = 19990301,
  atempstartdate2   = 120000,

@@ -1,13 +1,13 @@
  &DARWIN_FORCING_PARAMS
- ironFile='../input/input/loc1_FeFlux_monsurf.bin',
- PARFile='../input/input/loc1_PAR_monsurf.bin',
+ ironFile='forcing/MITgcm/darwin/verification/quota_1d/loc1_FeFlux_monsurf.bin',
+ PARFile='forcing/MITgcm/darwin/verification/quota_1d/loc1_PAR_monsurf.bin',
  ironPeriod= -12.,
  PARPeriod= -12.,
  darwin_inscal_iron= 1000.,
  darwin_inscal_PAR= 11.574074074074,
-#darwin_PO4_fluxFile= '../input/input/ann_nphos_flux.bin',
-#darwin_NO3_fluxFile= '../input/input/ann_nnitr_flux.bin',
-#darwin_Si_fluxFile= '../input/input/ann_nsil_flux.bin',
+#darwin_PO4_fluxFile= 'forcing/MITgcm/darwin/verification/quota_1d/ann_nphos_flux.bin',
+#darwin_NO3_fluxFile= 'forcing/MITgcm/darwin/verification/quota_1d/ann_nnitr_flux.bin',
+#darwin_Si_fluxFile= 'forcing/MITgcm/darwin/verification/quota_1d/ann_nsil_flux.bin',
  /
  &DARWIN_PARAMS
  darwin_seed= 11231,

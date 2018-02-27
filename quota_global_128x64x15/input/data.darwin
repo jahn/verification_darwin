@@ -1,7 +1,7 @@
  &DARWIN_FORCING_PARAMS
- iceFile='../input/input/nasa_icefraction_mth-2d.bin',
- ironFile='../input/input/mahowald2009_solubile_current_smooth_oce_mth-2d.bin',
- PARFile='../input/input/par_ecco.bin_mth-2d.bin',
+ iceFile='forcing/MITgcm/darwin/verification/quota_global_128x64x15/nasa_icefraction_mth-2d.bin',
+ ironFile='forcing/MITgcm/darwin/verification/quota_global_128x64x15/mahowald2009_solubile_current_smooth_oce_mth-2d.bin',
+ PARFile='forcing/MITgcm/darwin/verification/quota_global_128x64x15/par_ecco.bin_mth-2d.bin',
 # NO3_RelaxFile='/home/stephd/Input/input_ecco/lev01_nitrate_mth-3d.bin',
 # darwin_relaxScale=31104000.,
  icePeriod= -12.,
@@ -9,9 +9,9 @@
  PARPeriod= -12.,
  darwin_inscal_iron= 1000.,
  darwin_inscal_PAR= 11.574074074074,
-#darwin_PO4_fluxFile= '../input/input/ann_nphos_flux.bin',
-#darwin_NO3_fluxFile= '../input/input/ann_nnitr_flux.bin',
-#darwin_Si_fluxFile= '../input/input/ann_nsil_flux.bin',
+#darwin_PO4_fluxFile= 'forcing/MITgcm/darwin/verification/quota_global_128x64x15/ann_nphos_flux.bin',
+#darwin_NO3_fluxFile= 'forcing/MITgcm/darwin/verification/quota_global_128x64x15/ann_nnitr_flux.bin',
+#darwin_Si_fluxFile= 'forcing/MITgcm/darwin/verification/quota_global_128x64x15/ann_nsil_flux.bin',
  /
  &DARWIN_PARAMS
  darwin_seed= 56,

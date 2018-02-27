@@ -1,10 +1,10 @@
 ########################
  &DARWIN_FORCING_PARAMS
  darwin_chlInitBalanced= T,
- ironFile='../input/input/loc1_FeFlux_monsurf.bin',
+ ironFile='forcing/MITgcm/darwin/verification/monod_1d_6+4/loc1_FeFlux_monsurf.bin',
  ironPeriod= -12.,
  darwin_inscal_iron= 1000.,
- PARFile='../input/input/loc1_PAR_monsurf.bin',
+ PARFile='forcing/MITgcm/darwin/verification/monod_1d_6+4/loc1_PAR_monsurf.bin',
  PARPeriod= -12.,
  darwin_inscal_PAR= 11.574074074074,
  /

@@ -1,6 +1,6 @@
  &DARWIN_FORCING_PARAMS
- ironFile='../input/input/loc1_FeFlux_monsurf.bin',
- PARFile='../input/input/loc1_PAR_monsurf.bin',
+ ironFile='forcing/MITgcm/darwin/verification/monod_1d_twospecies/loc1_FeFlux_monsurf.bin',
+ PARFile='forcing/MITgcm/darwin/verification/monod_1d_twospecies/loc1_PAR_monsurf.bin',
  ironPeriod= -12.,
  PARPeriod= -12.,
  darwin_inscal_iron= 1000.,
