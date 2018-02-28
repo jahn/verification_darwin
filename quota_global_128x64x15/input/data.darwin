@@ -2,7 +2,7 @@
  iceFile='forcing/MITgcm/darwin/verification/quota_global_128x64x15/nasa_icefraction_mth-2d.bin',
  ironFile='forcing/MITgcm/darwin/verification/quota_global_128x64x15/mahowald2009_solubile_current_smooth_oce_mth-2d.bin',
  PARFile='forcing/MITgcm/darwin/verification/quota_global_128x64x15/par_ecco.bin_mth-2d.bin',
-# NO3_RelaxFile='/home/stephd/Input/input_ecco/lev01_nitrate_mth-3d.bin',
+# NO3_RelaxFile='forcing/MITgcm/darwin/input_ecco/lev01_nitrate_mth-3d.bin',
 # darwin_relaxScale=31104000.,
  icePeriod= -12.,
  ironPeriod= -12.,
