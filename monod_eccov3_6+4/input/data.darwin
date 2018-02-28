@@ -1,18 +1,18 @@
 ########################
  &DARWIN_FORCING_PARAMS
  darwin_chlInitBalanced= T,
- ironFile='../../../data/eccov3/mahowald2009_solubile_current_smooth_oce_mth-2d.bin',
+ ironFile='forcing/MITgcm/darwin/eccov3/mahowald2009_solubile_current_smooth_oce_mth-2d.bin',
  ironPeriod= 2592000.,
  ironStartTime= 1296000.,
  darwin_inscal_iron= 1000.,
- PARFile='../../../data/eccov3/ecco_oasim_total_below_oneband_einm2d.bin',
+ PARFile='forcing/MITgcm/darwin/eccov3/ecco_oasim_total_below_oneband_einm2d.bin',
  PARPeriod= 2592000.,
  PARStartTime= 1296000.,
  darwin_inscal_PAR= 11.574074074074,
- windFile='../../../data/eccov3/tren_speed_mth-2d.bin',
+ windFile='forcing/MITgcm/darwin/eccov3/tren_speed_mth-2d.bin',
  windPeriod= 2592000.,
  windStartTime= 1296000.,
- icefile = '../../../data/eccov3/SIarea.bin',
+ icefile = 'forcing/MITgcm/darwin/eccov3/SIarea.bin',
  iceperiod     = 86400.0,
  icestarttime  = 43200.0,
  /
