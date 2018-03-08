@@ -17,7 +17,7 @@
  fields(:, 1)= 'TRAC01:34  ',
  fields(:, 1)= 'GC_Tr01:34 ',
  fields(:, 1)= 'gTr01:34   ',
- fields(:, 1)= 'gGUD01:34  ',
+ fields(:, 1)= 'gDAR01:34  ',
 #
   filename(2)= '2d',
  levels(1, 2)=  1,
