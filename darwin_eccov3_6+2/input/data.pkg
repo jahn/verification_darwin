@@ -3,6 +3,7 @@
  useGMRedi=.TRUE.
  usePTRACERS=.TRUE.
  useGCHEM=.TRUE.,
+ useRADTRANS=.TRUE.,
  useKPP=.TRUE.,
  useMNC=.TRUE.,
  useEXF=.TRUE.,
