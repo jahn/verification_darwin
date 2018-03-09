@@ -1,6 +1,3 @@
-C $Header$
-C $Name$
-
 #ifndef DARWIN_OPTIONS_H
 #define DARWIN_OPTIONS_H
 #include "PACKAGES_CONFIG.h"
@@ -18,9 +15,9 @@ CEOP
 
 C tracer selection
 
-#undef   DARWIN_ALLOW_NQUOTA
-#undef   DARWIN_ALLOW_PQUOTA
-#undef   DARWIN_ALLOW_FEQUOTA
+#undef  DARWIN_ALLOW_NQUOTA
+#undef  DARWIN_ALLOW_PQUOTA
+#undef  DARWIN_ALLOW_FEQUOTA
 #undef  DARWIN_ALLOW_SIQUOTA
 #define DARWIN_ALLOW_CHLQUOTA
 #define DARWIN_ALLOW_CDOM
@@ -83,7 +80,8 @@ C debugging
 
 C deprecated
 
-#undef  DARWIN_WATERVAP_BUG
+C base particle scavenging on POP as in darwin2
+#undef  DARWIN_PART_SCAV_POP
 
 C these are for darwin_generate_random
 #undef  DARWIN_RANDOM_TRAITS
