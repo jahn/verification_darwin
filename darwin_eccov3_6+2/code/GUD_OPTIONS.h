@@ -1,96 +1,96 @@
 C $Header$
 C $Name$
 
-#ifndef GUD_OPTIONS_H
-#define GUD_OPTIONS_H
+#ifndef DARWIN_OPTIONS_H
+#define DARWIN_OPTIONS_H
 #include "PACKAGES_CONFIG.h"
-#ifdef ALLOW_GUD
+#ifdef ALLOW_DARWIN
 
 #include "CPP_OPTIONS.h"
 
 CBOP
-C    !ROUTINE: GUD_OPTIONS.h
+C    !ROUTINE: DARWIN_OPTIONS.h
 C    !INTERFACE:
 
 C    !DESCRIPTION:
-C options for gud package
+C options for darwin package
 CEOP
 
 C tracer selection
 
-#undef   GUD_ALLOW_NQUOTA
-#undef   GUD_ALLOW_PQUOTA
-#undef   GUD_ALLOW_FEQUOTA
-#undef  GUD_ALLOW_SIQUOTA
-#define GUD_ALLOW_CHLQUOTA
-#define GUD_ALLOW_CDOM
-#define GUD_ALLOW_CARBON
+#undef   DARWIN_ALLOW_NQUOTA
+#undef   DARWIN_ALLOW_PQUOTA
+#undef   DARWIN_ALLOW_FEQUOTA
+#undef  DARWIN_ALLOW_SIQUOTA
+#define DARWIN_ALLOW_CHLQUOTA
+#define DARWIN_ALLOW_CDOM
+#define DARWIN_ALLOW_CARBON
 
 C optional bits
 
-#define GUD_ALLOW_DENIT
-#undef  GUD_ALLOW_EXUDE
+#define DARWIN_ALLOW_DENIT
+#undef  DARWIN_ALLOW_EXUDE
 #define ALLOW_OLD_VIRTUALFLUX
 
 C light
 
-#define GUD_READ_PAR
-#undef  GUD_USE_QSW
-#undef  GUD_AVPAR
-#define GUD_ALLOW_GEIDER
-#define GUD_ALLOW_RADTRANS
+#define DARWIN_READ_PAR
+#undef  DARWIN_USE_QSW
+#undef  DARWIN_AVPAR
+#define DARWIN_ALLOW_GEIDER
+#define DARWIN_ALLOW_RADTRANS
 
 C initialize chl with radtrans as in darwin2
-#undef  GUD_CHL_INIT_LEGACY
+#undef  DARWIN_CHL_INIT_LEGACY
 
-#define GUD_GEIDER_RHO_SYNTH
+#define DARWIN_GEIDER_RHO_SYNTH
 
-#define GUD_DIAG_IOP
-#undef GUD_DIAG_RADTRANS_SOLUTION
+#define DARWIN_DIAG_IOP
+#undef DARWIN_DIAG_RADTRANS_SOLUTION
 
 C grazing
 
 C for quadratic grazing a la quota
-#undef  GUD_GRAZING_SWITCH
+#undef  DARWIN_GRAZING_SWITCH
 
 C compute palat from size ratios
-#undef  GUD_ALLOMETRIC_PALAT
+#undef  DARWIN_ALLOMETRIC_PALAT
 
 C turn off grazing temperature dependence
-#undef  GUD_NOZOOTEMP
+#undef  DARWIN_NOZOOTEMP
 
-#undef  GUD_TIME_GRAZING
+#undef  DARWIN_TIME_GRAZING
 
 C temperature
 
-#undef  GUD_NOTEMP
-#define GUD_TEMP_VERSION 2
-#undef  GUD_TEMP_RANGE
+#undef  DARWIN_NOTEMP
+#define DARWIN_TEMP_VERSION 2
+#undef  DARWIN_TEMP_RANGE
 
 C iron
 
-#define GUD_MINFE
-#define GUD_PART_SCAV
-#define GUD_IRON_SED_SOURCE_VARIABLE
+#define DARWIN_MINFE
+#define DARWIN_PART_SCAV
+#define DARWIN_IRON_SED_SOURCE_VARIABLE
 
 C debugging
 
-#undef  GUD_DEBUG
+#undef  DARWIN_DEBUG
 
-#define GUD_ALLOW_CONS
+#define DARWIN_ALLOW_CONS
 
-#define GUD_UNUSED 0
+#define DARWIN_UNUSED 0
 
 C deprecated
 
-#undef  GUD_WATERVAP_BUG
+#undef  DARWIN_WATERVAP_BUG
 
-C these are for gud_generate_random
-#undef  GUD_RANDOM_TRAITS
-#undef  GUD_TWO_SPECIES_SETUP
-#undef  GUD_NINE_SPECIES_SETUP
-#undef  GUD_ALLOW_DIAZ
+C these are for darwin_generate_random
+#undef  DARWIN_RANDOM_TRAITS
+#undef  DARWIN_TWO_SPECIES_SETUP
+#undef  DARWIN_NINE_SPECIES_SETUP
+#undef  DARWIN_ALLOW_DIAZ
 
-#endif /* ALLOW_GUD */
-#endif /* GUD_OPTIONS_H */
+#endif /* ALLOW_DARWIN */
+#endif /* DARWIN_OPTIONS_H */
 

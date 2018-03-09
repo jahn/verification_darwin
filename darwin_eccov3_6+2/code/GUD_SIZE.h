@@ -1,12 +1,12 @@
 C $Header$
 C $Name$
 
-#ifdef ALLOW_GUD
+#ifdef ALLOW_DARWIN
 
 CBOP
-C    !ROUTINE: GUD_SIZE.h
+C    !ROUTINE: DARWIN_SIZE.h
 C    !INTERFACE:
-C #include GUD_SIZE.h
+C #include DARWIN_SIZE.h
 
 C    !DESCRIPTION:
 C Contains dimensions and index ranges for cell model.
@@ -32,4 +32,4 @@ C Contains dimensions and index ranges for cell model.
       parameter(nGRplank=0)
 
 CEOP
-#endif /* ALLOW_GUD */
+#endif /* ALLOW_DARWIN */

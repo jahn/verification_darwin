@@ -157,7 +157,7 @@
  fields(13, 2)= 'Rirr013 ',
 #
  frequency(3)=   4*2592000.,
- filename(3)= 'gud',
+ filename(3)= 'darwin',
  fields(1, 3)=  'PP',
  fields(2, 3)=  'Nfix',
  fields(3, 3)=  'Denit',
