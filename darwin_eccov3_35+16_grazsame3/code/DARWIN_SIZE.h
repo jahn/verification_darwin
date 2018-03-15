@@ -1,39 +1,34 @@
-C $Header$
-C $Name$
-
 #ifdef ALLOW_DARWIN
 
 CBOP
-C    !ROUTINE: DARWIN_SIZE.h
-C    !INTERFACE:
+C     !ROUTINE: DARWIN_SIZE.h
+C     !INTERFACE:
 C #include DARWIN_SIZE.h
 
-C    !DESCRIPTION:
-C Contains dimensions and index ranges for darwin model.
+C     !DESCRIPTION:
+C Contains dimensions for the darwin model.
 C
-C right now, some bits of code assume that
-C
-C   iMinPhoto = 1
-C   iMinPrey = 1
-C   iMaxPred = nplank
-C   nChl = iMaxPhoto
+C nplank   :: number of plankton types
+C nGroup   :: number of plankton functional groups
+C             (for allometric trait generation)
+C darwin_nlam :: number of wavebands
+C             (must match RT_nlam with radtrans, 1 without)
+C nopt     :: number of optical types (spectra to read in)
+C nPhoto   :: number of phototrophs
+C             (will have Chl tracer if DARWIN_ALLOW_CHL is defined)
+C nPPplank :: number of primary production diagnostics to collect
+C nGRplank :: number of grazing loss diagnostics to collect
 
-      integer nplank, nGroup, nlam, nopt
-      integer iMinPhoto, iMaxPhoto, nPhoto
-      integer iMinPrey, iMaxPrey
-      integer iMinPred, iMaxPred
-      integer nChl
+      integer darwin_nlam, nopt
+      integer nplank, nGroup
+      integer nPhoto
       integer nPPplank
       integer nGRplank
-      parameter(nplank=51)
-      parameter(nGroup=9)
       parameter(darwin_nlam=13)
       parameter(nopt=12)
-      parameter(iMinPhoto=1, iMaxPhoto=35)
-      parameter(iMinPrey=1, iMaxPrey=nplank)
-      parameter(iMinPred=26, iMaxPred=nplank)
-      parameter(nPhoto=iMaxPhoto+1-iMinPhoto)
-      parameter(nChl=iMaxPhoto)
+      parameter(nplank=51)
+      parameter(nGroup=9)
+      parameter(nPhoto=35)
       parameter(nPPplank=0)
       parameter(nGRplank=0)
 
