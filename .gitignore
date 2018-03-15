@@ -1,0 +1,31 @@
+# CVS default ignores begin
+*~
+\#*
+.#*
+,*
+_$*
+*$
+*.old
+*.bak
+*.BAK
+*.orig
+*.rej
+*.a
+*.o
+*.so
+*.Z
+*.elc
+*.ln
+core
+# CVS default ignores end
+*.pyc
+# OSX system files
+.DS_store
+
+/*.log
+/tr_*
+/rs_*
+/tst_2+2_out.txt
+/tmp_*
+
+/*/tr_run.*
