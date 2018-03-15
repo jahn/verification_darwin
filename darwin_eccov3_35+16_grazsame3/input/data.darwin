@@ -1,11 +1,11 @@
 #######################
  &DARWIN_FORCING_PARAMS
  darwin_chlInitBalanced= T,
- ironFile='/home/stephdut/Input/input_ecco/mahowald2009_solubile_current_smooth_oce_mth-2d.bin',
+ ironFile='forcing/MITgcm/darwin/input_ecco/mahowald2009_solubile_current_smooth_oce_mth-2d.bin',
  ironPeriod= -12.,
  darwin_inscal_iron= 1000.,
 #
- windFile='/home/stephdut/Input/input_ecco/tren_speed_mth-2d.bin',
+ windFile='forcing/MITgcm/darwin/input_ecco/tren_speed_mth-2d.bin',
  windPeriod= -12.,
  /
 ########################
