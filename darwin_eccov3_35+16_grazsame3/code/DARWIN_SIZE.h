@@ -27,7 +27,7 @@ C   nChl = iMaxPhoto
       integer nGRplank
       parameter(nplank=51)
       parameter(nGroup=9)
-      parameter(nlam=13)
+      parameter(darwin_nlam=13)
       parameter(nopt=12)
       parameter(iMinPhoto=1, iMaxPhoto=35)
       parameter(iMinPrey=1, iMaxPrey=nplank)
