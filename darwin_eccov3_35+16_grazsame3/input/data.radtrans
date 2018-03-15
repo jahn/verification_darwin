@@ -28,10 +28,10 @@
  OASIM_EsFile(13)='forcing/MITgcm/darwin/input_ecco/ecco_oasim_esp13_below.bin',
  OASIMPeriod= -12.,
 #
- icefile = 'forcing/MITgcm/darwin/eccov3/SIarea.bin',
- icestartdate1 = 19990101,
- icestartdate2 = 120000,
- iceperiod     = 86400.0,
+ RT_icefile = 'forcing/MITgcm/darwin/eccov3/SIarea.bin',
+ RT_icestartdate1 = 19990101,
+ RT_icestartdate2 = 120000,
+ RT_iceperiod     = 86400.0,
  /
 ########################
  &RADTRANS_PARAMS
