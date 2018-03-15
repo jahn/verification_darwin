@@ -35,7 +35,7 @@
 #
  windFile='/home/stephdut/Input/input_ecco/tren_speed_mth-2d.bin',
  windPeriod= -12.,
- icefile = '/home/jahn/gud/big/input/eccov3/SIarea.bin',
+ icefile = 'forcing/MITgcm/darwin/eccov3/SIarea.bin',
  icestartdate1 = 19990101,
  icestartdate2 = 120000,
  iceperiod     = 86400.0,
