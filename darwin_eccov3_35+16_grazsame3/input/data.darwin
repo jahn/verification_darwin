@@ -14,8 +14,6 @@
  idebug=271,
  jdebug=63,
  darwin_seed= 56,
- darwin_read_phos= F,
- darwin_select_kn_allom=2,
  tempCoeffArr= 0.8,
  PARmin= 0.1,
  alpfe= 1.0,
@@ -43,14 +41,19 @@
  darwin_Sdom=0.0145000,
  darwin_aCDOM_fac = 0.30,
  darwin_part_size_P = 1.e-17,
- darwin_allomflat= T,
- allomflatslope = -0.075,
- allomflatbbb_slope=-1.458,
- allomflatb_size= 2.860959e-01, 2.923177e-01, 2.983251e-01, 3.140574e-01, 3.261153e-01, 3.440134e-01, 3.577670e-01, 3.618763e-01, 3.695100e-01, 3.718916e-01, 3.706202e-01, 3.640583e-01, 3.682107e-01,
- allomflatb_slope_small = 4.185404e+00, 4.208007e+00, 4.261307e+00, 4.302451e+00, 4.341968e+00, 4.373109e+00, 4.392320e+00, 4.416705e+00, 4.434653e+00, 4.454953e+00, 4.479809e+00, 4.507577e+00, 4.544071e+00,
- allomflatb_slope_large = 1.723153e+00, 1.718186e+00, 1.699666e+00, 1.687533e+00, 1.710736e+00, 1.732242e+00, 1.763117e+00, 1.811451e+00, 1.834619e+00, 1.863836e+00, 1.897289e+00, 1.861866e+00, 1.907367e+00,
+ gud_allomSpectra= T,
+ gud_absorpSlope= -0.075,
+ gud_bbbSlope=    -1.458,
+ gud_scatSwitchSizeLog= 2.860959e-01, 2.923177e-01, 2.983251e-01, 3.140574e-01, 3.261153e-01,
+                        3.440134e-01, 3.577670e-01, 3.618763e-01, 3.695100e-01, 3.718916e-01,
+                        3.706202e-01, 3.640583e-01, 3.682107e-01,
+ gud_scatSlopeSmall= 4.185404e+00, 4.208007e+00, 4.261307e+00, 4.302451e+00, 4.341968e+00,
+                     4.373109e+00, 4.392320e+00, 4.416705e+00, 4.434653e+00, 4.454953e+00,
+                     4.479809e+00, 4.507577e+00, 4.544071e+00,
+ gud_scatSlopeLarge= 1.723153e+00, 1.718186e+00, 1.699666e+00, 1.687533e+00, 1.710736e+00,
+                     1.732242e+00, 1.763117e+00, 1.811451e+00, 1.834619e+00, 1.863836e+00,
+                     1.897289e+00, 1.861866e+00, 1.907367e+00,
  /
-
  &DARWIN_CDOM_PARAMS
   fracCDOM = 0.02,
   cdomdegrd= 3.8580e-08,
@@ -66,7 +69,7 @@
  /
 ########################
  &DARWIN_TRAIT_PARAMS
-  darwin_sort_biovol= F,
+ grp_names= 'Pro', 'Syn', 'PicoEuk', 'Cocco', 'Diazo', 'Tricho', 'Diatom', 'Dino', 'Zoo',
 #
 #                        P  S  s  C  z, T,  D   l  Z
  grp_nplank(:)=          1, 1, 2, 5, 4, 1, 11, 10, 16,
@@ -110,6 +113,7 @@
  a_Qpmax = 8*0.02,  0.01,
 #
  darwin_effective_ksat= T,
+ darwin_select_kn_allom= 2,
 #
  grp_ExportFracPreyPred(1:8,9)= 8*.8,
  a_R_ChlC(9)= 0.,
