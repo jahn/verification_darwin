@@ -1,9 +1,9 @@
 #######################
- &GUD_FORCING_PARAMS
- gud_chlInitBalanced= T,
+ &DARWIN_FORCING_PARAMS
+ darwin_chlInitBalanced= T,
  ironFile='/home/stephdut/Input/input_ecco/mahowald2009_solubile_current_smooth_oce_mth-2d.bin',
  ironPeriod= -12.,
- gud_inscal_iron= 1000.,
+ darwin_inscal_iron= 1000.,
 #
  OASIM_EdFile( 1)='/home/stephdut/Input/input_ecco/ecco_oasim_edp01_below.bin',
  OASIM_EdFile( 2)='/home/stephdut/Input/input_ecco/ecco_oasim_edp02_below.bin',
@@ -41,13 +41,13 @@
  iceperiod     = 86400.0,
  /
 ########################
- &GUD_PARAMS
+ &DARWIN_PARAMS
  diaz_ini_fac= 0.1,
  idebug=271,
  jdebug=63,
- gud_seed= 56,
- gud_read_phos= F,
- gud_select_kn_allom=2,
+ darwin_seed= 56,
+ darwin_read_phos= F,
+ darwin_select_kn_allom=2,
  tempCoeffArr= 0.8,
  PARmin= 0.1,
  alpfe= 1.0,
@@ -65,21 +65,21 @@
  kPOSi= 7.7160493827160493E-8,  ! 1/150day
  phygrazmin= 120E-10,
  hollexp = 2.E0,
- gud_atmos_pCO2= 278E-6,
+ darwin_atmos_pCO2= 278E-6,
  /
 ########################
- &GUD_RADTRANS_PARAMS
- gud_useModelCalendar=.TRUE.,
- gud_waterabsorbFile='/home/stephdut/OPTICS_COEFF/optics_water_Aug2014_bandave25.txt',
- gud_phytoabsorbFile='/home/stephdut/OPTICS_COEFF/optics_phyto_10_bandave25_newsize5_diffsyn_zoo.txt',
- gud_particleabsorbFile='/home/stephdut/OPTICS_COEFF/optics_detritus_8_sameas4_bandave25.txt',
- gud_radtrans_kmax=22,
- gud_waveband_edges=400,412.5,437.5,462.5,487.5,512.5,537.5,562.5,587.5,612.5,637.5,662.5,687.5,700,
- gud_waveband_centers=400,425,450,475,500,525,550,575,600,625,650,675,700,
- gud_Sdom=0.0145000,
- gud_aCDOM_fac = 0.30,
- gud_part_size_P = 1.e-17,
- gud_allomflat= T,
+ &DARWIN_RADTRANS_PARAMS
+ darwin_useModelCalendar=.TRUE.,
+ darwin_waterabsorbFile='/home/stephdut/OPTICS_COEFF/optics_water_Aug2014_bandave25.txt',
+ darwin_phytoabsorbFile='/home/stephdut/OPTICS_COEFF/optics_phyto_10_bandave25_newsize5_diffsyn_zoo.txt',
+ darwin_particleabsorbFile='/home/stephdut/OPTICS_COEFF/optics_detritus_8_sameas4_bandave25.txt',
+ darwin_radtrans_kmax=22,
+ darwin_waveband_edges=400,412.5,437.5,462.5,487.5,512.5,537.5,562.5,587.5,612.5,637.5,662.5,687.5,700,
+ darwin_waveband_centers=400,425,450,475,500,525,550,575,600,625,650,675,700,
+ darwin_Sdom=0.0145000,
+ darwin_aCDOM_fac = 0.30,
+ darwin_part_size_P = 1.e-17,
+ darwin_allomflat= T,
  allomflatslope = -0.075,
  allomflatbbb_slope=-1.458,
  allomflatb_size= 2.860959e-01, 2.923177e-01, 2.983251e-01, 3.140574e-01, 3.261153e-01, 3.440134e-01, 3.577670e-01, 3.618763e-01, 3.695100e-01, 3.718916e-01, 3.706202e-01, 3.640583e-01, 3.682107e-01,
@@ -87,7 +87,7 @@
  allomflatb_slope_large = 1.723153e+00, 1.718186e+00, 1.699666e+00, 1.687533e+00, 1.710736e+00, 1.732242e+00, 1.763117e+00, 1.811451e+00, 1.834619e+00, 1.863836e+00, 1.897289e+00, 1.861866e+00, 1.907367e+00,
  /
 
- &GUD_CDOM_PARAMS
+ &DARWIN_CDOM_PARAMS
   fracCDOM = 0.02,
   cdomdegrd= 3.8580e-08,
   CDOMbleach = 3.0000e-06,
@@ -98,11 +98,11 @@
   CDOMcoeff = 21.,
  /
 ########################
- &GUD_RANDOM_PARAMS
+ &DARWIN_RANDOM_PARAMS
  /
 ########################
- &GUD_TRAIT_PARAMS
-  gud_sort_biovol= F,
+ &DARWIN_TRAIT_PARAMS
+  darwin_sort_biovol= F,
 #
 #                        P  S  s  C  z, T,  D   l  Z
  grp_nplank(:)=          1, 1, 2, 5, 4, 1, 11, 10, 16,
@@ -145,7 +145,7 @@
  a_qmin_p = 8*0.005, 0.008,
  a_qmax_p = 8*0.02,  0.01,
 #
- gud_effective_ksat= T,
+ darwin_effective_ksat= T,
 #
  grp_ExportFracPreyPred(1:8,9)= 8*.8,
  grp_R_ChlC(9)= 0.,
