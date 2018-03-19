@@ -7,6 +7,11 @@
 #
  windFile='forcing/MITgcm/darwin/input_ecco/tren_speed_mth-2d.bin',
  windPeriod= -12.,
+#
+ icefile = 'forcing/MITgcm/darwin/eccov3/SIarea.bin',
+ icestartdate1 = 19990101,
+ icestartdate2 = 120000,
+ iceperiod     = 86400.0,
  /
 ########################
  &DARWIN_PARAMS
