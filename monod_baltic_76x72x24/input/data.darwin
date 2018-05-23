@@ -18,6 +18,7 @@
  &DARWIN_PARAMS
   darwin_seed=11231,
 #  darwin_read_phos=T,
+  DARWIN_useQsw= .TRUE.,
   PARmin= 1.0,
  /
  &DARWIN_RADTRANS_PARAMS

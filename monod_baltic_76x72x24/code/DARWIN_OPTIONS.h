@@ -31,8 +31,6 @@ C optional bits
 
 C light
 
-#undef  DARWIN_READ_PAR
-#define DARWIN_USE_QSW
 #undef  DARWIN_AVPAR
 #undef  DARWIN_ALLOW_GEIDER
 #undef  DARWIN_ALLOW_RADTRANS
