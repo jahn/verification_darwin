@@ -26,6 +26,11 @@
  RT_EsFile(12)='/home/stephdut/Input/input_ecco/ecco_oasim_esp12_below.bin',
  RT_EsFile(13)='/home/stephdut/Input/input_ecco/ecco_oasim_esp13_below.bin',
  RT_E_period= -12.,
+#
+ RT_icefile = '/home/jahn/gud/big/input/eccov3/SIarea.bin',
+ RT_icestartdate1 = 19990101,
+ RT_icestartdate2 = 120000,
+ RT_iceperiod     = 86400.0,
  /
  &RADTRANS_PARAMS
  RT_wbEdges=400,412.5,437.5,462.5,487.5,512.5,537.5,562.5,587.5,612.5,637.5,662.5,687.5,700,
