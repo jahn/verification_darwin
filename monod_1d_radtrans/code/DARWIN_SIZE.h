@@ -8,6 +8,7 @@ C #include DARWIN_SIZE.h
 C    !DESCRIPTION:
 C Contains dimensions and index ranges for cell model.
 
+      integer nplank, nGroup, nopt
       integer nPhoto
       integer nPPplank
       integer nGRplank
