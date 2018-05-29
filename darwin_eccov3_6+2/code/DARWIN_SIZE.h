@@ -11,7 +11,6 @@ C
 C nplank   :: number of plankton types
 C nGroup   :: number of plankton functional groups
 C             (for allometric trait generation)
-C darwin_nlam :: number of wavebands
 C             (must match RT_nlam with radtrans, 1 without)
 C nopt     :: number of optical types (spectra to read in)
 C nPhoto   :: number of phototrophs
@@ -21,18 +20,21 @@ C nGRplank :: number of grazing loss diagnostics to collect
 
       integer nplank
       integer nGroup
-      integer darwin_nlam
       integer nopt
       integer nPhoto
       integer nPPplank
       integer nGRplank
-      parameter(darwin_nlam=13)
       parameter(nopt=12)
       parameter(nplank=8)
       parameter(nGroup=9)
       parameter(nPhoto=6)
       parameter(nPPplank=0)
       parameter(nGRplank=0)
+
+#ifndef ALLOW_RADTRANS
+      integer nlam
+      parameter(nlam=1)
+#endif
 
 CEOP
 #endif /* ALLOW_DARWIN */
