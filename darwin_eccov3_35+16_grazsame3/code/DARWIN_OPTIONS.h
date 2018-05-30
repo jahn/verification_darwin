@@ -33,7 +33,6 @@ C light
 
 #undef  DARWIN_AVPAR
 #define DARWIN_ALLOW_GEIDER
-#define DARWIN_ALLOW_RADTRANS
 
 C initialize chl with radtrans as in darwin2
 #undef  DARWIN_CHL_INIT_LEGACY
