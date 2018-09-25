@@ -28,6 +28,7 @@ C optional bits
 #define DARWIN_ALLOW_DENIT
 #undef  DARWIN_ALLOW_EXUDE
 #define ALLOW_OLD_VIRTUALFLUX
+#define DARWIN_NITRATE_FELIMIT
 
 C light
 
