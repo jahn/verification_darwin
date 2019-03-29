@@ -1,6 +1,5 @@
 ########################
  &DARWIN_FORCING_PARAMS
- darwin_chlInitBalanced= T,
  ironFile='forcing/MITgcm/darwin/verification/quota_1d_6spec_cnp/loc1_mahowald2009_solubile_current_smooth_oce_mth-2d.bin',
  PARFile='forcing/MITgcm/darwin/verification/quota_1d_6spec_cnp/loc1_ecco_oasim_total_below_oneband_einm2d.bin',
  windFile='forcing/MITgcm/darwin/verification/quota_1d_6spec_cnp/loc1_tren_speed_mth-2d.bin',
@@ -12,6 +11,7 @@
  /
 ########################
  &DARWIN_PARAMS
+ darwin_chlInitBalanced= T,
  diaz_ini_fac= 0.1,
  darwin_seed= 56,
  darwin_read_phos= F,

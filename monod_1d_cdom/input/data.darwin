@@ -2,12 +2,12 @@
  ironFile='forcing/MITgcm/darwin/verification/monod_1d_cdom/loc1_FeFlux_monsurf.bin',
  ironPeriod= -12.
  darwin_inscal_iron= 1000.,
- darwin_chlInitBalanced= .TRUE.,
 #
  /
  &DARWIN_PARAMS
  darwin_seed=11231,
  darwin_read_phos= T,
+ darwin_chlInitBalanced= .TRUE.,
  /
  &DARWIN_CDOM_PARAMS
  /

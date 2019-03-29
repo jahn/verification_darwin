@@ -1,5 +1,4 @@
  &DARWIN_FORCING_PARAMS
- darwin_chlInitBalanced=.TRUE.,
  ironFile= 'forcing/MITgcm/darwin/verification/monod_1d_dynchl/loc1_FeFlux_monsurf.bin',
  PARFile=  'forcing/MITgcm/darwin/verification/monod_1d_dynchl/loc1_PAR_monsurf.bin',
  ironPeriod= 2592000.,
@@ -12,6 +11,7 @@
  &DARWIN_PARAMS
  darwin_seed= 11231,
  darwin_read_phos=.TRUE.,
+ darwin_chlInitBalanced=.TRUE.,
  /
  &DARWIN_RADTRANS_PARAMS
  /
