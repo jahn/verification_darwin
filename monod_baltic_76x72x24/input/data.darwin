@@ -1,5 +1,6 @@
  &DARWIN_FORCING_PARAMS
-  useDarwinYearlyFields= .TRUE.,
+  DARWIN_useQsw= .TRUE.,
+#
 # iceFile='gud/nasa_icefraction_mth-2d.bin',
 #
   ironFile='forcing/MITgcm/darwin/verification/baltic/Fe_const_76x72_12_',
@@ -18,7 +19,6 @@
  &DARWIN_PARAMS
   darwin_seed=11231,
 #  darwin_read_phos=T,
-  DARWIN_useQsw= .TRUE.,
   PARmin= 1.0,
  /
  &DARWIN_RADTRANS_PARAMS
