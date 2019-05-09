@@ -25,7 +25,7 @@
  kPON=  4.6296296296296297D-07,  ! 2/50day
  kPOFe= 4.6296296296296297D-07,  ! 2/50day
  kPOSi= 7.71604938271605D-08,    ! 2/300day
-# darwin_atmos_pCO2= 278D0,
+## darwin_atmos_pCO2= 278D0,
  /
  &DARWIN_RADTRANS_PARAMS
  /

@@ -14,6 +14,7 @@
  icefile = 'forcing/MITgcm/darwin/eccov3/SIarea.bin',
  iceperiod     = 86400.0,
  icestarttime  = 43200.0,
+ pCO2const= 278E-6,
  /
 ########################
  &DARWIN_PARAMS
@@ -38,7 +39,6 @@
  kPOFe= 3.8580246913580247E-7,  ! 1/30day
  kPOSi= 7.7160493827160493E-8,  ! 1/150day
  phygrazmin= 120E-10,
- darwin_atmos_pCO2= 278E-6,
  /
 ########################
  &DARWIN_RADTRANS_PARAMS

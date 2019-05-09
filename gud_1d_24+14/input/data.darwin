@@ -31,7 +31,7 @@
  kPOFe= 3.8580246913580247E-7,  ! 1/30day
  kPOSi= 7.7160493827160493E-8,  ! 1/150day
  phygrazmin= 120E-10,
- darwin_atmos_pCO2= 278E-6,
+# darwin_atmos_pCO2= 278E-6,
  inhib_graz_exp= 1.0,
  /
 ########################

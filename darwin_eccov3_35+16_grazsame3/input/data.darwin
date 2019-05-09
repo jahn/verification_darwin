@@ -36,7 +36,7 @@
  kPOSi= 7.7160493827160493E-8,  ! 1/150day
  phygrazmin= 120E-10,
  hollexp = 2.E0,
- darwin_atmos_pCO2= 278E-6,
+# darwin_atmos_pCO2= 278E-6,
  /
 ########################
  &DARWIN_CDOM_PARAMS
