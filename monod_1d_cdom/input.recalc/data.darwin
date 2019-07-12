@@ -1,0 +1,27 @@
+ &DARWIN_FORCING_PARAMS
+ ironFile='forcing/MITgcm/darwin/verification/monod_1d_cdom/loc1_FeFlux_monsurf.bin',
+ ironPeriod= -12.
+ darwin_inscal_iron= 1000.,
+#
+ /
+ &DARWIN_PARAMS
+ darwin_seed=11231,
+ darwin_read_phos= T,
+ darwin_chlInitBalanced= .TRUE.,
+ /
+ &DARWIN_CDOM_PARAMS
+ /
+ &DARWIN_RADTRANS_PARAMS
+ darwin_waterabsorbFile='abw25par.dat',
+ darwin_phytoabsorbFile='optics_phyto_9_bandave25.txt',
+ darwin_particleabsorbFile='optics_detritus_3bb.dat',
+#darwin_aCDOMFile='aCDOM13amtVK2006.dat',
+ darwin_rCDOM= 1E-5,
+ darwin_RPOC= 2.,
+ /
+ &DARWIN_RANDOM_PARAMS
+ oldTwoGrazers= .TRUE.,
+ diatom_growfac= 1.0,
+ /
+ &DARWIN_TRAIT_PARAMS
+ /
