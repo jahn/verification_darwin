@@ -1,4 +1,5 @@
  &DARWIN_TRAITS 
+ pcmax(7:10)= 4*.00005787037037037037,
  EXPORTFRACMort(13)= .2,
  EXPORTFRACMort2(13)= .2,
  biosink(7)=1.157407407407407e-04, ! m/s from 10m/day, same as POM (wN_sink, wC_wink, wP_sink)
