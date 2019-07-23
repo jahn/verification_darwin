@@ -44,7 +44,7 @@
  &DARWIN_RANDOM_PARAMS
  /
  &DARWIN_TRAIT_PARAMS
- a_pp_sig(:)=5*0.5,
+ a_ppSig(:)=5*0.5,
 #                        P  S  E  D  Z
  grp_nplank(:)=          2, 3, 5,15,30,
  grp_photo(:)=           1, 1, 1, 1, 0,
