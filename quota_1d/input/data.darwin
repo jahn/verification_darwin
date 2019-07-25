@@ -29,12 +29,12 @@
  phygrazmin= 0.,
 #knita=0.,
  synthcost= 2.33D0,
- phymin= 0.,
  inhib_graz_exp= 1.0,
  /
  &DARWIN_RADTRANS_PARAMS
  /
  &DARWIN_RANDOM_PARAMS
+ phymin= 0.,
 # oldTwoGrazers= .TRUE.,
 # tempmax = 20.0,
 # temprange = 22.0,

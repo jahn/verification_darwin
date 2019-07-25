@@ -36,7 +36,6 @@
  phygrazmin= 0.,
 #knita=0.,
  synthcost= 2.33D0,
- phymin= 0.,
  inhib_graz_exp= 1.0,
  /
  &DARWIN_RADTRANS_PARAMS
