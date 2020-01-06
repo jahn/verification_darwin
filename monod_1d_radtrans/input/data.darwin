@@ -11,7 +11,7 @@
  /
  &DARWIN_RADTRANS_PARAMS
  darwin_waterabsorbFile='abw25par.dat',
- darwin_phytoabsorbFile='optics_phyto_9_bandave25.txt',
+ darwin_phytoabsorbFile='optics_phyto_9_bandave25.dat',
  darwin_particleabsorbFile='optics_detritus_3bb.dat',
 #darwin_aCDOMFile='aCDOM13amtVK2006.dat',
  /
