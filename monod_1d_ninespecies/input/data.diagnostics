@@ -52,6 +52,8 @@
  fields(49,1)= 'GR0007  ',
  fields(50,1)= 'GR0008  ',
  fields(51,1)= 'GR0009  ',
+ fields(52,1)= 'GrGn0010',
+ fields(53,1)= 'GrGn0011',
  &
  &diag_statis_parms
  &
