@@ -15,21 +15,15 @@ C             (must match RT_nlam with radtrans, 1 without)
 C nopt     :: number of optical types (spectra to read in)
 C nPhoto   :: number of phototrophs
 C             (will have Chl tracer if DARWIN_ALLOW_CHL is defined)
-C nPPplank :: number of primary production diagnostics to collect
-C nGRplank :: number of grazing loss diagnostics to collect
 
       integer nplank
       integer nGroup
       integer nopt
       integer nPhoto
-      integer nPPplank
-      integer nGRplank
       parameter(nopt=12)
       parameter(nplank=8)
       parameter(nGroup=9)
       parameter(nPhoto=6)
-      parameter(nPPplank=0)
-      parameter(nGRplank=0)
 
 #ifndef ALLOW_RADTRANS
       integer nlam

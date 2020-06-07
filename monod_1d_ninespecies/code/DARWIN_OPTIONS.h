@@ -64,6 +64,10 @@ C iron
 #undef  DARWIN_PART_SCAV
 #undef  DARWIN_IRON_SED_SOURCE_VARIABLE
 
+C diagnostics
+
+#define DARWIN_DIAG_PERTYPE
+
 C debugging
 
 #undef DARWIN_DEBUG

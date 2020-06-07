@@ -10,14 +10,10 @@ C Contains dimensions and index ranges for cell model.
 
       integer nplank, nGroup, nopt
       integer nPhoto
-      integer nPPplank
-      integer nGRplank
       parameter(nopt=12)
       parameter(nplank=51)
       parameter(nGroup=9)
       parameter(nPhoto=35)
-      parameter(nPPplank=0)
-      parameter(nGRplank=0)
 
 #ifndef ALLOW_RADTRANS
       integer nlam

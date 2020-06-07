@@ -10,14 +10,10 @@ C Contains dimensions and index ranges for darwin model.
 
       integer nplank, nGroup, nopt
       integer nPhoto
-      integer nPPplank
-      integer nGRplank
       parameter(nplank=11)
       parameter(nGroup=5)
       parameter(nopt=1)
       parameter(nPhoto=9)
-      parameter(nPPplank=0)
-      parameter(nGRplank=0)
 
 #ifndef ALLOW_RADTRANS
       integer nlam
