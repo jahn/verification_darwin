@@ -156,7 +156,7 @@
  PTRACERS_units( 17)= 'mmol C/m^3'
  PTRACERS_units( 18)= 'mmol eq/m^3'
  PTRACERS_units( 19)= 'mmol O/m^3'
- PTRACERS_units( 20)= 'mmol C/m^3'
+ PTRACERS_units( 20)= 'mmol P/m^3'
  PTRACERS_units( 21)= 'mmol C/m^3'
  PTRACERS_units( 22)= 'mmol C/m^3'
  PTRACERS_units( 23)= 'mmol C/m^3'
