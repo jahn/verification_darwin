@@ -223,6 +223,15 @@ C surface fluxes from E/P/runoff
       ENDDO
 
 C === iron =============================================================
+#ifdef DARWIN_ALLOW_CONS
+      DO k=1,Nr
+       DO j=jMin,jMax
+        DO i=iMin,iMax
+         DARWIN_minFeLoss(i,j,k,bi,bj) = Ptracer(i,j,k,bi,bj,iFeT)
+        ENDDO
+       ENDDO
+      ENDDO
+#endif
       CALL TIMER_START('DARWIN_FE_CHEM [DARWIN_FORCING]',myThid)
       CALL DARWIN_FE_CHEM(
      U                 Ptracer(1-OLx,1-OLy,1,bi,bj,iFeT),
@@ -230,6 +239,16 @@ C === iron =============================================================
      O                 freeFe(1-OLx, 1-OLy, 1),
      I                 bi, bj, iMin, iMax, jMin, jMax, myThid)
       CALL TIMER_STOP ('DARWIN_FE_CHEM [DARWIN_FORCING]',myThid)
+#ifdef DARWIN_ALLOW_CONS
+      DO k=1,Nr
+       DO j=jMin,jMax
+        DO i=iMin,iMax
+         DARWIN_minFeLoss(i,j,k,bi,bj) = DARWIN_minFeLoss(i,j,k,bi,bj)
+     &                                 - Ptracer(i,j,k,bi,bj,iFeT)
+        ENDDO
+       ENDDO
+      ENDDO
+#endif
 
 C     iron dust input
       CALL TIMER_START('DARWIN_FE_DUST [DARWIN_FORCING]',myThid)
@@ -260,6 +279,9 @@ C     scavenging
 #endif
         gPtr(i,j,k,iFeT) = gPtr(i,j,k,iFeT) -
      &                     scv*MAX(0 _d 0, freefe(i,j,k))
+#ifdef DARWIN_ALLOW_CONS
+        DARWIN_partScav(i,j,k,bi,bj) = scv*MAX(0 _d 0, freefe(i,j,k))
+#endif
       ENDDO
       ENDDO
       ENDDO
@@ -267,6 +289,13 @@ C     scavenging
 
 C     iron sediment source (in bottom grid cell above kMaxFeSed)
       CALL TIMER_START('DARWIN_FE_SED [DARWIN_FORCING]',myThid)
+#ifdef DARWIN_ALLOW_CONS
+      DO j=jMin,jMax
+       DO i=iMin,iMax
+        ironSedFlux(i,j,bi,bj) = 0 _d 0
+       ENDDO
+      ENDDO
+#endif
       DO k = kMinFeSed, kMaxFeSed
        kdn = MIN(Nr, k+1)
        DO j=jMin,jMax
@@ -288,6 +317,9 @@ C     iron sediment source (in bottom grid cell above kMaxFeSed)
 	  sedFe(i,j,k) = flx/(drF(k)*hFacC(i,j,k,bi,bj))
           gPtr(i,j,k,iFeT) = gPtr(i,j,k,iFeT) +
      &                             flx/(drF(k)*hFacC(i,j,k,bi,bj))
+#ifdef DARWIN_ALLOW_CONS
+          ironSedFlux(i,j,bi,bj) = flx
+#endif
          ENDIF
         ENDDO
        ENDDO
@@ -356,6 +388,19 @@ C === plankton =========================================================
       enddo
       CALL TIMER_STOP('DARWIN_PLANKTON [DARWIN_FORCING]',myThid)
 
+C === pre-sinking diags ================================================
+#ifdef ALLOW_DIAGNOSTICS
+      IF (useDIAGNOSTICS) THEN
+       CALL TIMER_START('DIAGS_FILL [DARWIN_FORCING]',myThid)
+       DO iTr=1,nDarwin
+        diagname = 'gECO'//PTRACERS_ioLabel(iTr)
+        CALL DIAGNOSTICS_FILL(gPtr(1-OLx,1-OLy,1,iTr), diagname,
+     &          0,Nr,2,bi,bj,myThid)
+       ENDDO
+       CALL TIMER_STOP ('DIAGS_FILL [DARWIN_FORCING]',myThid)
+      ENDIF
+#endif
+
 C === sinking ==========================================================
       CALL TIMER_START('DARWIN_SINKING [DARWIN_FORCING]',myThid)
       CALL DARWIN_SINKING( Ptracer,gPtr,bi,bj,iMin,iMax,jMin,jMax,
@@ -378,6 +423,16 @@ C === apply tendencies to tracers ======================================
 
 C === iron =============================================================
 C     re-apply free iron limit to FeT
+#ifdef DARWIN_ALLOW_CONS
+      DO k=1,Nr
+       DO j=jMin,jMax
+        DO i=iMin,iMax
+         DARWIN_minFeLoss(i,j,k,bi,bj) = DARWIN_minFeLoss(i,j,k,bi,bj)
+     &                                 + Ptracer(i,j,k,bi,bj,iFeT)
+        ENDDO
+       ENDDO
+      ENDDO
+#endif
       CALL TIMER_START('DARWIN_FE_CHEM [DARWIN_FORCING]',myThid)
       CALL DARWIN_FE_CHEM(
      U                 pTracer(1-OLx,1-OLy,1,bi,bj,iFeT),
@@ -385,11 +440,21 @@ C     re-apply free iron limit to FeT
      O                 freeFe(1-OLx,1-OLy,1),
      I                 bi, bj, iMin, iMax, jMin, jMax, myThid)
       CALL TIMER_STOP ('DARWIN_FE_CHEM [DARWIN_FORCING]',myThid)
+#ifdef DARWIN_ALLOW_CONS
+      DO k=1,Nr
+       DO j=jMin,jMax
+        DO i=iMin,iMax
+         DARWIN_minFeLoss(i,j,k,bi,bj) = DARWIN_minFeLoss(i,j,k,bi,bj)
+     &                                 - Ptracer(i,j,k,bi,bj,iFeT)
+        ENDDO
+       ENDDO
+      ENDDO
+#endif
 
       DO k=1,Nr
       DO j=jMin,jMax
       DO i=iMin,iMax
-        diffFe(i,j,k) = hFacC(i,j,k,bi,bj) 
+        diffFe(i,j,k) = hFacC(i,j,k,bi,bj)
      &   * ((diffFe1(i,j,k) + diffFe2(i,j,k)) / deltaTClock)
       ENDDO
       ENDDO

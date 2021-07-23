@@ -310,6 +310,13 @@ C-      use units & names from data.ptracers :
         diagCode  = 'SMR     MR      '
         CALL DIAGNOSTICS_ADDTOLIST( diagNum,
      I             diagName, diagCode, diagUnits, diagTitle, 0, myThid )
+
+        WRITE(diagName, '(2A)') 'gECO', PTRACERS_ioLabel(j)
+        ilnb = MAX(ILNBLNK(locName),1)
+        WRITE(diagTitle,'(2A)') locName(1:ilnb),
+     &        ' tendency from DARWIN w/o sink/swim'
+        CALL DIAGNOSTICS_ADDTOLIST( diagNum,
+     I             diagName, diagCode, diagUnits, diagTitle, 0, myThid )
       ENDDO
 
 #ifdef DARWIN_DIAG_PERTYPE
@@ -390,6 +397,27 @@ C-      use units & names from data.ptracers :
       WRITE(diagName,'(A)')'fluxCO2'
       WRITE(diagTitle,'(A)')'Flux of CO2 - air-sea exch'
       diagUnits = 'mmol C/m2/s     '
+      diagCode  = 'SM      L1      '
+      CALL DIAGNOSTICS_ADDTOLIST( diagNum,
+     I           diagName, diagCode, diagUnits, diagTitle, 0, myThid )
+
+      WRITE(diagName,'(A)')'fluxO2'
+      WRITE(diagTitle,'(A)')'Flux of O2 - air-sea exch'
+      diagUnits = 'mmol O2/m2/s    '
+      diagCode  = 'SM      L1      '
+      CALL DIAGNOSTICS_ADDTOLIST( diagNum,
+     I           diagName, diagCode, diagUnits, diagTitle, 0, myThid )
+
+      WRITE(diagName,'(A)')'VfluxCO2'
+      WRITE(diagTitle,'(A)')'Virtual flux of CO2'
+      diagUnits = 'mmol C/m2/s     '
+      diagCode  = 'SM      L1      '
+      CALL DIAGNOSTICS_ADDTOLIST( diagNum,
+     I           diagName, diagCode, diagUnits, diagTitle, 0, myThid )
+
+      WRITE(diagName,'(A)')'VfluxAlk'
+      WRITE(diagTitle,'(A)')'Virtual flux of alkalinity'
+      diagUnits = 'meq/m2/s        '
       diagCode  = 'SM      L1      '
       CALL DIAGNOSTICS_ADDTOLIST( diagNum,
      I           diagName, diagCode, diagUnits, diagTitle, 0, myThid )
@@ -476,7 +504,7 @@ C-      use units & names from data.ptracers :
 
       WRITE(diagName,'(A)')'gALKsurf'
       WRITE(diagTitle,'(A)')'Tendency of ALK due to oldvirt.flux'
-      diagUnits = 'mmol eq/m3/s    '
+      diagUnits = 'meq/m3/s        '
       diagCode  = 'SM      L1      '
       CALL DIAGNOSTICS_ADDTOLIST( diagNum,
      I           diagName, diagCode, diagUnits, diagTitle, 0, myThid )
