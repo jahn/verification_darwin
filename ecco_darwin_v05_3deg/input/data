@@ -57,7 +57,7 @@
  staggerTimeStep=.TRUE.,
  vectorInvariantMomentum=.TRUE.,
 #when using the cd scheme:
- useCDscheme=.TRUE.,
+#useCDscheme=.TRUE.,
  useJamartWetPoints=.TRUE.,
  readBinaryPrec=32,
  writeBinaryPrec=32,
@@ -78,7 +78,7 @@
  momDissip_In_AB=.FALSE.,
 #when using the cd scheme:
 # epsAB_CD = 0.25,
- tauCD=321428.,
+#tauCD=321428.,
  deltaTmom   =1200.,
  deltaTtracer=1200.,
  deltaTfreesurf=1200.,
