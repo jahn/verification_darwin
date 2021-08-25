@@ -41,6 +41,7 @@ C initialize chl with radtrans as in darwin2
 
 #define DARWIN_DIAG_IOP
 #undef DARWIN_DIAG_RADTRANS_SOLUTION
+#define DARWIN_DIAG_PERTYPE
 
 C grazing
 
