@@ -38,7 +38,12 @@
  fields(35,1)= 'TRAC35  ',
  fields(36,1)= 'PARF    ',
  fields(37,1)= 'atten   ',
- fields(38,1)= 'surfPAR ',
+ fields(38,1)= 'Chl     ',
+ fields(39,1)= 'plankC  ',
+#
+ filename(2)= 'surf',
+ frequency(2)= 3600.,
+ fields(1,2)= 'surfPAR ',
  &
  &diag_statis_parms
  &

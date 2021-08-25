@@ -54,6 +54,8 @@
  fields(51,1)= 'GR0009  ',
  fields(52,1)= 'GrGn0010',
  fields(53,1)= 'GrGn0011',
+ fields(54,1)= 'plankC  ',
+ fields(55,1)= 'Chl     ',
  &
  &diag_statis_parms
  &

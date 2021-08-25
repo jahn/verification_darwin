@@ -91,6 +91,8 @@
   fields(74,1) = 'Denit   ',
   fields(75,1) = 'pH      ',
   fields(76,1) = 'pCO2    ',
+  fields(77,1) = 'plankC  ',
+  fields(78,1) = 'Chl     ',
 #
   filename( 2) = 'chl',
   frequency(2) = 2592000.,
