@@ -26,9 +26,9 @@
  ptracers_units(15)= 'mmol Fe/m^3',
  ptracers_units(17)= 'mmol C/m^3',
  ptracers_units(18)= 'mmol P/m^3',
+# DIC
  ptracers_ref(:, 1)= 35*2000.0,
- ptracers_ref(:, 8)= 35*0.0,
- ptracers_ref(:,12)= 35*0.0,
+# PIC
  ptracers_ref(:,17)= 35*0.0,
  PTRACERS_initialFile( 2)= 'forcing/MITgcm/darwin/verification/monod_1d_cdom/loc1_nitr_janprof.bin',
  PTRACERS_initialFile( 3)= 'forcing/MITgcm/darwin/verification/monod_1d_cdom/loc1_NO2_run83_janprof.bin',
@@ -36,9 +36,11 @@
  PTRACERS_initialFile( 5)= 'forcing/MITgcm/darwin/verification/monod_1d_cdom/loc1_phos_janprof.bin',
  PTRACERS_initialFile( 6)= 'forcing/MITgcm/darwin/verification/monod_1d_cdom/fet_uniform.bin',
  PTRACERS_initialFile( 7)= 'forcing/MITgcm/darwin/verification/monod_1d_cdom/loc1_sil_janprof.bin',
+ PTRACERS_initialFile( 8)= 'forcing/MITgcm/darwin/verification/monod_1d_cdom/loc1_DOPx120_run83_janprof.bin',
  PTRACERS_initialFile( 9)= 'forcing/MITgcm/darwin/verification/monod_1d_cdom/loc1_DON_run83_janprof.bin',
  PTRACERS_initialFile(10)= 'forcing/MITgcm/darwin/verification/monod_1d_cdom/loc1_DOP_run83_janprof.bin',
  PTRACERS_initialFile(11)= 'forcing/MITgcm/darwin/verification/monod_1d_cdom/loc1_DOFe_run83_janprof.bin',
+ PTRACERS_initialFile(12)= 'forcing/MITgcm/darwin/verification/monod_1d_cdom/loc1_POPx120_run83_janprof.bin',
  PTRACERS_initialFile(13)= 'forcing/MITgcm/darwin/verification/monod_1d_cdom/loc1_PON_run83_janprof.bin',
  PTRACERS_initialFile(14)= 'forcing/MITgcm/darwin/verification/monod_1d_cdom/loc1_POP_run83_janprof.bin',
  PTRACERS_initialFile(16)= 'forcing/MITgcm/darwin/verification/monod_1d_cdom/loc1_POSi_run83_janprof.bin',
