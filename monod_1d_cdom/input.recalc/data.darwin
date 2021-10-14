@@ -16,7 +16,7 @@
  darwin_phytoabsorbFile='optics_phyto_9_bandave25.dat',
  darwin_particleabsorbFile='optics_detritus_3bb.dat',
 #darwin_aCDOMFile='aCDOM13amtVK2006.dat',
- darwin_rCDOM= 1E-5,
+ darwin_rCDOM= 120E-5,
  darwin_RPOC= 2.,
  /
  &DARWIN_RANDOM_PARAMS

@@ -28,6 +28,7 @@ C optional bits
 #undef  DARWIN_ALLOW_DENIT
 #undef  DARWIN_ALLOW_EXUDE
 #undef  ALLOW_OLD_VIRTUALFLUX
+#define DARWIN_CDOM_UNITS_CARBON
 
 C light
 

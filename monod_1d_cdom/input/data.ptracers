@@ -25,7 +25,7 @@
  ptracers_units(16)= 'mmol Si/m^3',
  ptracers_units(15)= 'mmol Fe/m^3',
  ptracers_units(17)= 'mmol C/m^3',
- ptracers_units(18)= 'mmol P/m^3',
+ ptracers_units(18)= 'mmol C/m^3',
 # DIC
  ptracers_ref(:, 1)= 35*2000.0,
 # PIC
@@ -45,7 +45,7 @@
  PTRACERS_initialFile(14)= 'forcing/MITgcm/darwin/verification/monod_1d_cdom/loc1_POP_run83_janprof.bin',
  PTRACERS_initialFile(16)= 'forcing/MITgcm/darwin/verification/monod_1d_cdom/loc1_POSi_run83_janprof.bin',
  PTRACERS_initialFile(15)= 'forcing/MITgcm/darwin/verification/monod_1d_cdom/loc1_POFe_run83_janprof.bin',
- PTRACERS_initialFile(18)= 'forcing/MITgcm/darwin/verification/monod_1d_cdom/loc1_DOP_run83_janprof.bin',
+ PTRACERS_initialFile(18)= 'forcing/MITgcm/darwin/verification/monod_1d_cdom/loc1_DOPx120_run83_janprof.bin',
  PTRACERS_initialFile(19:96)= 78*'forcing/MITgcm/darwin/verification/monod_1d_cdom/loc1_biomass_run83_janprof.bin',
  PTRACERS_initialFile(97:98)= 2*'forcing/MITgcm/darwin/verification/monod_1d_cdom/loc1_ZOOP_run83_janprof.bin',
 #
