@@ -18,6 +18,7 @@
  diaz_ini_fac= 0.1,
  idebug=271,
  jdebug=63,
+ darwin_linFSconserve=.TRUE.,
  darwin_seed= 56,
  darwin_read_phos= F,
  tempCoeffArr= 0.8,

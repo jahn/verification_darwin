@@ -11,6 +11,7 @@
  &DARWIN_PARAMS
  darwin_seed=801,
  darwin_read_phos=T,
+ darwin_linFSconserve=.TRUE.,
  PARmin=1.0,
  /
  &DARWIN_RADTRANS_PARAMS
