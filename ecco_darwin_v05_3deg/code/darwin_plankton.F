@@ -962,7 +962,7 @@ c loss of O2 by remineralization
 #endif /* DARWIN_ALLOW_CARBON */
 
       gTr(iDIC )=gTr(iDIC ) + reminDOC + disscPIC
-      
+
       diags(iReminDIC_DOC) = reminDOC
       diags(iDisscDIC_PIC) = disscPIC
 
@@ -1012,16 +1012,16 @@ C     DOC is created by #4 PA-assoc solubilization and consumed by #5
       gTr(iCDOM)=gTr(iCDOM) + reminPOP_CDOM - degrCDOM_DOP
 #else
       gTr(iDIC )=gTr(iDIC ) + reminPOC
-     
+
       diags(iReminDIC_POC) = reminPOC
- 
+
       gTr(iNH4 )=gTr(iNH4 ) + reminPON
       gTr(iPO4 )=gTr(iPO4 ) + reminPOP
       gTr(iFeT )=gTr(iFeT ) + reminPOFe
 #endif /* DARWIN_ALLOW_CDOM */
 
       diags(iConsALK) = (prodNO3 - consumNO3)
-     & +2.0 _d 0*(consumDIC_PIC - disscPIC)
+     &                + 2.0 _d 0*(consumDIC_PIC - disscPIC)
       diags(iConsDIN) = consumNH4 + consumNO2 + consumNO3
       diags(iConsNO3) = consumNO3
       diags(iConsNO2) = consumNO2
@@ -1029,7 +1029,7 @@ C     DOC is created by #4 PA-assoc solubilization and consumed by #5
       diags(iConsPO4) = consumPO4
       diags(iConsSi)  = consumSiO2
       diags(iConsFe)  = consumFeT
-  
+
 C==== grazing ==========================================================
 
       DO j=1,nplank
@@ -1372,9 +1372,9 @@ C==== mortality ========================================================
 #endif
 
       gTr(iDIC )=gTr(iDIC ) + respir
-      
+
       diags(iRespirDIC) = respir
- 
+
       gTr(iDOC )=gTr(iDOC ) + exude_DOC
       gTr(iDON )=gTr(iDON ) + exude_DON
       gTr(iDOP )=gTr(iDOP ) + exude_DOP

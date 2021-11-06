@@ -14,7 +14,7 @@ C Contains indices into diagnostics array
       integer iDenitN
       integer iConsPO4
       integer iConsSi
-      integer iConsFe 
+      integer iConsFe
       integer iConsDIN
       integer iPPplank
       integer iConsNO3
@@ -25,13 +25,13 @@ C Contains indices into diagnostics array
       integer iRespirDIC
       integer iReminDIC_DOC
       integer iReminDIC_POC
-      integer iDisscDIC_PIC 
+      integer iDisscDIC_PIC
       integer iConsALK
       integer iConsO2
       integer iGRplank
       integer iGrGn
       integer darwin_nDiag
-      
+
       PARAMETER(iPP=     1)
       PARAMETER(iNfix=   2)
       PARAMETER(iDenit=  3)

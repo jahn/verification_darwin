@@ -279,10 +279,10 @@ C then account for Schmidt number
          Kwexch(i,j) = Kwexch0(i,j)
      &                 / sqrt(SchmidtNoDIC(i,j)/660.0 _d 0)
 
-C compute fugacity of CO2     
-         fugCO2(i,j,bi,bj) = 
+C compute fugacity of CO2
+         fugCO2(i,j,bi,bj) =
      &    pCO2(i,j,ks,bi,bj)*fugf(i,j,bi,bj)
-     
+
 c Flux = kw*rho*(ff*pCO2atm-k0*FugFac*pCO2ocean)
          FluxCO2(i,j,bi,bj) =
      &          Kwexch(i,j)*(

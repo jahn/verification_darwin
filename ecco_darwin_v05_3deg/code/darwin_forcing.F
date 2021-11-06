@@ -72,7 +72,7 @@ C  k                    :: vertical level
       _RL gALKsurfForc(1-OLx:sNx+OLx,1-OLy:sNy+OLy)
       _RL gNO3surfForc(1-OLx:sNx+OLx,1-OLy:sNy+OLy)
       _RL gNO2surfForc(1-OLx:sNx+OLx,1-OLy:sNy+OLy)
-      _RL gNH4surfForc(1-OLx:sNx+OLx,1-OLy:sNy+OLy)  
+      _RL gNH4surfForc(1-OLx:sNx+OLx,1-OLy:sNy+OLy)
       _RL gPO4surfForc(1-OLx:sNx+OLx,1-OLy:sNy+OLy)
       _RL gFeTsurfForc(1-OLx:sNx+OLx,1-OLy:sNy+OLy)
       _RL gSiO2surfForc(1-OLx:sNx+OLx, 1-OLy:sNy+OLy)
@@ -99,7 +99,7 @@ C  k                    :: vertical level
       _RL sedFe(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr)
       _RL cNO3(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr)
       _RL cNO2(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr)
-      _RL cNH4(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr)      
+      _RL cNH4(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr)
       _RL cPO4(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr)
       _RL cSi(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr)
       _RL cFe(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr)
@@ -117,9 +117,9 @@ C  k                    :: vertical level
       _RL disscDIC_PIC(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr)
       _RL cALK(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr)
       _RL sALK(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr)
-	  _RL cO2(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr)
+      _RL cO2(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr)
       _RL sO2(1-OLx:sNx+OLx,1-OLy:sNy+OLy,Nr)
-	  
+
       DO k=1,Nr
        dTsub(k) = PTRACERS_dTLev(k)/nsubtime
       ENDDO
@@ -173,7 +173,7 @@ c
       CALL DARWIN_LIGHT_RADTRANS(PAR,subTime,bi,bj,iMin,iMax,jMin,jMax,
      &                        subTime,myIter,myThid)
 #else
-      CALL DARWIN_LIGHT(PAR, midTime, bi, bj, iMin, iMax, jMin, jMax, 
+      CALL DARWIN_LIGHT(PAR, midTime, bi, bj, iMin, iMax, jMin, jMax,
      &               subTime, myIter, myThid)
 #endif
       CALL TIMER_STOP ('DARWIN_LIGHT [DARWIN_FORCING]',myThid)
@@ -192,8 +192,8 @@ C carbon air-sea interaction
         gPtr(i,j,1,iDIC) = gPtr(i,j,1,iDIC) + gDIC(i,j)
         gPtr(i,j,1,iALK) = gPtr(i,j,1,iALK) + gALK(i,j)
         gPtr(i,j,1,iO2)  = gPtr(i,j,1,iO2)  + gO2(i,j)
-C        gDICsurfForc(i,j) = surfaceForcingPTr(i,j,bi,bj,iDIC) 
-C     &   * recip_drF(1)*recip_hFacC(i,j,1,bi,bj)	
+C        gDICsurfForc(i,j) = surfaceForcingPTr(i,j,bi,bj,iDIC)
+C     &   * recip_drF(1)*recip_hFacC(i,j,1,bi,bj)
       ENDDO
       ENDDO
 #endif
@@ -496,7 +496,7 @@ C === diagnostics ======================================================
           cNO3(i,j,k) = hFacC(i,j,k,bi,bj)
      &     * diags(i,j,k,iConsNO3)
           cNO2(i,j,k) = hFacC(i,j,k,bi,bj)
-     &     * diags(i,j,k,iConsNO2)   
+     &     * diags(i,j,k,iConsNO2)
           cNH4(i,j,k) = hFacC(i,j,k,bi,bj)
      &     * diags(i,j,k,iConsNH4)
           cPO4(i,j,k) = hFacC(i,j,k,bi,bj)
@@ -516,11 +516,11 @@ C === diagnostics ======================================================
           reminDIC_POC(i,j,k) = hFacC(i,j,k,bi,bj)
      &     * diags(i,j,k,iReminDIC_POC)
           disscDIC_PIC(i,j,k) = hFacC(i,j,k,bi,bj)
-     &     * diags(i,j,k,iDisscDIC_PIC)    
+     &     * diags(i,j,k,iDisscDIC_PIC)
           cALK(i,j,k) = hFacC(i,j,k,bi,bj)
      &     * diags(i,j,k,iConsALK)
           cO2(i,j,k) = hFacC(i,j,k,bi,bj)
-     &     * diags(i,j,k,iConsO2)     
+     &     * diags(i,j,k,iConsO2)
          ENDDO
         ENDDO
        ENDDO
@@ -549,7 +549,7 @@ C      nutrient consumption diagnostics
        CALL DIAGNOSTICS_FILL(reminDIC_POC(1-OLx,1-OLy,1),
      & 'rDIC_POC',0,Nr,1,bi,bj,myThid)
        CALL DIAGNOSTICS_FILL(disscDIC_PIC(1-OLx,1-OLy,1),
-     & 'dDIC_PIC',0,Nr,1,bi,bj,myThid)     
+     & 'dDIC_PIC',0,Nr,1,bi,bj,myThid)
        CALL DIAGNOSTICS_FILL(cALK(1-OLx,1-OLy,1),
      & 'C_ALK   ',0,Nr,1,bi,bj,myThid)
        CALL DIAGNOSTICS_FILL(cO2(1-OLx,1-OLy,1),
@@ -577,7 +577,7 @@ C      diags(iCons*) for convenience
      &     + gPtr(i,j,k,iFeT))
           sO2(i,j,k) = hFacC(i,j,k,bi,bj) * (diags(i,j,k,iConsO2)
      &     + gPtr(i,j,k,iO2))
- 
+
          ENDDO
         ENDDO
        ENDDO
@@ -614,7 +614,6 @@ C      diags(iCons*) for convenience
         diagname = 'gDAR'//PTRACERS_ioLabel(iTr)
         CALL DIAGNOSTICS_FILL(gPtrTemp(1-OLx,1-OLy,1,iTr), diagname,
      &   0,Nr,2,bi,bj,myThid)
-     &  
        ENDDO
 
 #ifdef DARWIN_DIAG_PERTYPE

@@ -44,8 +44,8 @@ c !LOCAL VARIABLES: ====================================================
       _RL lig
       _RL FeL
       _RL FeTemp(1-OLx:sNx+OLx, 1-OLy:sNy+OLy, Nr)
-       
-       DO k=1,Nr
+
+      DO k=1,Nr
        DO j=jMin,jMax
         DO i=iMin,iMax
 
@@ -53,7 +53,7 @@ c !LOCAL VARIABLES: ====================================================
 
          IF (maskC(i, j, k, bi, bj) .GT. 0.0 _d 0) THEN
           lig = (-ligand_stab*FeT(i,j,k) +
-     &            ligand_stab*ligand_tot - 
+     &            ligand_stab*ligand_tot -
      &            1. _d 0 +
      &            ( ( ligand_stab*FeT(i,j,k) -
      &                ligand_stab*ligand_tot+1. _d 0
@@ -61,7 +61,7 @@ c !LOCAL VARIABLES: ====================================================
      &              4. _d 0*ligand_stab*ligand_tot
      &            )**0.5 _d 0
      &          )/(2. _d 0*ligand_stab)
-          
+
           FeL = ligand_tot - lig
           freefe(i,j,k) = FeT(i,j,k) - FeL
 #ifdef DARWIN_MINFE
@@ -71,8 +71,8 @@ c !LOCAL VARIABLES: ====================================================
            diffFe(i,j,k) = (FeT(i,j,k) - feTemp(i,j,k))
           ENDIF
 #endif
-          ELSE
-           freefe(i,j,k) = 0.0 _d 0
+         ELSE
+          freefe(i,j,k) = 0.0 _d 0
          ENDIF
         ENDDO
        ENDDO
