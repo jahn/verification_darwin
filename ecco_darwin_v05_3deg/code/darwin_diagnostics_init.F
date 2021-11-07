@@ -52,6 +52,20 @@ c     CHARACTER*(MAX_LEN_MBUF) msgBuf
 
 C---+----1----+----2----+----3----+----4----+----5----+----6----+----7-|--+----|
 
+      WRITE(diagName,'(A)')'plankC  '
+      WRITE(diagTitle,'(A)')'Total plankton carbon biomass'
+      diagUnits = 'mmol C/m^3      '
+      diagCode  = 'SMR     MR      '
+      CALL DIAGNOSTICS_ADDTOLIST( diagNum,
+     I           diagName, diagCode, diagUnits, diagTitle, 0, myThid )
+
+      WRITE(diagName,'(A)')'Chl     '
+      WRITE(diagTitle,'(A)')'Total Chlorophyll a'
+      diagUnits = 'mg Chl a/m^3    '
+      diagCode  = 'SMR     MR      '
+      CALL DIAGNOSTICS_ADDTOLIST( diagNum,
+     I           diagName, diagCode, diagUnits, diagTitle, 0, myThid )
+
       WRITE(diagName,'(A)')'PP'
       WRITE(diagTitle,'(A)')'Primary Production'
       diagUnits = 'mmol C/m^3/s    '
@@ -324,6 +338,14 @@ C-      use units & names from data.ptracers :
         WRITE(diagName,'(A,I4.4)')'PP',j
         WRITE(diagTitle,'(A,I4)')'Primary Production plankton ',j
         diagUnits = 'mmol C/m^3/s    '
+        diagCode  = 'SMRP    MR      '
+        CALL DIAGNOSTICS_ADDTOLIST( diagNum,
+     I             diagName, diagCode, diagUnits, diagTitle, 0, myThid )
+
+        WRITE(diagName,'(A,I4.4)')'PC',j
+        WRITE(diagTitle,'(A,I4)')'Carbon-specific growth rate plankton '
+     &                           ,j
+        diagUnits = '1/s             '
         diagCode  = 'SMRP    MR      '
         CALL DIAGNOSTICS_ADDTOLIST( diagNum,
      I             diagName, diagCode, diagUnits, diagTitle, 0, myThid )
