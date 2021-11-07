@@ -52,7 +52,7 @@ C reduce nitrate uptake by iron limitation factor
 #undef DARWIN_NITRATE_FELIMIT
 
 C allow organic matter to sink into bottom (sedimentize)
-#undef DARWIN_BOTTOM_SINK
+#define DARWIN_BOTTOM_SINK
 
 
 C light
