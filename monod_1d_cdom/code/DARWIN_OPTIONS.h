@@ -71,7 +71,7 @@ C debugging
 
 #undef DARWIN_DEBUG
 
-#undef DARWIN_ALLOW_CONS
+#define DARWIN_ALLOW_CONS
 
 #define DARWIN_UNUSED 0
 
