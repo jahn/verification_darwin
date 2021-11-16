@@ -57,10 +57,10 @@
   cdomdegrd= 3.8580e-08,
   CDOMbleach = 1.9329e-06,
   PARCDOM = 60.,
-  R_NP_CDOM  = 16.,
-  R_FeP_CDOM = 1.e-3,
-  R_CP_CDOM  = 120.,
-  CDOMcoeff = 21.,
+  R_NC_CDOM  = .13333333333333333,
+  R_FeC_CDOM  = .0083333333333333333E-3,
+  R_PC_CDOM  = .0083333333333333333,
+  CDOMcoeff = .175,
  /
  &DARWIN_RADTRANS_PARAMS
  darwin_waterabsorbFile='/home/stephdut/OPTICS_COEFF/optics_water_Aug2014_bandave25.txt',
@@ -69,7 +69,7 @@
  darwin_Sdom=0.0145000,
  darwin_aCDOM_fac = 0.30,
  darwin_part_size_P = 1e-15,
- darwin_rCDOM = 1.0e-4,
+ darwin_rCDOM = 120e-4,
  darwin_RPOC = 2.0,
 
  darwin_allomSpectra= T,

@@ -54,6 +54,9 @@ C reduce nitrate uptake by iron limitation factor
 C allow organic matter to sink into bottom (sedimentize)
 #define DARWIN_BOTTOM_SINK
 
+C CDOM is in carbon units and follows POC
+#define DARWIN_CDOM_UNITS_CARBON
+
 
 C light
 
