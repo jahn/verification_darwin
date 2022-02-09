@@ -33,13 +33,16 @@
  fields(30,1)= 'TRAC30  ',
  fields(31,1)= 'PARF    ',
  fields(32,1)= 'atten   ',
- fields(33,1)= 'surfPAR ',
- fields(34,1)= 'pH      ',
- fields(35,1)= 'pCO2    ',
- fields(36,1)= 'fluxCO2 ',
- fields(37,1)= 'gDICsurf',
- fields(38,1)= 'gALKsurf',
- fields(39,1)= 'gO2surf ',
+ fields(33,1)= 'pH      ',
+ fields(34,1)= 'pCO2    ',
+#
+ filename(2)= 'surf',
+ frequency(2)= 3600.,
+ fields( 1,2)= 'surfPAR ',
+ fields( 2,2)= 'fluxCO2 ',
+ fields( 3,2)= 'gDICsurf',
+ fields( 4,2)= 'gALKsurf',
+ fields( 5,2)= 'gO2surf ',
  &
  &diag_statis_parms
  &
