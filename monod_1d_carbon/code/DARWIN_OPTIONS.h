@@ -22,6 +22,7 @@ C tracer selection
 #undef  DARWIN_ALLOW_CHLQUOTA
 #undef  DARWIN_ALLOW_CDOM
 #define DARWIN_ALLOW_CARBON
+#define DARWIN_TOTALPHSCALE
 
 C optional bits
 
