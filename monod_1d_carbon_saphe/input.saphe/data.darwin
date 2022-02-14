@@ -1,0 +1,53 @@
+ &DARWIN_FORCING_PARAMS
+ ironFile='forcing/MITgcm/darwin/OneD/OneD_so1/loc1_FeFlux_monsurf.bin',
+ PARFile='forcing/MITgcm/darwin/OneD/OneD_so1/loc1_owsm_PAR_monsurf.bin',
+ ironPeriod= -12.,
+ PARPeriod= -12.,
+ darwin_inscal_iron= 1000.,
+ darwin_inscal_PAR= 11.574074074074,
+ /
+ &DARWIN_PARAMS
+ diaz_ini_fac= 0.1,
+ darwin_seed= 11231,
+ darwin_read_phos= T,
+ PARmin= 1.0,
+ alpfe= 1.0,
+ freefemax = .1D-3,
+ depthfesed= 7000.,
+ scav_rat= 0.00000011574074074074074D0,
+# denit_no3= 104.,
+# o2crit=200.,
+# no3crit=1D-2,
+ kdop=  2.3148148148148148D-07,  ! 2/100day
+ kdon=  2.3148148148148148D-07,  ! 2/100day
+ kdofe= 2.3148148148148148D-07,  ! 2/100day
+ kPOP=  4.6296296296296297D-07,  ! 2/50day
+ kPON=  4.6296296296296297D-07,  ! 2/50day
+ kPOFe= 4.6296296296296297D-07,  ! 2/50day
+ kPOSi= 7.71604938271605D-08,    ! 2/300day
+## darwin_atmos_pCO2= 278D0,
+ selectPHsolver=1,
+ /
+ &DARWIN_RADTRANS_PARAMS
+ /
+ &DARWIN_RANDOM_PARAMS
+ Smallexport= .05D0,
+ Bigexport= 0.3D0,
+ smallkinhpar= 3D-3,
+#
+ oldTwoGrazers= .TRUE.,
+#
+ GrazeFast= 7.2337962962962966D-06,  ! 1.25/(2*day),
+ GrazeSlow= 2.066798941798942D-06,   ! 1.25/(7*day),
+ diatomgraz= 0.85D0,
+ coccograz=  0.85D0,
+ olargegraz= 0.9D0,
+ ExGrazfracbig=   0.6D0,
+ ExGrazfracsmall= 0.3D0,
+ ZooexfacSmall= 0.1D0,
+ ZooexfacBig=   0.5D0,
+ val_R_PICPOC= 0.8D0,
+ kgrazesat_val= 10.2D0,
+ /
+ &DARWIN_TRAIT_PARAMS
+ /
