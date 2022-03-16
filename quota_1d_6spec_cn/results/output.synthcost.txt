@@ -5,10 +5,10 @@
 (PID.TID 0000.0001) // ======================================================
 (PID.TID 0000.0001) // execution environment starting up...
 (PID.TID 0000.0001) 
-(PID.TID 0000.0001) // MITgcmUV version:  checkpoint67l
+(PID.TID 0000.0001) // MITgcmUV version:  checkpoint68g
 (PID.TID 0000.0001) // Build user:        jahn
-(PID.TID 0000.0001) // Build host:        eofe7.cm.cluster
-(PID.TID 0000.0001) // Build date:        Sat Apr 25 08:45:44 EDT 2020
+(PID.TID 0000.0001) // Build host:        node637.cm.cluster
+(PID.TID 0000.0001) // Build date:        Tue Mar 15 19:56:33 EDT 2022
 (PID.TID 0000.0001) 
 (PID.TID 0000.0001) // =======================================================
 (PID.TID 0000.0001) // Execution Environment parameter file "eedata"
@@ -48,7 +48,7 @@
 (PID.TID 0000.0001)                   /*  note: To execute a program with MPI calls */
 (PID.TID 0000.0001)                   /*  it must be launched appropriately e.g     */
 (PID.TID 0000.0001)                   /*  "mpirun -np 64 ......"                    */
-(PID.TID 0000.0001) useCoupler=    F ;/* Flag used to control communications with   */
+(PID.TID 0000.0001) useCoupler=   F ; /* Flag used to control communications with   */
 (PID.TID 0000.0001)                   /*  other model components, through a coupler */
 (PID.TID 0000.0001) useNest2W_parent =    F ;/* Control 2-W Nesting comm */
 (PID.TID 0000.0001) useNest2W_child  =    F ;/* Control 2-W Nesting comm */
@@ -956,6 +956,9 @@
 (PID.TID 0000.0001) exf_monFreq  = /* EXF monitor frequency [ s ] */
 (PID.TID 0000.0001)                 1.000000000000000E+00
 (PID.TID 0000.0001)     ;
+(PID.TID 0000.0001) exf_adjMonSelect = /* select group of exf AD-variables to monitor */
+(PID.TID 0000.0001)                       1
+(PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) repeatPeriod = /* period for cycling forcing dataset [ s ] */
 (PID.TID 0000.0001)                 0.000000000000000E+00
 (PID.TID 0000.0001)     ;
@@ -1144,52 +1147,52 @@
 (PID.TID 0000.0001)  ===================================
 (PID.TID 0000.0001) ------------------------------------------------------------
 (PID.TID 0000.0001) DIAGNOSTICS_SET_LEVELS: done
-(PID.TID 0000.0001)  Total Nb of available Diagnostics: ndiagt=   887
+(PID.TID 0000.0001)  Total Nb of available Diagnostics: ndiagt=   958
 (PID.TID 0000.0001)  write list of available Diagnostics to file: available_diagnostics.log
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   162 TRAC01
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   177 TRAC02
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   192 TRAC03
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   207 TRAC04
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   222 TRAC05
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   237 TRAC06
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   252 TRAC07
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   267 TRAC08
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   282 TRAC09
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   297 TRAC10
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   312 TRAC11
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   327 TRAC12
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   342 TRAC13
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   357 TRAC14
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   372 TRAC15
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   387 TRAC16
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   402 TRAC17
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   417 TRAC18
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   432 TRAC19
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   447 TRAC20
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   462 TRAC21
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   477 TRAC22
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   492 TRAC23
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   507 TRAC24
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   522 TRAC25
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   537 TRAC26
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   552 TRAC27
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   567 TRAC28
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   582 TRAC29
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   597 TRAC30
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   612 TRAC31
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   627 TRAC32
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   642 TRAC33
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   657 TRAC34
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   672 TRAC35
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   687 TRAC36
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   702 TRAC37
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   717 TRAC38
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   732 TRAC39
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   747 TRAC40
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   762 TRAC41
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   783 PARF
-(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   782 atten
-(PID.TID 0000.0001) SETDIAG: Allocate  1 x  1 Levels for Diagnostic #   842 surfPAR
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   166 TRAC01
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   181 TRAC02
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   196 TRAC03
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   211 TRAC04
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   226 TRAC05
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   241 TRAC06
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   256 TRAC07
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   271 TRAC08
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   286 TRAC09
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   301 TRAC10
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   316 TRAC11
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   331 TRAC12
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   346 TRAC13
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   361 TRAC14
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   376 TRAC15
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   391 TRAC16
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   406 TRAC17
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   421 TRAC18
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   436 TRAC19
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   451 TRAC20
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   466 TRAC21
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   481 TRAC22
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   496 TRAC23
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   511 TRAC24
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   526 TRAC25
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   541 TRAC26
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   556 TRAC27
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   571 TRAC28
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   586 TRAC29
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   601 TRAC30
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   616 TRAC31
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   631 TRAC32
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   646 TRAC33
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   661 TRAC34
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   676 TRAC35
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   691 TRAC36
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   706 TRAC37
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   721 TRAC38
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   736 TRAC39
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   751 TRAC40
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   766 TRAC41
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   789 PARF
+(PID.TID 0000.0001) SETDIAG: Allocate 35 x  1 Levels for Diagnostic #   788 atten
+(PID.TID 0000.0001) SETDIAG: Allocate  1 x  1 Levels for Diagnostic #   911 surfPAR
 (PID.TID 0000.0001)   space allocated for all diagnostics:    1506 levels
 (PID.TID 0000.0001) DIAGNOSTICS_SET_POINTERS: Set levels for Outp.Stream: darwin
 (PID.TID 0000.0001)  Levels:       1.
@@ -1197,9 +1200,9 @@
 (PID.TID 0000.0001) ------------------------------------------------------------
 (PID.TID 0000.0001) DIAGSTATS_SET_REGIONS: define no region
 (PID.TID 0000.0001) ------------------------------------------------------------
-(PID.TID 0000.0001) SETDIAG: Allocate 35 Levels for Stats-Diag #   778 PP
-(PID.TID 0000.0001) SETDIAG: Allocate 35 Levels for Stats-Diag #   779 Nfix
-(PID.TID 0000.0001) SETDIAG: Allocate 35 Levels for Stats-Diag #   780 Denit
+(PID.TID 0000.0001) SETDIAG: Allocate 35 Levels for Stats-Diag #   784 PP
+(PID.TID 0000.0001) SETDIAG: Allocate 35 Levels for Stats-Diag #   785 Nfix
+(PID.TID 0000.0001) SETDIAG: Allocate 35 Levels for Stats-Diag #   786 Denit
 (PID.TID 0000.0001)   space allocated for all stats-diags:     105 levels
 (PID.TID 0000.0001) DIAGSTATS_SET_POINTERS: done
 (PID.TID 0000.0001) ------------------------------------------------------------
@@ -1274,7 +1277,7 @@
 (PID.TID 0000.0001)                 2.800000000000000E+00,      /* K = 34 */
 (PID.TID 0000.0001)                 2.600000000000000E+00       /* K = 35 */
 (PID.TID 0000.0001)     ;
-(PID.TID 0000.0001) sRef =   /* Reference salinity profile ( psu ) */
+(PID.TID 0000.0001) sRef =   /* Reference salinity profile ( g/kg ) */
 (PID.TID 0000.0001)    35 @  3.500000000000000E+01              /* K =  1: 35 */
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) useStrainTensionVisc= /* Use StrainTension Form of Viscous Operator */
@@ -1367,9 +1370,15 @@
 (PID.TID 0000.0001) eosType =  /* Type of Equation of State */
 (PID.TID 0000.0001)               'JMD95Z'
 (PID.TID 0000.0001)     ;
+(PID.TID 0000.0001) eosRefP0 = /* Reference atmospheric pressure for EOS ( Pa ) */
+(PID.TID 0000.0001)                 1.013250000000000E+05
+(PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) selectP_inEOS_Zc = /* select pressure to use in EOS (0,1,2,3) */
 (PID.TID 0000.0001)                       0
 (PID.TID 0000.0001)     0= -g*rhoConst*z ; 1= pRef (from tRef,sRef); 2= Hyd P ; 3= Hyd+NH P
+(PID.TID 0000.0001)     ;
+(PID.TID 0000.0001) surf_pRef = /* Surface reference pressure ( Pa ) */
+(PID.TID 0000.0001)                 1.013250000000000E+05
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) HeatCapacity_Cp =  /* Specific heat capacity ( J/kg/K ) */
 (PID.TID 0000.0001)                 3.994000000000000E+03
@@ -1425,17 +1434,20 @@
 (PID.TID 0000.0001) freeSurfFac =   /* Implicit free surface factor */
 (PID.TID 0000.0001)                 0.000000000000000E+00
 (PID.TID 0000.0001)     ;
-(PID.TID 0000.0001) implicSurfPress =  /* Surface Pressure implicit factor (0-1)*/
+(PID.TID 0000.0001) implicSurfPress =  /* Surface Pressure implicit factor (0-1) */
 (PID.TID 0000.0001)                 1.000000000000000E+00
 (PID.TID 0000.0001)     ;
-(PID.TID 0000.0001) implicDiv2DFlow =  /* Barot. Flow Div. implicit factor (0-1)*/
+(PID.TID 0000.0001) implicDiv2DFlow =  /* Barot. Flow Div. implicit factor (0-1) */
 (PID.TID 0000.0001)                 1.000000000000000E+00
 (PID.TID 0000.0001)     ;
-(PID.TID 0000.0001) uniformLin_PhiSurf = /* use uniform Bo_surf on/off flag*/
+(PID.TID 0000.0001) uniformLin_PhiSurf = /* use uniform Bo_surf on/off flag */
 (PID.TID 0000.0001)                   T
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) uniformFreeSurfLev = /* free-surface level-index is uniform */
 (PID.TID 0000.0001)                   T
+(PID.TID 0000.0001)     ;
+(PID.TID 0000.0001) sIceLoadFac =  /* scale factor for sIceLoad (0-1) */
+(PID.TID 0000.0001)                 1.000000000000000E+00
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) hFacMin =   /* minimum partial cell factor (hFac) */
 (PID.TID 0000.0001)                 1.000000000000000E+00
@@ -1443,10 +1455,10 @@
 (PID.TID 0000.0001) hFacMinDr = /* minimum partial cell thickness ( m) */
 (PID.TID 0000.0001)                 0.000000000000000E+00
 (PID.TID 0000.0001)     ;
-(PID.TID 0000.0001) exactConserv =  /* Exact Volume Conservation on/off flag*/
+(PID.TID 0000.0001) exactConserv =  /* Exact Volume Conservation on/off flag */
 (PID.TID 0000.0001)                   F
 (PID.TID 0000.0001)     ;
-(PID.TID 0000.0001) linFSConserveTr = /* Tracer correction for Lin Free Surface on/off flag*/
+(PID.TID 0000.0001) linFSConserveTr = /* Tracer correction for Lin Free Surface on/off flag */
 (PID.TID 0000.0001)                   F
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) nonlinFreeSurf = /* Non-linear Free Surf. options (-1,0,1,2,3)*/
@@ -1468,7 +1480,7 @@
 (PID.TID 0000.0001) temp_EvPrRn = /* Temp. of Evap/Prec/R (UNSET=use local T)(oC)*/
 (PID.TID 0000.0001)                 1.234567000000000E+05
 (PID.TID 0000.0001)     ;
-(PID.TID 0000.0001) salt_EvPrRn = /* Salin. of Evap/Prec/R (UNSET=use local S)(psu)*/
+(PID.TID 0000.0001) salt_EvPrRn = /* Salin. of Evap/Prec/R (UNSET=use local S)(g/kg)*/
 (PID.TID 0000.0001)                 0.000000000000000E+00
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) selectAddFluid = /* option for mass source/sink of fluid (=0: off) */
@@ -1477,10 +1489,10 @@
 (PID.TID 0000.0001) temp_addMass = /* Temp. of addMass array (UNSET=use local T)(oC)*/
 (PID.TID 0000.0001)                 1.234567000000000E+05
 (PID.TID 0000.0001)     ;
-(PID.TID 0000.0001) salt_addMass = /* Salin. of addMass array (UNSET=use local S)(psu)*/
+(PID.TID 0000.0001) salt_addMass = /* Salin. of addMass array (UNSET=use local S)(g/kg)*/
 (PID.TID 0000.0001)                 0.000000000000000E+00
 (PID.TID 0000.0001)     ;
-(PID.TID 0000.0001) convertFW2Salt = /* convert F.W. Flux to Salt Flux (-1=use local S)(psu)*/
+(PID.TID 0000.0001) convertFW2Salt = /* convert F.W. Flux to Salt Flux (-1=use local S)(g/kg)*/
 (PID.TID 0000.0001)                 3.500000000000000E+01
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) use3Dsolver = /* use 3-D pressure solver on/off flag */
@@ -1652,8 +1664,8 @@
 (PID.TID 0000.0001) cg2dMaxIters =   /* Upper limit on 2d con. grad iterations  */
 (PID.TID 0000.0001)                     300
 (PID.TID 0000.0001)     ;
-(PID.TID 0000.0001) cg2dChkResFreq =   /* 2d con. grad convergence test frequency */
-(PID.TID 0000.0001)                       1
+(PID.TID 0000.0001) cg2dMinItersNSA =   /* Minimum number of iterations of 2d con. grad solver  */
+(PID.TID 0000.0001)                       0
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) cg2dUseMinResSol= /* use cg2d last-iter(=0) / min-resid.(=1) solution */
 (PID.TID 0000.0001)                       0
@@ -1668,6 +1680,9 @@
 (PID.TID 0000.0001)                       1
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) useSRCGSolver =  /* use single reduction CG solver(s) */
+(PID.TID 0000.0001)                   F
+(PID.TID 0000.0001)     ;
+(PID.TID 0000.0001) useNSACGSolver =  /* use not-self-adjoint CG solver */
 (PID.TID 0000.0001)                   F
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) printResidualFreq = /* Freq. for printing CG residual */
@@ -4530,50 +4545,50 @@ listId=    1 ; file name: darwin
    44  |   44  |      3600.000000         0.000000 |   1
  levels:   1
  diag# | name   |   ipt  |  iMate | kLev|   count |   mate.C|           
-   162 |TRAC01  |      1 |      0 |  35 |       0 |
-   177 |TRAC02  |     36 |      0 |  35 |       0 |
-   192 |TRAC03  |     71 |      0 |  35 |       0 |
-   207 |TRAC04  |    106 |      0 |  35 |       0 |
-   222 |TRAC05  |    141 |      0 |  35 |       0 |
-   237 |TRAC06  |    176 |      0 |  35 |       0 |
-   252 |TRAC07  |    211 |      0 |  35 |       0 |
-   267 |TRAC08  |    246 |      0 |  35 |       0 |
-   282 |TRAC09  |    281 |      0 |  35 |       0 |
-   297 |TRAC10  |    316 |      0 |  35 |       0 |
-   312 |TRAC11  |    351 |      0 |  35 |       0 |
-   327 |TRAC12  |    386 |      0 |  35 |       0 |
-   342 |TRAC13  |    421 |      0 |  35 |       0 |
-   357 |TRAC14  |    456 |      0 |  35 |       0 |
-   372 |TRAC15  |    491 |      0 |  35 |       0 |
-   387 |TRAC16  |    526 |      0 |  35 |       0 |
-   402 |TRAC17  |    561 |      0 |  35 |       0 |
-   417 |TRAC18  |    596 |      0 |  35 |       0 |
-   432 |TRAC19  |    631 |      0 |  35 |       0 |
-   447 |TRAC20  |    666 |      0 |  35 |       0 |
-   462 |TRAC21  |    701 |      0 |  35 |       0 |
-   477 |TRAC22  |    736 |      0 |  35 |       0 |
-   492 |TRAC23  |    771 |      0 |  35 |       0 |
-   507 |TRAC24  |    806 |      0 |  35 |       0 |
-   522 |TRAC25  |    841 |      0 |  35 |       0 |
-   537 |TRAC26  |    876 |      0 |  35 |       0 |
-   552 |TRAC27  |    911 |      0 |  35 |       0 |
-   567 |TRAC28  |    946 |      0 |  35 |       0 |
-   582 |TRAC29  |    981 |      0 |  35 |       0 |
-   597 |TRAC30  |   1016 |      0 |  35 |       0 |
-   612 |TRAC31  |   1051 |      0 |  35 |       0 |
-   627 |TRAC32  |   1086 |      0 |  35 |       0 |
-   642 |TRAC33  |   1121 |      0 |  35 |       0 |
-   657 |TRAC34  |   1156 |      0 |  35 |       0 |
-   672 |TRAC35  |   1191 |      0 |  35 |       0 |
-   687 |TRAC36  |   1226 |      0 |  35 |       0 |
-   702 |TRAC37  |   1261 |      0 |  35 |       0 |
-   717 |TRAC38  |   1296 |      0 |  35 |       0 |
-   732 |TRAC39  |   1331 |      0 |  35 |       0 |
-   747 |TRAC40  |   1366 |      0 |  35 |       0 |
-   762 |TRAC41  |   1401 |      0 |  35 |       0 |
-   783 |PARF    |   1436 |      0 |  35 |       0 |
-   782 |atten   |   1471 |      0 |  35 |       0 |
-   842 |surfPAR |   1506 |      0 |   1 |       0 |
+   166 |TRAC01  |      1 |      0 |  35 |       0 |
+   181 |TRAC02  |     36 |      0 |  35 |       0 |
+   196 |TRAC03  |     71 |      0 |  35 |       0 |
+   211 |TRAC04  |    106 |      0 |  35 |       0 |
+   226 |TRAC05  |    141 |      0 |  35 |       0 |
+   241 |TRAC06  |    176 |      0 |  35 |       0 |
+   256 |TRAC07  |    211 |      0 |  35 |       0 |
+   271 |TRAC08  |    246 |      0 |  35 |       0 |
+   286 |TRAC09  |    281 |      0 |  35 |       0 |
+   301 |TRAC10  |    316 |      0 |  35 |       0 |
+   316 |TRAC11  |    351 |      0 |  35 |       0 |
+   331 |TRAC12  |    386 |      0 |  35 |       0 |
+   346 |TRAC13  |    421 |      0 |  35 |       0 |
+   361 |TRAC14  |    456 |      0 |  35 |       0 |
+   376 |TRAC15  |    491 |      0 |  35 |       0 |
+   391 |TRAC16  |    526 |      0 |  35 |       0 |
+   406 |TRAC17  |    561 |      0 |  35 |       0 |
+   421 |TRAC18  |    596 |      0 |  35 |       0 |
+   436 |TRAC19  |    631 |      0 |  35 |       0 |
+   451 |TRAC20  |    666 |      0 |  35 |       0 |
+   466 |TRAC21  |    701 |      0 |  35 |       0 |
+   481 |TRAC22  |    736 |      0 |  35 |       0 |
+   496 |TRAC23  |    771 |      0 |  35 |       0 |
+   511 |TRAC24  |    806 |      0 |  35 |       0 |
+   526 |TRAC25  |    841 |      0 |  35 |       0 |
+   541 |TRAC26  |    876 |      0 |  35 |       0 |
+   556 |TRAC27  |    911 |      0 |  35 |       0 |
+   571 |TRAC28  |    946 |      0 |  35 |       0 |
+   586 |TRAC29  |    981 |      0 |  35 |       0 |
+   601 |TRAC30  |   1016 |      0 |  35 |       0 |
+   616 |TRAC31  |   1051 |      0 |  35 |       0 |
+   631 |TRAC32  |   1086 |      0 |  35 |       0 |
+   646 |TRAC33  |   1121 |      0 |  35 |       0 |
+   661 |TRAC34  |   1156 |      0 |  35 |       0 |
+   676 |TRAC35  |   1191 |      0 |  35 |       0 |
+   691 |TRAC36  |   1226 |      0 |  35 |       0 |
+   706 |TRAC37  |   1261 |      0 |  35 |       0 |
+   721 |TRAC38  |   1296 |      0 |  35 |       0 |
+   736 |TRAC39  |   1331 |      0 |  35 |       0 |
+   751 |TRAC40  |   1366 |      0 |  35 |       0 |
+   766 |TRAC41  |   1401 |      0 |  35 |       0 |
+   789 |PARF    |   1436 |      0 |  35 |       0 |
+   788 |atten   |   1471 |      0 |  35 |       0 |
+   911 |surfPAR |   1506 |      0 |   1 |       0 |
 ------------------------------------------------------------------------
 Global & Regional Statistics diagnostics: Number of lists:     1
 ------------------------------------------------------------------------
@@ -4582,9 +4597,9 @@ listId=   1 ; file name: stats
     3  |    3  |      3600.000000         0.000000 |
  Regions:   0
  diag# | name   |   ipt  |  iMate |    Volume   |   mate-Vol. |         
-   778 |PP      |      1 |      0 | 0.00000E+00 |
-   779 |Nfix    |     36 |      0 | 0.00000E+00 |
-   780 |Denit   |     71 |      0 | 0.00000E+00 |
+   784 |PP      |      1 |      0 | 0.00000E+00 |
+   785 |Nfix    |     36 |      0 | 0.00000E+00 |
+   786 |Denit   |     71 |      0 | 0.00000E+00 |
 ------------------------------------------------------------------------
 (PID.TID 0000.0001)  MDS_READ_FIELD: opening global file: forcing/MITgcm/darwin/verification/quota_1d_6spec_cn/loc1_glodap_tco2_ann-3d.bin
 (PID.TID 0000.0001)  MDS_READ_FIELD: opening global file: forcing/MITgcm/darwin/verification/quota_1d_6spec_cn/loc1_lev01_nitrate_ann-3d.bin
@@ -5023,7 +5038,6 @@ listId=   1 ; file name: stats
 (PID.TID 0000.0001) // =======================================================
 (PID.TID 0000.0001) // End MONITOR DARWIN statistics
 (PID.TID 0000.0001) // =======================================================
- mean surface dic   2073.14438519122        35.0000000000000     
 (PID.TID 0000.0001) // =======================================================
 (PID.TID 0000.0001) // Begin MONITOR dynamic field statistics
 (PID.TID 0000.0001) // =======================================================
@@ -5144,10 +5158,10 @@ listId=   1 ; file name: stats
 (PID.TID 0000.0001) %MON trcstat_ptracer05_mean       =   2.0209546446007E+00
 (PID.TID 0000.0001) %MON trcstat_ptracer05_sd         =   2.4240751024245E-01
 (PID.TID 0000.0001) %MON trcstat_ptracer05_del2       =   0.0000000000000E+00
-(PID.TID 0000.0001) %MON trcstat_ptracer06_max        =   8.7445411792750E-04
+(PID.TID 0000.0001) %MON trcstat_ptracer06_max        =   8.7442552455063E-04
 (PID.TID 0000.0001) %MON trcstat_ptracer06_min        =   2.6957878821099E-06
-(PID.TID 0000.0001) %MON trcstat_ptracer06_mean       =   6.2669132766792E-04
-(PID.TID 0000.0001) %MON trcstat_ptracer06_sd         =   1.8499654399533E-04
+(PID.TID 0000.0001) %MON trcstat_ptracer06_mean       =   6.2668723705606E-04
+(PID.TID 0000.0001) %MON trcstat_ptracer06_sd         =   1.8499106569678E-04
 (PID.TID 0000.0001) %MON trcstat_ptracer06_del2       =   0.0000000000000E+00
 (PID.TID 0000.0001) %MON trcstat_ptracer07_max        =   9.3254103221542E+01
 (PID.TID 0000.0001) %MON trcstat_ptracer07_min        =   3.4056780280727E+00
@@ -5327,53 +5341,53 @@ listId=   1 ; file name: stats
 (PID.TID 0000.0001) // =======================================================
 (PID.TID 0000.0001) // End MONITOR ptracer field statistics
 (PID.TID 0000.0001) // =======================================================
- Computing Diagnostic #    162  TRAC01       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    177  TRAC02       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    192  TRAC03       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    207  TRAC04       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    222  TRAC05       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    237  TRAC06       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    252  TRAC07       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    267  TRAC08       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    282  TRAC09       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    297  TRAC10       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    312  TRAC11       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    327  TRAC12       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    342  TRAC13       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    357  TRAC14       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    372  TRAC15       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    387  TRAC16       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    402  TRAC17       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    417  TRAC18       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    432  TRAC19       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    447  TRAC20       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    462  TRAC21       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    477  TRAC22       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    492  TRAC23       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    507  TRAC24       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    522  TRAC25       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    537  TRAC26       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    552  TRAC27       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    567  TRAC28       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    582  TRAC29       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    597  TRAC30       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    612  TRAC31       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    627  TRAC32       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    642  TRAC33       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    657  TRAC34       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    672  TRAC35       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    687  TRAC36       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    702  TRAC37       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    717  TRAC38       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    732  TRAC39       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    747  TRAC40       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    762  TRAC41       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    783  PARF         Counter:       1   Parms: SMRP    LR      
- Computing Diagnostic #    782  atten        Counter:       1   Parms: SMRP    MR      
- Computing Diagnostic #    842  surfPAR      Counter:       2   Parms: SM P    L1      
- Compute Stats, Diag. #    778  PP        vol(   0 ): 3.081E+13  Parms: SMRP    MR      
- Compute Stats, Diag. #    779  Nfix      vol(   0 ): 3.081E+13  Parms: SMRP    MR      
- Compute Stats, Diag. #    780  Denit     vol(   0 ): 3.081E+13  Parms: SMRP    MR      
+ Computing Diagnostic #    166  TRAC01       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    181  TRAC02       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    196  TRAC03       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    211  TRAC04       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    226  TRAC05       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    241  TRAC06       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    256  TRAC07       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    271  TRAC08       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    286  TRAC09       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    301  TRAC10       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    316  TRAC11       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    331  TRAC12       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    346  TRAC13       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    361  TRAC14       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    376  TRAC15       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    391  TRAC16       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    406  TRAC17       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    421  TRAC18       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    436  TRAC19       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    451  TRAC20       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    466  TRAC21       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    481  TRAC22       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    496  TRAC23       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    511  TRAC24       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    526  TRAC25       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    541  TRAC26       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    556  TRAC27       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    571  TRAC28       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    586  TRAC29       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    601  TRAC30       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    616  TRAC31       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    631  TRAC32       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    646  TRAC33       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    661  TRAC34       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    676  TRAC35       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    691  TRAC36       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    706  TRAC37       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    721  TRAC38       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    736  TRAC39       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    751  TRAC40       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    766  TRAC41       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    789  PARF         Counter:       1   Parms: SMRP    LR      
+ Computing Diagnostic #    788  atten        Counter:       1   Parms: SMRP    MR      
+ Computing Diagnostic #    911  surfPAR      Counter:       2   Parms: SM P    L1      
+ Compute Stats, Diag. #    784  PP        vol(   0 ): 3.081E+13  Parms: SMRP    MR      
+ Compute Stats, Diag. #    785  Nfix      vol(   0 ): 3.081E+13  Parms: SMRP    MR      
+ Compute Stats, Diag. #    786  Denit     vol(   0 ): 3.081E+13  Parms: SMRP    MR      
 (PID.TID 0000.0001) // =======================================================
 (PID.TID 0000.0001) // Begin MONITOR EXF statistics
 (PID.TID 0000.0001) // =======================================================
@@ -5456,7 +5470,6 @@ listId=   1 ; file name: stats
 (PID.TID 0000.0001) // =======================================================
 (PID.TID 0000.0001) // End MONITOR DARWIN statistics
 (PID.TID 0000.0001) // =======================================================
- mean surface dic   2073.34293833478        35.0000000000000     
 (PID.TID 0000.0001) // =======================================================
 (PID.TID 0000.0001) // Begin MONITOR dynamic field statistics
 (PID.TID 0000.0001) // =======================================================
@@ -5577,10 +5590,10 @@ listId=   1 ; file name: stats
 (PID.TID 0000.0001) %MON trcstat_ptracer05_mean       =   2.0209619806617E+00
 (PID.TID 0000.0001) %MON trcstat_ptracer05_sd         =   2.4238988488588E-01
 (PID.TID 0000.0001) %MON trcstat_ptracer05_del2       =   0.0000000000000E+00
-(PID.TID 0000.0001) %MON trcstat_ptracer06_max        =   8.4207526392116E-04
+(PID.TID 0000.0001) %MON trcstat_ptracer06_max        =   8.4202433991518E-04
 (PID.TID 0000.0001) %MON trcstat_ptracer06_min        =   2.8173167207513E-06
-(PID.TID 0000.0001) %MON trcstat_ptracer06_mean       =   6.1940584514241E-04
-(PID.TID 0000.0001) %MON trcstat_ptracer06_sd         =   1.7661387734277E-04
+(PID.TID 0000.0001) %MON trcstat_ptracer06_mean       =   6.1939855987641E-04
+(PID.TID 0000.0001) %MON trcstat_ptracer06_sd         =   1.7660469296178E-04
 (PID.TID 0000.0001) %MON trcstat_ptracer06_del2       =   0.0000000000000E+00
 (PID.TID 0000.0001) %MON trcstat_ptracer07_max        =   9.3254117096561E+01
 (PID.TID 0000.0001) %MON trcstat_ptracer07_min        =   3.4134315424912E+00
@@ -5760,53 +5773,53 @@ listId=   1 ; file name: stats
 (PID.TID 0000.0001) // =======================================================
 (PID.TID 0000.0001) // End MONITOR ptracer field statistics
 (PID.TID 0000.0001) // =======================================================
- Computing Diagnostic #    162  TRAC01       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    177  TRAC02       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    192  TRAC03       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    207  TRAC04       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    222  TRAC05       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    237  TRAC06       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    252  TRAC07       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    267  TRAC08       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    282  TRAC09       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    297  TRAC10       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    312  TRAC11       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    327  TRAC12       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    342  TRAC13       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    357  TRAC14       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    372  TRAC15       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    387  TRAC16       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    402  TRAC17       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    417  TRAC18       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    432  TRAC19       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    447  TRAC20       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    462  TRAC21       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    477  TRAC22       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    492  TRAC23       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    507  TRAC24       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    522  TRAC25       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    537  TRAC26       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    552  TRAC27       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    567  TRAC28       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    582  TRAC29       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    597  TRAC30       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    612  TRAC31       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    627  TRAC32       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    642  TRAC33       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    657  TRAC34       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    672  TRAC35       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    687  TRAC36       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    702  TRAC37       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    717  TRAC38       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    732  TRAC39       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    747  TRAC40       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    762  TRAC41       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    783  PARF         Counter:       1   Parms: SMRP    LR      
- Computing Diagnostic #    782  atten        Counter:       1   Parms: SMRP    MR      
- Computing Diagnostic #    842  surfPAR      Counter:       2   Parms: SM P    L1      
- Compute Stats, Diag. #    778  PP        vol(   0 ): 3.081E+13  Parms: SMRP    MR      
- Compute Stats, Diag. #    779  Nfix      vol(   0 ): 3.081E+13  Parms: SMRP    MR      
- Compute Stats, Diag. #    780  Denit     vol(   0 ): 3.081E+13  Parms: SMRP    MR      
+ Computing Diagnostic #    166  TRAC01       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    181  TRAC02       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    196  TRAC03       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    211  TRAC04       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    226  TRAC05       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    241  TRAC06       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    256  TRAC07       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    271  TRAC08       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    286  TRAC09       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    301  TRAC10       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    316  TRAC11       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    331  TRAC12       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    346  TRAC13       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    361  TRAC14       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    376  TRAC15       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    391  TRAC16       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    406  TRAC17       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    421  TRAC18       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    436  TRAC19       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    451  TRAC20       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    466  TRAC21       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    481  TRAC22       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    496  TRAC23       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    511  TRAC24       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    526  TRAC25       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    541  TRAC26       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    556  TRAC27       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    571  TRAC28       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    586  TRAC29       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    601  TRAC30       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    616  TRAC31       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    631  TRAC32       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    646  TRAC33       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    661  TRAC34       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    676  TRAC35       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    691  TRAC36       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    706  TRAC37       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    721  TRAC38       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    736  TRAC39       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    751  TRAC40       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    766  TRAC41       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    789  PARF         Counter:       1   Parms: SMRP    LR      
+ Computing Diagnostic #    788  atten        Counter:       1   Parms: SMRP    MR      
+ Computing Diagnostic #    911  surfPAR      Counter:       2   Parms: SM P    L1      
+ Compute Stats, Diag. #    784  PP        vol(   0 ): 3.081E+13  Parms: SMRP    MR      
+ Compute Stats, Diag. #    785  Nfix      vol(   0 ): 3.081E+13  Parms: SMRP    MR      
+ Compute Stats, Diag. #    786  Denit     vol(   0 ): 3.081E+13  Parms: SMRP    MR      
 (PID.TID 0000.0001) // =======================================================
 (PID.TID 0000.0001) // Begin MONITOR EXF statistics
 (PID.TID 0000.0001) // =======================================================
@@ -5889,7 +5902,6 @@ listId=   1 ; file name: stats
 (PID.TID 0000.0001) // =======================================================
 (PID.TID 0000.0001) // End MONITOR DARWIN statistics
 (PID.TID 0000.0001) // =======================================================
- mean surface dic   2073.63229344642        35.0000000000000     
 (PID.TID 0000.0001) // =======================================================
 (PID.TID 0000.0001) // Begin MONITOR dynamic field statistics
 (PID.TID 0000.0001) // =======================================================
@@ -6010,10 +6022,10 @@ listId=   1 ; file name: stats
 (PID.TID 0000.0001) %MON trcstat_ptracer05_mean       =   2.0209678998660E+00
 (PID.TID 0000.0001) %MON trcstat_ptracer05_sd         =   2.4237696105030E-01
 (PID.TID 0000.0001) %MON trcstat_ptracer05_del2       =   0.0000000000000E+00
-(PID.TID 0000.0001) %MON trcstat_ptracer06_max        =   8.1833976535809E-04
+(PID.TID 0000.0001) %MON trcstat_ptracer06_max        =   8.1826886957559E-04
 (PID.TID 0000.0001) %MON trcstat_ptracer06_min        =   2.9208731553693E-06
-(PID.TID 0000.0001) %MON trcstat_ptracer06_mean       =   6.1378087902378E-04
-(PID.TID 0000.0001) %MON trcstat_ptracer06_sd         =   1.7046148000419E-04
+(PID.TID 0000.0001) %MON trcstat_ptracer06_mean       =   6.1377073656434E-04
+(PID.TID 0000.0001) %MON trcstat_ptracer06_sd         =   1.7044931012211E-04
 (PID.TID 0000.0001) %MON trcstat_ptracer06_del2       =   0.0000000000000E+00
 (PID.TID 0000.0001) %MON trcstat_ptracer07_max        =   9.3254130980525E+01
 (PID.TID 0000.0001) %MON trcstat_ptracer07_min        =   3.4193838313047E+00
@@ -6193,53 +6205,53 @@ listId=   1 ; file name: stats
 (PID.TID 0000.0001) // =======================================================
 (PID.TID 0000.0001) // End MONITOR ptracer field statistics
 (PID.TID 0000.0001) // =======================================================
- Computing Diagnostic #    162  TRAC01       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    177  TRAC02       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    192  TRAC03       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    207  TRAC04       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    222  TRAC05       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    237  TRAC06       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    252  TRAC07       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    267  TRAC08       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    282  TRAC09       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    297  TRAC10       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    312  TRAC11       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    327  TRAC12       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    342  TRAC13       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    357  TRAC14       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    372  TRAC15       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    387  TRAC16       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    402  TRAC17       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    417  TRAC18       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    432  TRAC19       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    447  TRAC20       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    462  TRAC21       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    477  TRAC22       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    492  TRAC23       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    507  TRAC24       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    522  TRAC25       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    537  TRAC26       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    552  TRAC27       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    567  TRAC28       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    582  TRAC29       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    597  TRAC30       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    612  TRAC31       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    627  TRAC32       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    642  TRAC33       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    657  TRAC34       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    672  TRAC35       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    687  TRAC36       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    702  TRAC37       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    717  TRAC38       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    732  TRAC39       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    747  TRAC40       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    762  TRAC41       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    783  PARF         Counter:       1   Parms: SMRP    LR      
- Computing Diagnostic #    782  atten        Counter:       1   Parms: SMRP    MR      
- Computing Diagnostic #    842  surfPAR      Counter:       2   Parms: SM P    L1      
- Compute Stats, Diag. #    778  PP        vol(   0 ): 3.081E+13  Parms: SMRP    MR      
- Compute Stats, Diag. #    779  Nfix      vol(   0 ): 3.081E+13  Parms: SMRP    MR      
- Compute Stats, Diag. #    780  Denit     vol(   0 ): 3.081E+13  Parms: SMRP    MR      
+ Computing Diagnostic #    166  TRAC01       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    181  TRAC02       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    196  TRAC03       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    211  TRAC04       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    226  TRAC05       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    241  TRAC06       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    256  TRAC07       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    271  TRAC08       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    286  TRAC09       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    301  TRAC10       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    316  TRAC11       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    331  TRAC12       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    346  TRAC13       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    361  TRAC14       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    376  TRAC15       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    391  TRAC16       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    406  TRAC17       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    421  TRAC18       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    436  TRAC19       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    451  TRAC20       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    466  TRAC21       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    481  TRAC22       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    496  TRAC23       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    511  TRAC24       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    526  TRAC25       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    541  TRAC26       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    556  TRAC27       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    571  TRAC28       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    586  TRAC29       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    601  TRAC30       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    616  TRAC31       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    631  TRAC32       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    646  TRAC33       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    661  TRAC34       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    676  TRAC35       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    691  TRAC36       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    706  TRAC37       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    721  TRAC38       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    736  TRAC39       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    751  TRAC40       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    766  TRAC41       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    789  PARF         Counter:       1   Parms: SMRP    LR      
+ Computing Diagnostic #    788  atten        Counter:       1   Parms: SMRP    MR      
+ Computing Diagnostic #    911  surfPAR      Counter:       2   Parms: SM P    L1      
+ Compute Stats, Diag. #    784  PP        vol(   0 ): 3.081E+13  Parms: SMRP    MR      
+ Compute Stats, Diag. #    785  Nfix      vol(   0 ): 3.081E+13  Parms: SMRP    MR      
+ Compute Stats, Diag. #    786  Denit     vol(   0 ): 3.081E+13  Parms: SMRP    MR      
 (PID.TID 0000.0001) // =======================================================
 (PID.TID 0000.0001) // Begin MONITOR EXF statistics
 (PID.TID 0000.0001) // =======================================================
@@ -6322,7 +6334,6 @@ listId=   1 ; file name: stats
 (PID.TID 0000.0001) // =======================================================
 (PID.TID 0000.0001) // End MONITOR DARWIN statistics
 (PID.TID 0000.0001) // =======================================================
- mean surface dic   2073.96467072212        35.0000000000000     
 (PID.TID 0000.0001) // =======================================================
 (PID.TID 0000.0001) // Begin MONITOR dynamic field statistics
 (PID.TID 0000.0001) // =======================================================
@@ -6443,10 +6454,10 @@ listId=   1 ; file name: stats
 (PID.TID 0000.0001) %MON trcstat_ptracer05_mean       =   2.0209729571094E+00
 (PID.TID 0000.0001) %MON trcstat_ptracer05_sd         =   2.4236690956053E-01
 (PID.TID 0000.0001) %MON trcstat_ptracer05_del2       =   0.0000000000000E+00
-(PID.TID 0000.0001) %MON trcstat_ptracer06_max        =   7.9977541847555E-04
+(PID.TID 0000.0001) %MON trcstat_ptracer06_max        =   7.9968601493463E-04
 (PID.TID 0000.0001) %MON trcstat_ptracer06_min        =   3.0116528858865E-06
-(PID.TID 0000.0001) %MON trcstat_ptracer06_mean       =   6.0922128238582E-04
-(PID.TID 0000.0001) %MON trcstat_ptracer06_sd         =   1.6566812636256E-04
+(PID.TID 0000.0001) %MON trcstat_ptracer06_mean       =   6.0920849217734E-04
+(PID.TID 0000.0001) %MON trcstat_ptracer06_sd         =   1.6565341716457E-04
 (PID.TID 0000.0001) %MON trcstat_ptracer06_del2       =   0.0000000000000E+00
 (PID.TID 0000.0001) %MON trcstat_ptracer07_max        =   9.3254144873433E+01
 (PID.TID 0000.0001) %MON trcstat_ptracer07_min        =   3.4271046886794E+00
@@ -6626,262 +6637,256 @@ listId=   1 ; file name: stats
 (PID.TID 0000.0001) // =======================================================
 (PID.TID 0000.0001) // End MONITOR ptracer field statistics
 (PID.TID 0000.0001) // =======================================================
- Computing Diagnostic #    162  TRAC01       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    177  TRAC02       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    192  TRAC03       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    207  TRAC04       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    222  TRAC05       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    237  TRAC06       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    252  TRAC07       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    267  TRAC08       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    282  TRAC09       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    297  TRAC10       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    312  TRAC11       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    327  TRAC12       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    342  TRAC13       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    357  TRAC14       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    372  TRAC15       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    387  TRAC16       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    402  TRAC17       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    417  TRAC18       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    432  TRAC19       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    447  TRAC20       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    462  TRAC21       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    477  TRAC22       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    492  TRAC23       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    507  TRAC24       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    522  TRAC25       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    537  TRAC26       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    552  TRAC27       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    567  TRAC28       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    582  TRAC29       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    597  TRAC30       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    612  TRAC31       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    627  TRAC32       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    642  TRAC33       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    657  TRAC34       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    672  TRAC35       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    687  TRAC36       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    702  TRAC37       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    717  TRAC38       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    732  TRAC39       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    747  TRAC40       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    762  TRAC41       Counter:       1   Parms: SMR     MR      
- Computing Diagnostic #    783  PARF         Counter:       1   Parms: SMRP    LR      
- Computing Diagnostic #    782  atten        Counter:       1   Parms: SMRP    MR      
- Computing Diagnostic #    842  surfPAR      Counter:       2   Parms: SM P    L1      
- Compute Stats, Diag. #    778  PP        vol(   0 ): 3.081E+13  Parms: SMRP    MR      
- Compute Stats, Diag. #    779  Nfix      vol(   0 ): 3.081E+13  Parms: SMRP    MR      
- Compute Stats, Diag. #    780  Denit     vol(   0 ): 3.081E+13  Parms: SMRP    MR      
+ Computing Diagnostic #    166  TRAC01       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    181  TRAC02       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    196  TRAC03       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    211  TRAC04       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    226  TRAC05       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    241  TRAC06       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    256  TRAC07       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    271  TRAC08       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    286  TRAC09       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    301  TRAC10       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    316  TRAC11       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    331  TRAC12       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    346  TRAC13       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    361  TRAC14       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    376  TRAC15       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    391  TRAC16       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    406  TRAC17       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    421  TRAC18       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    436  TRAC19       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    451  TRAC20       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    466  TRAC21       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    481  TRAC22       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    496  TRAC23       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    511  TRAC24       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    526  TRAC25       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    541  TRAC26       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    556  TRAC27       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    571  TRAC28       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    586  TRAC29       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    601  TRAC30       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    616  TRAC31       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    631  TRAC32       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    646  TRAC33       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    661  TRAC34       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    676  TRAC35       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    691  TRAC36       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    706  TRAC37       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    721  TRAC38       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    736  TRAC39       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    751  TRAC40       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    766  TRAC41       Counter:       1   Parms: SMR     MR      
+ Computing Diagnostic #    789  PARF         Counter:       1   Parms: SMRP    LR      
+ Computing Diagnostic #    788  atten        Counter:       1   Parms: SMRP    MR      
+ Computing Diagnostic #    911  surfPAR      Counter:       2   Parms: SM P    L1      
+ Compute Stats, Diag. #    784  PP        vol(   0 ): 3.081E+13  Parms: SMRP    MR      
+ Compute Stats, Diag. #    785  Nfix      vol(   0 ): 3.081E+13  Parms: SMRP    MR      
+ Compute Stats, Diag. #    786  Denit     vol(   0 ): 3.081E+13  Parms: SMRP    MR      
 (PID.TID 0000.0001) %CHECKPOINT         4 ckptA
 (PID.TID 0000.0001)   Seconds in section "ALL                    [THE_MODEL_MAIN]":
-(PID.TID 0000.0001)           User time:   1.00348196271807
+(PID.TID 0000.0001)           User time:   2.22563091479242
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:   1.43664312362671
+(PID.TID 0000.0001)     Wall clock time:   2.33946299552917
 (PID.TID 0000.0001)          No. starts:           1
 (PID.TID 0000.0001)           No. stops:           1
 (PID.TID 0000.0001)   Seconds in section "INITIALISE_FIXED       [THE_MODEL_MAIN]":
-(PID.TID 0000.0001)           User time:  0.344171985983849
+(PID.TID 0000.0001)           User time:  0.798330005258322
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  0.727782964706421
+(PID.TID 0000.0001)     Wall clock time:  0.847014188766479
 (PID.TID 0000.0001)          No. starts:           1
 (PID.TID 0000.0001)           No. stops:           1
 (PID.TID 0000.0001)   Seconds in section "THE_MAIN_LOOP          [THE_MODEL_MAIN]":
-(PID.TID 0000.0001)           User time:  0.658578991889954
+(PID.TID 0000.0001)           User time:   1.42621606588364
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  0.705474853515625
+(PID.TID 0000.0001)     Wall clock time:   1.48709917068481
 (PID.TID 0000.0001)          No. starts:           1
 (PID.TID 0000.0001)           No. stops:           1
 (PID.TID 0000.0001)   Seconds in section "INITIALISE_VARIA    [THE_MAIN_LOOP]":
-(PID.TID 0000.0001)           User time:  3.481498360633850E-002
+(PID.TID 0000.0001)           User time:  6.368499994277954E-002
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  4.832792282104492E-002
+(PID.TID 0000.0001)     Wall clock time:  8.377003669738770E-002
 (PID.TID 0000.0001)          No. starts:           1
 (PID.TID 0000.0001)           No. stops:           1
 (PID.TID 0000.0001)   Seconds in section "MAIN LOOP           [THE_MAIN_LOOP]":
-(PID.TID 0000.0001)           User time:  0.623748987913132
+(PID.TID 0000.0001)           User time:   1.36250007152557
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  0.657124996185303
+(PID.TID 0000.0001)     Wall clock time:   1.40328407287598
 (PID.TID 0000.0001)          No. starts:           1
 (PID.TID 0000.0001)           No. stops:           1
 (PID.TID 0000.0001)   Seconds in section "MAIN_DO_LOOP        [THE_MAIN_LOOP]":
-(PID.TID 0000.0001)           User time:  0.623731970787048
+(PID.TID 0000.0001)           User time:   1.36246192455292
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  0.657093048095703
+(PID.TID 0000.0001)     Wall clock time:   1.40320205688477
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "FORWARD_STEP        [MAIN_DO_LOOP]":
-(PID.TID 0000.0001)           User time:  0.623705983161926
+(PID.TID 0000.0001)           User time:   1.36233711242676
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  0.657043218612671
+(PID.TID 0000.0001)     Wall clock time:   1.40308189392090
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DO_STATEVARS_DIAGS  [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  1.063942909240723E-003
+(PID.TID 0000.0001)           User time:  2.904951572418213E-003
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  1.617908477783203E-003
+(PID.TID 0000.0001)     Wall clock time:  2.938032150268555E-003
 (PID.TID 0000.0001)          No. starts:           8
 (PID.TID 0000.0001)           No. stops:           8
 (PID.TID 0000.0001)   Seconds in section "LOAD_FIELDS_DRIVER  [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  3.162026405334473E-003
+(PID.TID 0000.0001)           User time:  5.842208862304688E-003
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  3.748178482055664E-003
+(PID.TID 0000.0001)     Wall clock time:  7.838010787963867E-003
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "EXF_GETFORCING     [LOAD_FLDS_DRIVER]":
-(PID.TID 0000.0001)           User time:  1.814067363739014E-003
+(PID.TID 0000.0001)           User time:  3.449082374572754E-003
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  1.527070999145508E-003
+(PID.TID 0000.0001)     Wall clock time:  3.407955169677734E-003
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "EXTERNAL_FLDS_LOAD [LOAD_FLDS_DRIVER]":
-(PID.TID 0000.0001)           User time:  2.408027648925781E-005
+(PID.TID 0000.0001)           User time:  3.120303153991699E-004
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  9.388923645019531E-004
+(PID.TID 0000.0001)     Wall clock time:  1.588821411132812E-003
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DO_ATMOSPHERIC_PHYS [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  0.000000000000000E+000
+(PID.TID 0000.0001)           User time:  2.706050872802734E-005
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  2.598762512207031E-005
+(PID.TID 0000.0001)     Wall clock time:  5.674362182617188E-005
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DO_OCEANIC_PHYS     [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  4.301041364669800E-003
+(PID.TID 0000.0001)           User time:  9.876847267150879E-003
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  4.919290542602539E-003
+(PID.TID 0000.0001)     Wall clock time:  1.012706756591797E-002
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "KPP_CALC [DO_OCEANIC_PHYS]":
-(PID.TID 0000.0001)           User time:  4.052966833114624E-003
+(PID.TID 0000.0001)           User time:  7.958114147186279E-003
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  3.889083862304688E-003
-(PID.TID 0000.0001)          No. starts:           4
-(PID.TID 0000.0001)           No. stops:           4
-(PID.TID 0000.0001)   Seconds in section "GCHEM_CALC_TENDENCY [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  6.973743438720703E-006
-(PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  2.384185791015625E-005
+(PID.TID 0000.0001)     Wall clock time:  7.975339889526367E-003
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "THERMODYNAMICS      [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  7.910794019699097E-002
+(PID.TID 0000.0001)           User time:  0.168908953666687
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  8.016395568847656E-002
+(PID.TID 0000.0001)     Wall clock time:  0.168883085250854
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "TRC_CORRECTION_STEP [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  1.099705696105957E-005
+(PID.TID 0000.0001)           User time:  4.589557647705078E-005
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  2.622604370117188E-005
+(PID.TID 0000.0001)     Wall clock time:  5.578994750976562E-005
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "GCHEM_FORCING_SEP  [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  2.917051315307617E-003
+(PID.TID 0000.0001)           User time:  9.145140647888184E-003
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  5.862236022949219E-003
+(PID.TID 0000.0001)     Wall clock time:  1.045036315917969E-002
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DARWIN_FORCING [GCHEM_FORCING_SEP]":
-(PID.TID 0000.0001)           User time:  2.120047807693481E-003
+(PID.TID 0000.0001)           User time:  7.048964500427246E-003
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  2.892017364501953E-003
+(PID.TID 0000.0001)     Wall clock time:  7.050037384033203E-003
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DARWIN_LIGHT [DARWIN_FORCING]":
-(PID.TID 0000.0001)           User time:  1.300275325775146E-004
+(PID.TID 0000.0001)           User time:  6.369948387145996E-004
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  2.682209014892578E-004
+(PID.TID 0000.0001)     Wall clock time:  6.308555603027344E-004
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DARWIN_SURFFORCING [DARWIN_FORCING]":
-(PID.TID 0000.0001)           User time:  7.501244544982910E-005
+(PID.TID 0000.0001)           User time:  5.979537963867188E-004
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  2.281665802001953E-004
+(PID.TID 0000.0001)     Wall clock time:  5.428791046142578E-004
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DARWIN_FE_CHEM [DARWIN_FORCING]":
-(PID.TID 0000.0001)           User time:  1.898407936096191E-005
+(PID.TID 0000.0001)           User time:  1.740455627441406E-004
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  7.009506225585938E-005
+(PID.TID 0000.0001)     Wall clock time:  2.136230468750000E-004
 (PID.TID 0000.0001)          No. starts:           8
 (PID.TID 0000.0001)           No. stops:           8
 (PID.TID 0000.0001)   Seconds in section "DARWIN_FE_DUST [DARWIN_FORCING]":
-(PID.TID 0000.0001)           User time:  9.000301361083984E-006
+(PID.TID 0000.0001)           User time:  2.801418304443359E-005
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  2.622604370117188E-005
+(PID.TID 0000.0001)     Wall clock time:  5.817413330078125E-005
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DARWIN_FE_SCAV [DARWIN_FORCING]":
-(PID.TID 0000.0001)           User time:  2.120137214660645E-004
+(PID.TID 0000.0001)           User time:  8.404254913330078E-005
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  3.623962402343750E-005
+(PID.TID 0000.0001)     Wall clock time:  8.606910705566406E-005
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DARWIN_FE_SED [DARWIN_FORCING]":
-(PID.TID 0000.0001)           User time:  1.001358032226562E-005
+(PID.TID 0000.0001)           User time:  2.992153167724609E-005
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  2.884864807128906E-005
+(PID.TID 0000.0001)     Wall clock time:  7.390975952148438E-005
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DARWIN_PLANKTON [DARWIN_FORCING]":
-(PID.TID 0000.0001)           User time:  5.470216274261475E-004
+(PID.TID 0000.0001)           User time:  1.834988594055176E-003
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  7.319450378417969E-004
-(PID.TID 0000.0001)          No. starts:           4
-(PID.TID 0000.0001)           No. stops:           4
-(PID.TID 0000.0001)   Seconds in section "DARWIN_SINKING [DARWIN_FORCING]":
-(PID.TID 0000.0001)           User time:  2.801418304443359E-005
-(PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  1.909732818603516E-004
-(PID.TID 0000.0001)          No. starts:           4
-(PID.TID 0000.0001)           No. stops:           4
-(PID.TID 0000.0001)   Seconds in section "DARWIN_STEP [DARWIN_FORCING]":
-(PID.TID 0000.0001)           User time:  2.402067184448242E-005
-(PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  1.528263092041016E-004
+(PID.TID 0000.0001)     Wall clock time:  1.858711242675781E-003
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DIAGS_FILL [DARWIN_FORCING]":
-(PID.TID 0000.0001)           User time:  6.100237369537354E-004
+(PID.TID 0000.0001)           User time:  1.096308231353760E-003
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  3.137588500976562E-004
+(PID.TID 0000.0001)     Wall clock time:  1.038312911987305E-003
+(PID.TID 0000.0001)          No. starts:           8
+(PID.TID 0000.0001)           No. stops:           8
+(PID.TID 0000.0001)   Seconds in section "DARWIN_SINKING [DARWIN_FORCING]":
+(PID.TID 0000.0001)           User time:  4.749894142150879E-004
+(PID.TID 0000.0001)         System time:  0.000000000000000E+000
+(PID.TID 0000.0001)     Wall clock time:  4.050731658935547E-004
+(PID.TID 0000.0001)          No. starts:           4
+(PID.TID 0000.0001)           No. stops:           4
+(PID.TID 0000.0001)   Seconds in section "DARWIN_STEP [DARWIN_FORCING]":
+(PID.TID 0000.0001)           User time:  3.819465637207031E-004
+(PID.TID 0000.0001)         System time:  0.000000000000000E+000
+(PID.TID 0000.0001)     Wall clock time:  3.340244293212891E-004
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "BLOCKING_EXCHANGES  [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  2.170693874359131E-002
+(PID.TID 0000.0001)           User time:  4.734599590301514E-002
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  2.183008193969727E-002
+(PID.TID 0000.0001)     Wall clock time:  4.726386070251465E-002
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DO_STATEVARS_TAVE   [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  1.630187034606934E-004
+(PID.TID 0000.0001)           User time:  8.718371391296387E-004
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  4.072189331054688E-004
+(PID.TID 0000.0001)     Wall clock time:  9.059906005859375E-004
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "MONITOR             [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  2.812951803207397E-003
+(PID.TID 0000.0001)           User time:  5.539953708648682E-003
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  2.380132675170898E-003
+(PID.TID 0000.0001)     Wall clock time:  5.505084991455078E-003
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DO_THE_MODEL_IO     [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  0.505366027355194
+(PID.TID 0000.0001)           User time:   1.10567009449005
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  0.523626089096069
+(PID.TID 0000.0001)     Wall clock time:   1.12805509567261
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "PTRACERS_RESET      [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  1.597404479980469E-005
+(PID.TID 0000.0001)           User time:  5.900859832763672E-005
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  2.884864807128906E-005
+(PID.TID 0000.0001)     Wall clock time:  6.198883056640625E-005
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DO_WRITE_PICKUP     [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  2.778947353363037E-003
+(PID.TID 0000.0001)           User time:  5.365967750549316E-003
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  1.197290420532227E-002
+(PID.TID 0000.0001)     Wall clock time:  2.007007598876953E-002
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001) // ======================================================
@@ -6899,9 +6904,9 @@ listId=   1 ; file name: stats
 (PID.TID 0000.0001) //          Total. Y spins =              0
 (PID.TID 0000.0001) //            Avg. Y spins =       0.00E+00
 (PID.TID 0000.0001) // o Thread number: 000001
-(PID.TID 0000.0001) //            No. barriers =          15422
+(PID.TID 0000.0001) //            No. barriers =          15550
 (PID.TID 0000.0001) //      Max. barrier spins =              1
 (PID.TID 0000.0001) //      Min. barrier spins =              1
-(PID.TID 0000.0001) //     Total barrier spins =          15422
+(PID.TID 0000.0001) //     Total barrier spins =          15550
 (PID.TID 0000.0001) //      Avg. barrier spins =       1.00E+00
 PROGRAM MAIN: Execution ended Normally

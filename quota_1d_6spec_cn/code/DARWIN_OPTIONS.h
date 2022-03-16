@@ -63,6 +63,7 @@ C iron
 #define DARWIN_MINFE
 #define DARWIN_PART_SCAV
 #define DARWIN_IRON_SED_SOURCE_VARIABLE
+#undef  DARWIN_IRON_SED_SOURCE_POP
 
 C debugging
 
