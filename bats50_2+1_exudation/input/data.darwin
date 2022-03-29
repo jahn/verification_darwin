@@ -1,0 +1,160 @@
+########################
+ &DARWIN_FORCING_PARAMS
+ ironFile='forcing/zhenwu/input_BATS/loc1_FeFlux_monsurf.bin',
+ ironPeriod= -12.,
+ darwin_inscal_iron= 1000.,
+#
+ PARFile='forcing/zhenwu/input_BATS/loc1_PAR_monsurf.bin',
+ PARPeriod= -12.,
+ darwin_inscal_PAR= 11.574074074074,
+#
+ pCO2const= 278E-6,
+ /
+########################
+ &DARWIN_PARAMS
+ darwin_chlInitBalanced= T,
+ diaz_ini_fac= 0.1,
+ darwin_linFSConserve= T,
+ darwin_seed= 56,
+ darwin_read_phos= F,
+ tempCoeffArr= 0.8,
+ PARmin= 0.1,
+ alpfe= 1.0,
+ freefemax = .1E-3,
+ depthfesed= 7000.,
+ scav_rat= 1.73611111111111111111E-7,
+ kdoc=  3.8580246913580247E-7,  ! 1/30day
+ kdop=  3.8580246913580247E-7,  ! 1/30day
+ kdon=  3.8580246913580247E-7,  ! 1/30day
+ kdofe= 3.8580246913580247E-7,  ! 1/30day
+ kPOC=  3.8580246913580247E-7,  ! 1/30day
+ kPOP=  3.8580246913580247E-7,  ! 1/30day
+ kPON=  3.8580246913580247E-7,  ! 1/30day
+ kPOFe= 3.8580246913580247E-7,  ! 1/30day
+ kPOSi= 7.7160493827160493E-8,  ! 1/150day
+ phygrazmin= 120E-10,
+ hollexp = 2.E0,
+ /
+########################
+ &DARWIN_RADTRANS_PARAMS
+ /
+########################
+ &DARWIN_CDOM_PARAMS
+  fracCDOM = 0.02,
+  cdomdegrd= 3.8580e-08,
+  CDOMbleach = 3.0000e-06,
+  PARCDOM = 70.,
+  R_NP_CDOM  = 16.,
+  R_FeP_CDOM = 1.e-3,
+  R_CP_CDOM  = 120.,
+  CDOMcoeff = 21.,
+ /
+########################
+ &DARWIN_RANDOM_PARAMS
+ /
+########################
+ &DARWIN_TRAIT_PARAMS
+  darwin_sort_biovol= F,
+#                        P  D  Z
+ grp_nplank(:)=          1, 1, 1,
+ grp_photo(:)=           1, 1, 0,
+ grp_pred(:)=            0, 0, 1
+ grp_prey(:)=            1, 1, 1,
+ grp_hasSi(:)=           0, 0, 0,
+ grp_hasPIC(:)=          0, 0, 0,
+ grp_DIAZO(:)=           0, 0, 0,
+ grp_useNH4(:)=          1, 1, 0,
+ grp_useNO2(:)=          1, 1, 0,
+ grp_useNO3(:)=          1, 1, 0,
+ grp_combNO(:)=          1, 1, 0,
+ grp_tempMort(:)=        0, 0, 0,
+ grp_tempMort2(:)=       0, 0, 0,
+ grp_aptype(:)=          4, 5, 11,
+#
+ a_Xmin(:)= 2*120E-20,
+
+ a_mqyield(:)= 2*5E-5,
+ a_chl2cmax(:)= .2, .3,
+ a_acclimtimescl(:)= 2*5.7870370370370370E-6,
+#
+ logvolbase= -.9000,
+ logvolinc= 0.513,
+ logvol0ind(:)= 1, 5, 7
+#
+ a_biosink(:)= 2*6.951416635391563E-7, 0.,  ! .05*dm**.85
+ b_biosink(:)= 2*.2833333333333333, 0.,
+ a_PCmax(1)= 0.90,
+ a_PCmax(2)= 3.9,
+ a_PCmax_denom(:)= 2*86400.,
+ b_PCmax(:)= 0.08, -0.08, 0.,
+#
+ a_vmaxNO3(1)= 0.28,
+ a_vmaxNO3(2)= 0.28,
+ a_vmaxNO3_denom(:)= 2*86400.,
+ b_vmaxNO3(:)= -0.12, -0.12, 0.,
+#
+ a_vmaxNO2(1)= 0.28,
+ a_vmaxNO2(2)= 0.28,
+ a_vmaxNO2_denom(:)= 2*86400.,
+ b_vmaxNO2(:)= -0.12, -0.12, 0.,
+#
+ a_vmaxNH4(1)= 0.14,
+ a_vmaxNH4(2)= 0.14,
+ a_vmaxNH4_denom(:)= 2*86400.,
+ b_vmaxNH4(:)= -0.12, -0.12, 0.,
+#
+ a_vmaxPO4(1)= 0.02,
+ a_vmaxPO4(2)= 0.02,
+ a_vmaxPO4_denom(:)= 2*86400.,
+ b_vmaxPO4(:)= 0.01, 0.01, 0.,
+#
+ a_vmaxFeT(1)= 12.0e-6,
+ a_vmaxFeT(2)= 12.0e-6,
+ a_vmaxFeT_denom(:)= 2*86400.,
+ b_vmaxFeT(:)= -0.03, -0.03, 0.,
+#
+ a_ksatNO3(:) = 2*0.14,
+ b_ksatNO3(:) = 2*0.33,
+#a_ksatNO2(:) = 2*0.18,
+#b_ksatNO2(:) = 2*0.33,
+#a_ksatNH4(:) = 2*0.09,
+#b_ksatNH4(:) = 2*0.33,
+#a_ksatPO4(:) = 2*0.08,
+#b_ksatPO4(:) = 2*0.41,
+#a_ksatFeT(:) = 2*16.0E-6,
+#b_ksatFeT(:) = 2*0.27,
+#
+ a_Qnmin(:) = 2*0.035, 0.05,
+#a_Qnmax(:) = 2*0.17,  0.17,
+ b_Qnmin(:) = -0.06, -0.06, 0.0,
+#
+#a_Qpmin(:) = 2*0.005, 0.008,
+#a_Qpmax(:) = 2*0.02,  0.01,
+#
+#a_Qfemin(:) = 2*5.0e-6, 5.0e-6,
+#a_Qfemax(:) = 2*2.0e-5, 2.0e-5,
+#
+ darwin_effective_ksat= T,
+ darwin_select_kn_allom= 2,
+#
+ a_FracExudeC(:) = 0.7, 0.5, 0.0,
+ a_respRate_c(:) = 3*0.0,
+#
+ grp_ExportFracPreyPred(1:2,3)= 2*.8,
+ a_R_ChlC(3)= 0.,
+ a_grazemax(3)= 3.4722000000000000E-05,  ! prowe values
+ b_grazemax(3)= -0.16,
+#
+ a_mort(:)= 6e-07, 6e-07, 2e-7  ! 1/7days, 1/50days
+ a_mort2(:)= 6e-07, 6e-07, 8e-7,  ! 16*.6/120/day
+ a_phytoTempExp2(:)= 2*.0003,
+ a_R_PC(:)= 3*0.008333333333333333,
+ a_R_FeC(:)= 0.008333333333333333E-3, 0.008333333333333333E-3, 0.001333333333333333E-3,
+ a_R_NC(:)= 0.13333333333333333, 2*0.13333333333333333,
+ a_R_SiC(:)= 0., 0.0, 0.,
+ a_R_PICPOC(:)= 3*0.,
+ a_kgrazesat(:)= 2*1.5, 1*1.5,
+ b_kgrazesat(:)= 3*0,
+#
+ grp_ass_eff(:,:)=9*0.5,
+ /

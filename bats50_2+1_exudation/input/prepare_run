@@ -1,0 +1,2 @@
+#!/bin/sh
+ln -s $MITGCM_DATA_DIR forcing

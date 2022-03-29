@@ -1,0 +1,78 @@
+# Gud diagnostics
+# ==================
+#
+ &diagnostics_list
+#
+  filename( 1) = 'rates',
+  frequency(1) = 2592000.,
+  frequency(1) = 3600.,
+  fields( 1,1) = 'PP      ',
+  fields( 2,1) = 'Nfix    ',
+  fields( 3,1) = 'Denit   ',
+  fields( 4,1) = 'EXU     ',
+  fields( 5,1) = 'BioSyn  ',
+  fields( 6,1) = 'DmdN    ',
+  fields( 7,1) = 'DmdP    ',
+  fields( 8,1) = 'DmdFe   ',
+  fields( 9,1) = 'DmdSi   ',
+  fields(10,1) = 'Dmdmin  ',
+  fields(11,1) = 'PAR     ',
+#
+  filename( 2) = '2d',
+  frequency(2) = 2592000.,
+# frequency(2) = 31104000.,
+  frequency(2) = 3600.,
+  fields( 1,2) = 'fluxCO2 ',
+  fields( 2,2) = 'gDICsurf',
+  fields( 3,2) = 'gALKsurf',
+  fields( 4,2) = 'gO2surf ',
+#
+  filename( 3) = 'rates_each_spec',
+# frequency(3) = 31104000.,
+  frequency(3) = 2592000.,
+  frequency(3) = 3600.,
+  fields( 1,3) = 'PP0001  ',
+  fields( 2,3) = 'PP0002  ',
+  fields( 3,3) = 'EXU0001 ',
+  fields( 4,3) = 'EXU0002 ',
+  fields( 5,3) = 'BS0001  ',
+  fields( 6,3) = 'BS0002  ',
+  fields( 7,3) = 'DP0001  ',
+  fields( 8,3) = 'DP0002  ',
+  fields( 9,3) = 'DN0001  ',
+  fields(10,3) = 'DN0002  ',
+  fields(11,3) = 'DFe0001 ',
+  fields(12,3) = 'DFe0002 ',
+  fields(13,3) = 'DSi0001 ',
+  fields(14,3) = 'DSi0002 ',
+  fields(15,3) = 'Dmin0001',
+  fields(16,3) = 'Dmin0002',
+#
+ &
+
+# Parameter for Diagnostics of per level statistics:
+#-----------------
+# for each output-stream:
+#  stat_fname(n) : prefix of the output file name (only 8.c long) for
+#outp.stream n
+#  stat_freq(n):< 0 : write snap-shot output every |stat_freq| seconds
+#               > 0 : write time-average output every stat_freq seconds
+#  stat_phase(n)    : write at time = stat_phase + multiple of |stat_freq|
+#  stat_region(:,n) : list of "regions" (default: 1 region only=global)
+#  stat_fields(:,n) : list of diagnostics fields (8.c) (see
+#"available_diagnostics.log"
+#                 file for the list of all available diag. in this particular
+#config)
+#-----------------
+ &DIAG_STATIS_PARMS
+ diagst_mnc=.FALSE.,
+     stat_freq(1:3)= 3*2592000.,
+#    stat_freq(1:3)= 3*3600.,
+    stat_phase(1:3)= 3*0.,
+ stat_fields(1,1)= 'PP      '
+ stat_fields(1,2)= 'Nfix    '
+ stat_fields(1,3)= 'Denit   '
+    stat_fname(1)= 'statsPP',
+    stat_fname(2)= 'statsNfix',
+    stat_fname(3)= 'statsDenit',
+ &
