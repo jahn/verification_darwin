@@ -103,8 +103,11 @@
   fields(98,1) = 'PAR     ',
   fields(99,1) = 'PARF    ',
   fields(100,1) = 'atten   ',
-  fields(101,1) = 'surfPAR ',
     filename(1) = 'darwin',
+#
+  frequency(2) = 3600.,
+  fields(101,2) = 'surfPAR ',
+    filename(2) = 'surf',
 #
  &
 

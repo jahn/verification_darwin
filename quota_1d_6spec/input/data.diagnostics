@@ -68,7 +68,10 @@
  fields(65,1)= 'TRAC65  ',
  fields(66,1)= 'PARF    ',
  fields(67,1)= 'atten   ',
- fields(68,1)= 'surfPAR ',
+#
+ filename(2)= 'surf',
+ frequency(2)= 3600.,
+ fields(1,2)= 'surfPAR ',
  &
  &diag_statis_parms
        diagst_mnc=.TRUE.,

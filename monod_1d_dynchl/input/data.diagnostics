@@ -179,7 +179,10 @@
  fields(176,1)= 'PAR     ',
  fields(177,1)= 'PARF    ',
  fields(178,1)= 'atten   ',
- fields(179,1)= 'surfPAR ',
+#
+ filename(2)= 'surf',
+ frequency(2)= 3600.,
+ fields(1,2)= 'surfPAR ',
  &
  &diag_statis_parms
  &

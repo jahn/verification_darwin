@@ -27,9 +27,11 @@
   fields(22,1) = 'PAR     ',
   fields(23,1) = 'PARF    ',
   fields(24,1) = 'atten   ',
-  fields(25,1) = 'surfPAR ',
    filename(1) = 'darwin',
 #
+  frequency(2) = 3600.,
+  fields(1,2) = 'surfPAR ',
+   filename(2) = 'surf',
  &
 
 # Parameter for Diagnostics of per level statistics:

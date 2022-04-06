@@ -84,7 +84,10 @@
  fields(81,1)= 'PAR     ',
  fields(82,1)= 'PARF    ',
  fields(83,1)= 'atten   ',
- fields(84,1)= 'surfPAR ',
+#
+ filename(2)= 'surf',
+ frequency(2)= 10800.,
+ fields(1,2)= 'surfPAR ',
  &
  &diag_statis_parms
  &
