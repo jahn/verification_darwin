@@ -13,6 +13,10 @@ C o Include/exclude phi_hyd calculation code
 C o Include/exclude call to S/R CONVECT
 #undef INCLUDE_CONVECT_CALL
 
+C o Include/exclude calling S/R CONVECTIVE_ADJUSTMENT_INI, turned off by
+C   default because it is an unpopular historical left-over
+#define INCLUDE_CONVECT_INI_CALL
+
 C o Include/exclude call to S/R CALC_DIFFUSIVITY
 #define INCLUDE_CALC_DIFFUSIVITY_CALL
 
