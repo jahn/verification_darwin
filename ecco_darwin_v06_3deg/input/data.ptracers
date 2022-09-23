@@ -65,7 +65,7 @@
  PTRACERS_units(17)= 'uM C'
  PTRACERS_units(18)= 'meq/m^3'
  PTRACERS_units(19)= 'uM O2'
- PTRACERS_units(20)= 'uM C'
+ PTRACERS_units(20)= 'uM P'
  PTRACERS_units(21)= 'uM C'
  PTRACERS_units(22)= 'uM C'
  PTRACERS_units(23)= 'uM C'
