@@ -27,8 +27,8 @@
  &DARWIN_PARAMS
  darwin_chlInitBalanced= T,
  diaz_ini_fac= 0.1,
- idebug=271,
- jdebug=63,
+ idebug=112,
+ jdebug=40,
  darwin_seed= 56,
  tempCoeffArr= 1.0,
  PARmin= 0.1,

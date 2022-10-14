@@ -127,7 +127,7 @@ C include code for per-type diagnostics
 C debugging
 
 C turn on debugging output
-#undef DARWIN_DEBUG
+#define DARWIN_DEBUG
 
 C compute and print global element totals
 #define DARWIN_ALLOW_CONS
