@@ -232,7 +232,7 @@
  PTRACERS_initialFile(17)='ptracers_optimized_17.0000000001',
  PTRACERS_initialFile(18)='ptracers_optimized_18.0000000001',
  PTRACERS_initialFile(19)='ptracers_optimized_19.0000000001',
- PTRACERS_initialFile(20)='ptracers_optimized_08.0000000001',
+ PTRACERS_initialFile(20)=' ',
  PTRACERS_initialFile(21)='biomass.R4_128x64x15.bin',
  PTRACERS_initialFile(22)='biomass.R4_128x64x15.bin',
  PTRACERS_initialFile(23)='biomass.R4_128x64x15.bin',
