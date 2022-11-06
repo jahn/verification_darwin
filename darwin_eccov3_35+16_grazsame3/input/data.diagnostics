@@ -12,9 +12,9 @@
  &diagnostics_list
 #
   filename( 1) = '3d',
-# frequency(1) = 2592000.,
+  frequency(1) = 2592000.,
 # frequency(1) = 31104000.,
-  frequency(1) = 43200.,
+# frequency(1) = 43200.,
   fields( 1,1) = 'TRAC01  ',
   fields( 2,1) = 'TRAC02  ',
   fields( 3,1) = 'TRAC03  ',
@@ -246,9 +246,9 @@
   fields( 52,4) = 'PAR013  ',
 #
   filename( 5) = '2d',
-# frequency(5) = 2592000.,
+  frequency(5) = 2592000.,
 # frequency(5) = 31104000.,
-  frequency(5) = 10800.,
+# frequency(5) = 10800.,
   fields( 1,5) = 'fluxCO2 ',
   fields( 2,5) = 'gDICsurf',
   fields( 3,5) = 'gALKsurf',
