@@ -2002,7 +2002,7 @@ conselems=" C  N  P Fe Si  A  O"
 testoutput_cons() {
     all=""
     for e in $conselems; do
-        f="$1/$2/darwin_cons_$e.txt"
+        f="$(ls $1/$2/darwin_cons_$e.*.txt | tail -n 1)"
         if [ -e "$f" ]; then
           yy="$(../tools/darwin/conscheck "$f" 0 -)"
           yy="$(printf "%2.0f" $yy)"
