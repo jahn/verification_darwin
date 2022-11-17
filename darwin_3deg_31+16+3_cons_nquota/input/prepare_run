@@ -1,3 +1,4 @@
 #!/bin/sh
 ln -sf ../../ecco_darwin_v05_3deg/data_darwin/* .
+ln -sf ../../ecco_darwin_v05_3deg/data_darwin/exp18binav/* .
 mkdir -p diags diags/3hourly diags/daily diags/monthly diags/budget
