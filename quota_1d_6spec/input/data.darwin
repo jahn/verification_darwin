@@ -1,8 +1,8 @@
 ########################
  &DARWIN_FORCING_PARAMS
- ironFile='forcing/MITgcm/darwin/verification/quota_1d_6spec/loc1_mahowald2009_solubile_current_smooth_oce_mth-2d.bin',
- PARFile='forcing/MITgcm/darwin/verification/quota_1d_6spec/loc1_ecco_oasim_total_below_oneband_einm2d.bin',
- windFile='forcing/MITgcm/darwin/verification/quota_1d_6spec/loc1_tren_speed_mth-2d.bin',
+ ironFile='forcing/MITgcm/darwin/OneD/OneD_satl/loc1_mahowald2009_solubile_current_smooth_oce_mth-2d.bin',
+ PARFile='forcing/MITgcm/darwin/OneD/OneD_satl/loc1_ecco_oasim_total_below_oneband_einm2d.bin',
+ windFile='forcing/MITgcm/darwin/OneD/OneD_satl/loc1_tren_speed_mth-2d.bin',
  ironPeriod= -12.,
  PARPeriod= -12.,
  windPeriod= -12.,

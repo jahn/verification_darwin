@@ -1,6 +1,6 @@
  &DARWIN_FORCING_PARAMS
- ironFile= 'forcing/MITgcm/darwin/verification/monod_1d_dynchl/loc1_FeFlux_monsurf.bin',
- PARFile=  'forcing/MITgcm/darwin/verification/monod_1d_dynchl/loc1_PAR_monsurf.bin',
+ ironFile= 'forcing/MITgcm/darwin/OneD/OneD_anna/loc1_FeFlux_monsurf.bin',
+ PARFile=  'forcing/MITgcm/darwin/OneD/OneD_anna/loc1_PAR_monsurf.bin',
  ironPeriod= 2592000.,
  ironStartTime= 1296000.,
  PARPeriod=  2592000.,

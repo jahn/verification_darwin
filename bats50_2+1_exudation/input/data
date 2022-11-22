@@ -103,12 +103,12 @@ ygOrigin=-45.,
 # Data Files
 # **********
 &PARM05
-bathyFile=       'forcing/zhenwu/input_BATS/bathyneg.bin',
-hydrogThetaFile= 'forcing/zhenwu/input_50_layer/temp.bin',
-hydrogSaltFile=  'forcing/zhenwu/input_50_layer/salt.bin',
-zonalWindFile=   'forcing/zhenwu/input_BATS/loc1_taux_monsurf.bin',
-meridWindFile=   'forcing/zhenwu/input_BATS/loc1_tauy_monsurf.bin',
-thetaClimFile=   'forcing/zhenwu/input_BATS/bats_temp_monsurf.bin',
+bathyFile=       'forcing/MITgcm/darwin/OneD/OneD_bats/bathyneg.bin',
+hydrogThetaFile= 'forcing/MITgcm/darwin/OneD/OneD_bats/temp.bin',
+hydrogSaltFile=  'forcing/MITgcm/darwin/OneD/OneD_bats/salt.bin',
+zonalWindFile=   'forcing/MITgcm/darwin/OneD/OneD_bats/loc1_taux_monsurf.bin',
+meridWindFile=   'forcing/MITgcm/darwin/OneD/OneD_bats/loc1_tauy_monsurf.bin',
+thetaClimFile=   'forcing/MITgcm/darwin/OneD/OneD_bats/bats_temp_monsurf.bin',
 saltClimFile=    '',
 surfQFile=       '',
 EmPmRFile=       '',

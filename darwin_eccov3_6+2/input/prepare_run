@@ -1,0 +1,4 @@
+#! /usr/bin/env bash
+if ! [ -e forcing ]; then
+  ln -s "$MITGCM_DATA_DIR" forcing
+fi

@@ -91,12 +91,12 @@ ygOrigin=-45.,
 # Data Files
 # **********
 &PARM05
-bathyFile=       'forcing/MITgcm/darwin/verification/quota_1d_6spec/bathyneg.bin',
-hydrogThetaFile= 'forcing/MITgcm/darwin/verification/quota_1d_6spec/loc1_temp_janprof.bin',
-hydrogSaltFile=  'forcing/MITgcm/darwin/verification/quota_1d_6spec/salt_uniform.bin',
-zonalWindFile=   'forcing/MITgcm/darwin/verification/quota_1d_6spec/loc1_taux_monsurf.bin',
-meridWindFile=   'forcing/MITgcm/darwin/verification/quota_1d_6spec/loc1_tauy_monsurf.bin',
-thetaClimFile=   'forcing/MITgcm/darwin/verification/quota_1d_6spec/loc1_temp_monsurf.bin',
+bathyFile=       'forcing/MITgcm/darwin/OneD/OneD_satl/bathyneg.bin',
+hydrogThetaFile= 'forcing/MITgcm/darwin/OneD/OneD_satl/loc1_temp_janprof.bin',
+hydrogSaltFile=  'forcing/MITgcm/darwin/OneD/OneD_satl/salt_uniform.bin',
+zonalWindFile=   'forcing/MITgcm/darwin/OneD/OneD_satl/loc1_taux_monsurf.bin',
+meridWindFile=   'forcing/MITgcm/darwin/OneD/OneD_satl/loc1_tauy_monsurf.bin',
+thetaClimFile=   'forcing/MITgcm/darwin/OneD/OneD_satl/loc1_temp_monsurf.bin',
 saltClimFile=    '',
 surfQFile=       '',
 EmPmRFile=       '',

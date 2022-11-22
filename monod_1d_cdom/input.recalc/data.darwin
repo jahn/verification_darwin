@@ -1,5 +1,5 @@
  &DARWIN_FORCING_PARAMS
- ironFile='forcing/MITgcm/darwin/verification/monod_1d_cdom/loc1_FeFlux_monsurf.bin',
+ ironFile='forcing/MITgcm/darwin/OneD/OneD_anna/loc1_FeFlux_monsurf.bin',
  ironPeriod= -12.
  darwin_inscal_iron= 1000.,
 #

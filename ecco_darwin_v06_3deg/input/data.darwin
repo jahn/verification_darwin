@@ -62,9 +62,9 @@
   CDOMcoeff = 21.,
  /
  &DARWIN_RADTRANS_PARAMS
- darwin_waterabsorbFile='/home/stephdut/OPTICS_COEFF2/optics_water.txt',
- darwin_phytoabsorbFile='/home/stephdut/OPTICS_COEFF2/optics_plankton.txt',
- darwin_particleabsorbFile='/home/stephdut/OPTICS_COEFF2/optics_detritus.txt',
+ darwin_waterabsorbFile='forcing/MITgcm/darwin/OPTICS_COEFF2/optics_water.txt',
+ darwin_phytoabsorbFile='forcing/MITgcm/darwin/OPTICS_COEFF2/optics_plankton.txt',
+ darwin_particleabsorbFile='forcing/MITgcm/darwin/OPTICS_COEFF2/optics_detritus.txt',
  darwin_Sdom=0.0145000,
  darwin_aCDOM_fac = 0.30,
  darwin_part_size_P = 1e-15,

@@ -99,7 +99,7 @@ ygOrigin=-80.,
 # Data Files
 # **********
 &PARM05
-bathyFile=       '/home/stephdut/Input/input_ecco/bathy_fl.bin',
+bathyFile=       'forcing/MITgcm/darwin/input_ecco/bathy_fl.bin',
 zonalWindFile=   '',
 meridWindFile=   '',
 thetaClimFile=   '',
