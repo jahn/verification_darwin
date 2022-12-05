@@ -19,7 +19,10 @@
  alpfe= 1.0,
  freefemax = .1E-3,
  depthfesed= 7000.,
- scav_rat= 1.73611111111111111111E-7,
+ scav_tau= .015,
+ scav_POC_wgt= 1.,
+ scav_POSi_wgt= 0.,
+ scav_PIC_wgt= 0.,
  kdoc=  0,  !3.8580246913580247E-7,  ! 1/30day
  kdop=  0,  !3.8580246913580247E-7,  ! 1/30day
  kdon=  0,  !3.8580246913580247E-7,  ! 1/30day
