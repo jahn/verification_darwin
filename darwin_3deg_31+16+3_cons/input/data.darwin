@@ -36,10 +36,6 @@
  freefemax = .1E-3,
  depthfesed= 7000.,
  scav_tau= 0.2,
- scav_inter=9.14351851851E-7,
- scav_POC_wgt= 1.,
- scav_POSi_wgt= 0.,
- scav_PIC_wgt= 0.,
  kdoc=  0.5000000000000000E-7,  ! 1/30day
  kdop=  0.5000000000000000E-7,  ! 1/30day
  kdon=  0.5000000000000000E-7,  ! 1/30day
