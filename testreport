@@ -757,6 +757,68 @@ testoutput_run()
 # <-- same processing for adjoint & forward test
 }
 
+testoutput_diags()
+{
+  # testoutput_run directory subdir diagfile reference_output
+  # testoutput_diags directory subdir sfx
+  #
+  #  test output from 1 run in "directory"
+  # default list of output variables to be checked:
+  #  1rst : main variable used to decide if it pass or FAIL
+  #  others : number of matching digits to be printed in summary.txt
+  GLUEMNC=../utils/python/MITgcmutils/scripts/gluemncbig
+  $GLUEMNC -q -o $1/$2/grid.nc $1/$2/mnc_test_*/grid.*.nc >$1/$2/gluemncbig.log && rm $1/$2/gluemncbig.log
+  listChk=
+  #  load experiment-specific list from file "tr_checklist" (if it exist)
+  if test -r $1/$2/tr_diaglist ; then
+    cat $1/$2/tr_diaglist | while read listChk; do
+      # first word is name of diagnostics file
+      df=`echo $listChk | awk '{print $1}'`
+      listVar=`echo $listChk | sed 's/ [a-zA-Z0-9]*+/&mn &mx &av &sd &d2/g' \
+                     | sed 's/+//g' | sed "s/^$df//"`
+      # set ref.outp file-name and, if compressed, uncompress it into subdir
+      OUTPUTFILE=diags_$df.txt
+      refoutp=results/diags_$df$3.txt
+      if test ! -r $1/$refoutp ; then
+        #echo "missing reference output file 'diags_${df}_$3.txt' in '$1/results/'"
+        break
+      fi
+      if [ $debug -gt 0 ]; then echo "testoutput_run: listVar='$listVar'" 1>&2 ; fi
+      echo "listVar='$listVar'" >> $locDIR"/summary.txt"
+      #---
+      $GLUEMNC -q -o $1/$2/$df.nc $1/$2/mnc_test_*/$df.*.nc > $1/$2/gluemncbig.log && rm $1/$2/gluemncbig.log
+      ./ncstats -g $1/$2/grid.nc $1/$2/$df.nc > $1/$2/diags_$df.txt
+      #---
+      allargs=
+      for xx in $listVar
+      do
+        dd=`echo $xx | sed 's/..$//'`
+        ii="${xx: -2}"
+        case $ii in
+        'mn') testoutput_var $1 "${df}_${dd}_min"  "${df}_${dd}_min"  $2 $refoutp ; yy=$? ;;
+        'mx') testoutput_var $1 "${df}_${dd}_max"  "${df}_${dd}_max"  $2 $refoutp ; yy=$? ;;
+        'av') testoutput_var $1 "${df}_${dd}_mean" "${df}_${dd}_mean" $2 $refoutp ; yy=$? ;;
+        'sd') testoutput_var $1 "${df}_${dd}_sd"   "${df}_${dd}_StDv" $2 $refoutp ; yy=$? ;;
+        'd2') testoutput_var $1 "${df}_${dd}_del2" "${df}_${dd}_Del2" $2 $refoutp ; yy=$? ;;
+        esac
+        allargs="$allargs $yy"
+      done
+
+      #lenl=$LEN_CHECK_LIST
+      lenl=24
+      nbVar=`echo $listVar | awk '{print NF}'`
+      if [ $nbVar -lt $lenl ] ; then
+      #-- fill line (up to standard length) with dot:
+        adNul=`expr $lenl - $nbVar | awk '{for(i=1;i<=$1;i++){print "."}}'`
+        res=$(echo $allargs $adNul)
+      else
+        res=$(echo $allargs)
+      fi
+      formatdiagres $1$3 $df $res
+    done
+  fi
+}
+
 genmakemodel()
 {
     # genmakemodel directory
@@ -1453,6 +1515,19 @@ formatheaders()
 
 }
 
+formatdiagres()
+{
+    # formatdiagres expt diagname results*
+
+    nm=$1
+    printf '%-7s' $2
+    shift; shift
+    listPrt=$@
+    printf '%3s' $listPrt
+    printf '  %s' $nm
+    printf '\n'
+}
+
 scandirs()
 {
     if [ $# -eq 1 ]; then
@@ -2017,10 +2092,12 @@ testoutput_cons() {
 SUMREST=tr_tmp_results.txt
 SUMHEAD=tr_tmp_headers.txt
 SUMCONS=tr_tmp_cons.txt
+SUMDIAG=tr_tmp_diag.txt
 
 cat /dev/null > $SUMHEAD
 cat /dev/null > $SUMREST
 cat /dev/null > $SUMCONS
+cat /dev/null > $SUMDIAG
 
 #  ...and each test directory...
 for dir in $TESTDIRS ; do
@@ -2031,32 +2108,32 @@ for dir in $TESTDIRS ; do
     rundir="run"
     pfxdir="tr_$rundir"
     if test ! -d $dir/$rundir ; then
-	rundir=$builddir
+        rundir=$builddir
     fi
     CODE_DIR=$dir/$code_dir
     BUILD_DIR=$dir/$builddir
 
     #  Cleanup only!
     if test "x$CLEANUP" = xt ; then
-	echo -n '  --- dir:' $BUILD_DIR ': '
-	makeclean $BUILD_DIR
-	(   cd $BUILD_DIR
-	    rm -f $EXECUTABLE *.bak
-	    rm -f genmake_state genmake_*optfile genmake.log
-	    rm -f SIZE.h.mpi genmake.tr_log make.tr_log
-	    rm -rf mpi_headers
-	)
-	if test -d $dir/$rundir ; then
-	    echo -n '  --- dir:' $dir/$rundir ': '
-	    run_clean $dir/$rundir
-	fi
-	trdir=`( cd $dir ; find . -type d -name "$pfxdir.*" -print | sed 's/^.\///')`
-	ttd=`echo $trdir | wc -w`
-	if test $ttd != 0 ; then
-	    echo '  --- rm dir:' $trdir
-	    ( cd $dir ; rm -rf $trdir )
-	fi
-	continue
+        echo -n '  --- dir:' $BUILD_DIR ': '
+        makeclean $BUILD_DIR
+        (   cd $BUILD_DIR
+            rm -f $EXECUTABLE *.bak
+            rm -f genmake_state genmake_*optfile genmake.log
+            rm -f SIZE.h.mpi genmake.tr_log make.tr_log
+            rm -rf mpi_headers
+        )
+        if test -d $dir/$rundir ; then
+            echo -n '  --- dir:' $dir/$rundir ': '
+            run_clean $dir/$rundir
+        fi
+        trdir=`( cd $dir ; find . -type d -name "$pfxdir.*" -print | sed 's/^.\///')`
+        ttd=`echo $trdir | wc -w`
+        if test $ttd != 0 ; then
+            echo '  --- rm dir:' $trdir
+            ( cd $dir ; rm -rf $trdir )
+        fi
+        continue
     fi
 
     #  Verify that the testdir exists and contains previous
@@ -2064,104 +2141,104 @@ for dir in $TESTDIRS ; do
     fout=$dir"/results/"$ref_outp
    #if test ! -r $fout ; then
     if test ! -r $fout -a ! -r ${fout}.gz ; then
-	echo "can't read \"$fout\" -- skipping $dir"
-	continue
+        echo "can't read \"$fout\" -- skipping $dir"
+        continue
     fi
 
     # Check for specific files for particular type of run
 
     if test ! -r $CODE_DIR"/SIZE.h_mpi"  -a "x$MPI" != "x0" ; then
-	echo "can't find \"$CODE_DIR/SIZE.h_mpi\" -- skipping $dir"
-	continue
+        echo "can't find \"$CODE_DIR/SIZE.h_mpi\" -- skipping $dir"
+        continue
     fi
     if test ! -r $dir"/input/eedata.mth" -a "x$MULTI_THREAD" = "xt" ; then
-	echo "can't find \"$dir/input/eedata.mth\" -- skipping $dir"
-	continue
+        echo "can't find \"$dir/input/eedata.mth\" -- skipping $dir"
+        continue
     fi
 
     if test "x$MPI" != "x0" ; then
-	ntx=1 ; nty=1
-	if test "x$MULTI_THREAD" = "xt" ; then
-	  ff=$dir"/input/eedata.mth"
-	  ntx=`grep "^ *nTx *=" $ff | tail -1 | sed 's/^ *nTx *= *//' | sed "s/, *$//"`
-	  nty=`grep "^ *nTy *=" $ff | tail -1 | sed 's/^ *nTy *= *//' | sed "s/, *$//"`
-	  if test "x$ntx" = x ; then ntx=1 ; fi
-	  if test "x$nty" = x ; then nty=1 ; fi
-	fi
-	#- create new SIZE.h with no more than '$MPI' Procs
-	mk_mpi_size $CODE_DIR"/SIZE.h_mpi" $BUILD_DIR"/tr_size.mpi" $MPI $ntx $nty
-	LOC_NPROC=$?
-	(   cd $BUILD_DIR
-	    if test -r SIZE.h.mpi ; then
-		cmp tr_size.mpi SIZE.h.mpi > /dev/null 2>&1 ; RETVAL=$?
-	    else RETVAL=1
-	    fi
-	    if test "x$RETVAL" = x0 ; then
-		rm -f tr_size.mpi
-	    else
-		rm -f SIZE.h.mpi ; mv tr_size.mpi SIZE.h.mpi
-	    fi
-	)
-	if test "x$MPI_MFILE" != x ; then
-	    #- create new MPI machine-file with the right number of Procs
-	    rm -f $LOC_MFILE
-	    cat $MPI_MFILE | sort | uniq | head -$LOC_NPROC > $LOC_MFILE
-	    nl=`wc -l $LOC_MFILE | awk '{print $1}'`
-	    if [ $nl -lt $LOC_NPROC ] ; then
-		rm -f $LOC_MFILE
-		cat $MPI_MFILE | head -$LOC_NPROC > $LOC_MFILE
-		#sed -n "1,$LOC_NPROC p" $MPI_MFILE > $LOC_MFILE
-	    fi
-	    if [ $verbose -gt 1 ]; then
-		nl=`wc -l $LOC_MFILE | awk '{print $1}'`
-		echo " new LOC_MFILE=$LOC_MFILE : $nl procs for LOC_NPROC=$LOC_NPROC"
-	    fi
-	fi
-	if test "x$MULTI_THREAD" = "xt" ; then
-	    retv=`check_eedata $dir"/input/eedata.mth" $BUILD_DIR"/SIZE.h.mpi"`
-	    if test $retv != 0 ; then
-		echo "input/eedata.mth tiling misfit -- skipping $dir"
-		continue
-	    fi
-	fi
+        ntx=1 ; nty=1
+        if test "x$MULTI_THREAD" = "xt" ; then
+          ff=$dir"/input/eedata.mth"
+          ntx=`grep "^ *nTx *=" $ff | tail -1 | sed 's/^ *nTx *= *//' | sed "s/, *$//"`
+          nty=`grep "^ *nTy *=" $ff | tail -1 | sed 's/^ *nTy *= *//' | sed "s/, *$//"`
+          if test "x$ntx" = x ; then ntx=1 ; fi
+          if test "x$nty" = x ; then nty=1 ; fi
+        fi
+        #- create new SIZE.h with no more than '$MPI' Procs
+        mk_mpi_size $CODE_DIR"/SIZE.h_mpi" $BUILD_DIR"/tr_size.mpi" $MPI $ntx $nty
+        LOC_NPROC=$?
+        (   cd $BUILD_DIR
+            if test -r SIZE.h.mpi ; then
+                cmp tr_size.mpi SIZE.h.mpi > /dev/null 2>&1 ; RETVAL=$?
+            else RETVAL=1
+            fi
+            if test "x$RETVAL" = x0 ; then
+                rm -f tr_size.mpi
+            else
+                rm -f SIZE.h.mpi ; mv tr_size.mpi SIZE.h.mpi
+            fi
+        )
+        if test "x$MPI_MFILE" != x ; then
+            #- create new MPI machine-file with the right number of Procs
+            rm -f $LOC_MFILE
+            cat $MPI_MFILE | sort | uniq | head -$LOC_NPROC > $LOC_MFILE
+            nl=`wc -l $LOC_MFILE | awk '{print $1}'`
+            if [ $nl -lt $LOC_NPROC ] ; then
+                rm -f $LOC_MFILE
+                cat $MPI_MFILE | head -$LOC_NPROC > $LOC_MFILE
+                #sed -n "1,$LOC_NPROC p" $MPI_MFILE > $LOC_MFILE
+            fi
+            if [ $verbose -gt 1 ]; then
+                nl=`wc -l $LOC_MFILE | awk '{print $1}'`
+                echo " new LOC_MFILE=$LOC_MFILE : $nl procs for LOC_NPROC=$LOC_NPROC"
+            fi
+        fi
+        if test "x$MULTI_THREAD" = "xt" ; then
+            retv=`check_eedata $dir"/input/eedata.mth" $BUILD_DIR"/SIZE.h.mpi"`
+            if test $retv != 0 ; then
+                echo "input/eedata.mth tiling misfit -- skipping $dir"
+                continue
+            fi
+        fi
     fi
 
     #  Check whether there are "extra runs" for this testdir
     extra_runs=
     if test "x$NORUN" = xf ; then
-	ex_run_dirs=`( cd $dir ; ls -d $inputdir.* 2> /dev/null )`
+        ex_run_dirs=`( cd $dir ; ls -d $inputdir.* 2> /dev/null )`
     fi
     #echo "ex_run_dirs='$ex_run_dirs'"
     for exd in $ex_run_dirs ; do
-	name=`echo $exd | sed -e "s/$inputdir\.//"`
-	refExOut=`echo $ref_outp | sed "s/\./.${name}./"`
-	outf="$dir/results/$refExOut"
-	if test -r $outf -o -r ${outf}.gz ; then
-	  if test "x$MULTI_THREAD" = "xt" ; then
-	    if test -r $dir"/"$exd"/eedata.mth" ; then
-	      if test "x$MPI" = "x0" ; then
-		extra_runs="$extra_runs $name"
-	      else
-		retv=`check_eedata $dir"/"$exd"/eedata.mth" $BUILD_DIR"/SIZE.h.mpi"`
-		if test $retv = 0 ; then
-		    extra_runs="$extra_runs $name"
-		else
-		    echo $exd"/eedata.mth tiling misfit -- skipping $dir"
-		fi
-	      fi
-	    #else echo $dir"/"$exd"/eedata.mth: not found"
-	    fi
-	  else
-	    extra_runs="$extra_runs $name"
-	  fi
-	fi
+        name=`echo $exd | sed -e "s/$inputdir\.//"`
+        refExOut=`echo $ref_outp | sed "s/\./.${name}./"`
+        outf="$dir/results/$refExOut"
+        if test -r $outf -o -r ${outf}.gz ; then
+          if test "x$MULTI_THREAD" = "xt" ; then
+            if test -r $dir"/"$exd"/eedata.mth" ; then
+              if test "x$MPI" = "x0" ; then
+                extra_runs="$extra_runs $name"
+              else
+                retv=`check_eedata $dir"/"$exd"/eedata.mth" $BUILD_DIR"/SIZE.h.mpi"`
+                if test $retv = 0 ; then
+                    extra_runs="$extra_runs $name"
+                else
+                    echo $exd"/eedata.mth tiling misfit -- skipping $dir"
+                fi
+              fi
+            #else echo $dir"/"$exd"/eedata.mth: not found"
+            fi
+          else
+            extra_runs="$extra_runs $name"
+          fi
+        fi
     done
 
     echo
     if test "x$extra_runs" = "x" ; then
-	echo "Experiment:  $dir"
+        echo "Experiment:  $dir"
     else
-	echo "Experiment:  $dir ; extra_runs=$extra_runs"
+        echo "Experiment:  $dir ; extra_runs=$extra_runs"
     fi
     echo
     unset genmake makedepend make run
@@ -2178,133 +2255,143 @@ for dir in $TESTDIRS ; do
     CDIR=`pwd`"/$locDIR"
 
     if test "x$NORUN" = xt ; then
-	    run=N
-	genmakemodel $dir/$builddir && genmake=Y \
-	    && makeclean $dir/$builddir \
-	    && symlink_mpifiles $dir $code_dir $builddir \
-	    && makedependmodel $dir/$builddir && makedepend=Y \
-	    && makemodel $dir/$builddir && make=Y
-	    echo
+        run=N
+        genmakemodel $dir/$builddir && genmake=Y \
+            && makeclean $dir/$builddir \
+            && symlink_mpifiles $dir $code_dir $builddir \
+            && makedependmodel $dir/$builddir && makedepend=Y \
+            && makemodel $dir/$builddir && make=Y
+        echo
     else
-	genmakemodel $dir/$builddir && genmake=Y \
-	    && makeclean $dir/$builddir \
-	    && symlink_mpifiles $dir $code_dir $builddir \
-	    && makedependmodel $dir/$builddir && makedepend=Y \
-	    && makemodel $dir/$builddir && make=Y \
-	    && run_clean $dir/$rundir \
-	    && linkdata $dir/$rundir $inputdir \
-	    && runmodel $dir/$rundir && run=Y \
-	    && heading=`testoutput_heading $dir $rundir $ref_outp` \
-	    && results=`testoutput_run $dir $rundir $ref_outp` \
-	    && rescons="`testoutput_cons $dir $rundir`"
-	    echo 1>&2
+        genmakemodel $dir/$builddir && genmake=Y \
+            && makeclean $dir/$builddir \
+            && symlink_mpifiles $dir $code_dir $builddir \
+            && makedependmodel $dir/$builddir && makedepend=Y \
+            && makemodel $dir/$builddir && make=Y \
+            && run_clean $dir/$rundir \
+            && linkdata $dir/$rundir $inputdir \
+            && runmodel $dir/$rundir && run=Y \
+            && heading=`testoutput_heading $dir $rundir $ref_outp` \
+            && results=`testoutput_run $dir $rundir $ref_outp` \
+            && diagres=`testoutput_diags $dir $rundir` \
+            && rescons="`testoutput_cons $dir $rundir`"
+        echo 1>&2
     fi
-    #echo "results='$results'"
+    ##echo "results='$results'"
 
-	fres=`formatheaders $dir - - - - $heading`
-	echo 1>&2
-	echo "$fres" | sed 's/  > />/' | sed 's/  < /</' | sed 's/FAIL.*$//' >> $SUMHEAD
-	echo "fresults='$fres'" >> $locDIR"/summary.txt"
+    fres=`formatheaders $dir - - - - $heading`
+    echo 1>&2
+    echo "$fres" | sed 's/  > />/' | sed 's/  < /</' | sed 's/FAIL.*$//' >> $SUMHEAD
+    echo "fresults='$fres'" >> $locDIR"/summary.txt"
 
-	fres=`formatresults $dir ${genmake:-N} ${makedepend:-N} ${make:-N} ${run:-N} $results`
-	echo "$fres" | sed 's/ 99/ --/g' | sed 's/  > />/' | sed 's/  < /</' >> $SUMREST
-	echo "fresults='$fres'" | sed 's/ 99/ --/g' >> $locDIR"/summary.txt"
+    fres=`formatresults $dir ${genmake:-N} ${makedepend:-N} ${make:-N} ${run:-N} $results`
+    echo "$fres" | sed 's/ 99/ --/g' | sed 's/  > />/' | sed 's/  < /</' >> $SUMREST
+    echo "fresults='$fres'" | sed 's/ 99/ --/g' >> $locDIR"/summary.txt"
 
-        echo "cons$rescons  $dir" >> $SUMCONS
+    if test -n "$diagres"; then
+        echo "$diagres" >> $SUMDIAG
+    fi
 
-	for ex in $extra_runs ; do
-	    unset run
-	    results=$EMPTY_RESULTS
-            rescons="  -  -  -  -  -  -  -"
-	    #  reference output file
-	    refExOut=`echo $ref_outp | sed "s/\./.${ex}./g"`
-	    #  Create an output dir & summary.txt file for each extra run (tdir.ex)
-	    locDIR=$DRESULTS"/"$dir"."$ex
-	    mkdir $locDIR
-	    #- report to this experiment local summary file ---
-	    echo "DATE='$DATE' ; tdir='$dir.$ex'" > $locDIR"/summary.txt"
-	    #echo "MACH='$MACH'" >> $locDIR"/summary.txt"
-	    #echo "UNAMEA='$UNAMEA'" >> $locDIR"/summary.txt"
-	    CDIR=`pwd`"/$locDIR"
-	    test ! -e "$dir/$pfxdir.$ex" && mkdir "$dir/$pfxdir.$ex"
-	    run_clean $dir/$pfxdir.$ex
-	    linkdata $dir/$pfxdir.$ex $inputdir.$ex $inputdir
-	    runmodel $dir/$pfxdir.$ex && run=Y \
-	    && heading=`testoutput_heading $dir $pfxdir.$ex $refExOut` \
-	    && results=`testoutput_run $dir $pfxdir.$ex $refExOut` \
-	    && rescons="`testoutput_cons $dir $pfxdir.$ex`"
-	    echo 1>&2
+    echo "cons$rescons  $dir" >> $SUMCONS
 
-	    fres=`formatheaders $dir.$ex - - - - $heading`
-#	    fres="$fres.$ex"
-	    echo "$fres" | sed 's/  > />/' | sed 's/  < /</' >> $SUMHEAD
+    for ex in $extra_runs ; do
+        unset run
+        results=$EMPTY_RESULTS
+        rescons="  -  -  -  -  -  -  -"
+        #  reference output file
+        refExOut=`echo $ref_outp | sed "s/\./.${ex}./g"`
+        #  Create an output dir & summary.txt file for each extra run (tdir.ex)
+        locDIR=$DRESULTS"/"$dir"."$ex
+        mkdir $locDIR
+        #- report to this experiment local summary file ---
+        echo "DATE='$DATE' ; tdir='$dir.$ex'" > $locDIR"/summary.txt"
+        #echo "MACH='$MACH'" >> $locDIR"/summary.txt"
+        #echo "UNAMEA='$UNAMEA'" >> $locDIR"/summary.txt"
+        CDIR=`pwd`"/$locDIR"
+        test ! -e "$dir/$pfxdir.$ex" && mkdir "$dir/$pfxdir.$ex"
+        run_clean $dir/$pfxdir.$ex
+        linkdata $dir/$pfxdir.$ex $inputdir.$ex $inputdir
+        runmodel $dir/$pfxdir.$ex && run=Y \
+            && heading=`testoutput_heading $dir $pfxdir.$ex $refExOut` \
+            && results=`testoutput_run $dir $pfxdir.$ex $refExOut` \
+            && diagres=`testoutput_diags $dir $pfxdir.$ex .$ex` \
+            && rescons="`testoutput_cons $dir $pfxdir.$ex`"
+        echo 1>&2
 
-	    fres=`formatresults $dir.$ex ${genmake:-N} ${makedepend:-N} ${make:-N} ${run:-N} $results`
-#	    fres="$fres.$ex"
-	    echo "$fres" | sed 's/ 99/ --/g' | sed 's/  > />/' | sed 's/  < /</' >> $SUMREST
+        fres=`formatheaders $dir.$ex - - - - $heading`
+#        fres="$fres.$ex"
+        echo "$fres" | sed 's/  > />/' | sed 's/  < /</' >> $SUMHEAD
 
-            echo "cons$rescons  $dir.$ex" >> $SUMCONS
+        fres=`formatresults $dir.$ex ${genmake:-N} ${makedepend:-N} ${make:-N} ${run:-N} $results`
+#        fres="$fres.$ex"
+        echo "$fres" | sed 's/ 99/ --/g' | sed 's/  > />/' | sed 's/  < /</' >> $SUMREST
 
-	    echo "fresults='$fres'" | sed 's/ 99/ --/g' >> $locDIR"/summary.txt"
-	    if test "x$POSTCLEAN" = x2 ; then
-		run_clean $dir/$pfxdir.$ex
-	    fi
-	done
+        if test -n "$diagres"; then
+            echo "$diagres" >> $SUMDIAG
+        fi
+
+        echo "cons$rescons  $dir.$ex" >> $SUMCONS
+
+        echo "fresults='$fres'" | sed 's/ 99/ --/g' >> $locDIR"/summary.txt"
+        if test "x$POSTCLEAN" = x2 ; then
+            run_clean $dir/$pfxdir.$ex
+        fi
+    done
 
     if test ! -f $DRESULTS"/"genmake_state ; then
-	if test -f $dir/$builddir/Makefile ; then
-	    mkOpt=`grep '^# OPTFILE=' $dir/$builddir/Makefile 2>/dev/null | head -1 | sed 's/^# //'`
-	    echo "from '$dir/$builddir/Makefile', extract:" > $DRESULTS/genmake_state
-#	    sed -n '/^# executed by:/,+1 p' $dir/$builddir/Makefile >> $DRESULTS/genmake_state
+        if test -f $dir/$builddir/Makefile ; then
+            mkOpt=`grep '^# OPTFILE=' $dir/$builddir/Makefile 2>/dev/null | head -1 | sed 's/^# //'`
+            echo "from '$dir/$builddir/Makefile', extract:" > $DRESULTS/genmake_state
+#            sed -n '/^# executed by:/,+1 p' $dir/$builddir/Makefile >> $DRESULTS/genmake_state
 # bsd-sed cannot do the above code
-	    cat $dir/$builddir/Makefile | \
-		sed -n '/^# executed by:/{N
+            cat $dir/$builddir/Makefile | \
+                sed -n '/^# executed by:/{N
                                           p
                                           }' >> $DRESULTS/genmake_state
-	    echo " $mkOpt" >> $DRESULTS/genmake_state
-	    if test "x$OPTFILE" = xNONE ; then
-		eval $mkOpt
-#		sed "/^No \"OPTFILE\" was specified ; genmake2/a\  OPTFILE=${OPTFILE}"\
-#			$SUMMARY > tmp.tr_log
+            echo " $mkOpt" >> $DRESULTS/genmake_state
+            if test "x$OPTFILE" = xNONE ; then
+                eval $mkOpt
+#                sed "/^No \"OPTFILE\" was specified ; genmake2/a\  OPTFILE=${OPTFILE}"\
+#                        $SUMMARY > tmp.tr_log
 # bsd-sed requires a newline after "a\":
-		sed "/^No \"OPTFILE\" was specified ; genmake2/a\\
+                sed "/^No \"OPTFILE\" was specified ; genmake2/a\\
                          OPTFILE=${OPTFILE}" $SUMMARY > tmp.tr_log
-		RETVAL=$?
-		if test "x$RETVAL" = x0 ; then
-		    cp -f tmp.tr_log $SUMMARY
-		fi
-		rm -f tmp.tr_log
-	    fi
-	    gmkLog=$dir/$builddir/genmake.log
-	    if test -r $gmkLog ; then
-		grep '^Get compiler version using:' $gmkLog > /dev/null 2>&1
-		RETVAL=$?
-		if test "x$RETVAL" = x0 ; then
-		  echo -n "from '$gmkLog', "	>> $DRESULTS/genmake_state
-		  echo "extract compiler version:"   >> $DRESULTS/genmake_state
-		  sed -n '/Get compiler version/,/<-- compiler version/p' \
-		     $gmkLog | grep -v '^... compiler version ' > tmp.tr_log
-		  sed -n '1p' tmp.tr_log	>> $DRESULTS/genmake_state
-		  sed -n '2,/^$/p' tmp.tr_log | sed '/^$/d' | sed 's/^./ &/' \
-						>> $DRESULTS/genmake_state
-		  rm -f tmp.tr_log
-		fi
-		grep ' set FC_CHECK=' $gmkLog	>> $DRESULTS/genmake_state
-	    fi
-	    gmkLog=$dir/$builddir/genmake_state
-	    if test -r $gmkLog ; then
-		echo -n "from '$gmkLog', "	>> $DRESULTS/genmake_state
-		echo "get genmake settings:"	>> $DRESULTS/genmake_state
-		sed -n '/^HAVE_/p' $gmkLog | sed 's/^./ &/' \
-						>> $DRESULTS/genmake_state
-		sed -n '/^THIS[A-Z]*=/p' $gmkLog >> $DRESULTS/genmake_state
-	    fi
-	fi
+                RETVAL=$?
+                if test "x$RETVAL" = x0 ; then
+                    cp -f tmp.tr_log $SUMMARY
+                fi
+                rm -f tmp.tr_log
+            fi
+            gmkLog=$dir/$builddir/genmake.log
+            if test -r $gmkLog ; then
+                grep '^Get compiler version using:' $gmkLog > /dev/null 2>&1
+                RETVAL=$?
+                if test "x$RETVAL" = x0 ; then
+                  echo -n "from '$gmkLog', "	>> $DRESULTS/genmake_state
+                  echo "extract compiler version:"   >> $DRESULTS/genmake_state
+                  sed -n '/Get compiler version/,/<-- compiler version/p' \
+                     $gmkLog | grep -v '^... compiler version ' > tmp.tr_log
+                  sed -n '1p' tmp.tr_log	>> $DRESULTS/genmake_state
+                  sed -n '2,/^$/p' tmp.tr_log | sed '/^$/d' | sed 's/^./ &/' \
+                                                >> $DRESULTS/genmake_state
+                  rm -f tmp.tr_log
+                fi
+                grep ' set FC_CHECK=' $gmkLog	>> $DRESULTS/genmake_state
+            fi
+            gmkLog=$dir/$builddir/genmake_state
+            if test -r $gmkLog ; then
+                echo -n "from '$gmkLog', "	>> $DRESULTS/genmake_state
+                echo "get genmake settings:"	>> $DRESULTS/genmake_state
+                sed -n '/^HAVE_/p' $gmkLog | sed 's/^./ &/' \
+                                                >> $DRESULTS/genmake_state
+                sed -n '/^THIS[A-Z]*=/p' $gmkLog >> $DRESULTS/genmake_state
+            fi
+        fi
     fi
     #postclean $dir/$builddir
     if test "x$POSTCLEAN" = x2 ; then
-	makeclean $dir/$builddir \
-	    && run_clean $dir/$rundir
+        makeclean $dir/$builddir \
+            && run_clean $dir/$rundir
     fi
     if test "x$MPI" != x0 -a "x$MPI_MFILE" != x ; then rm -f $LOC_MFILE ; fi
 
@@ -2318,10 +2405,14 @@ cat $SUMHEAD >> $SUMMARY
 echo "----------------------------------------------------------------------------------------------------------------------" >> $SUMMARY
 cat $SUMREST >> $SUMMARY
 echo >> $SUMMARY
+if test -n "$SUMDIAG"; then
+    cat $SUMDIAG >> $SUMMARY
+    echo >> $SUMMARY
+fi
 echo "     $conselems" >> $SUMMARY
 cat $SUMCONS >> $SUMMARY
 echo >> $SUMMARY
-rm $SUMHEAD $SUMREST $SUMCONS
+rm $SUMHEAD $SUMREST $SUMDIAG $SUMCONS
 
 printf "Start time:  " >> $SUMMARY
 echo "$start_date" >> $SUMMARY
