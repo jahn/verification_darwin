@@ -126,23 +126,21 @@
   fileflags(2) = 'D       ',
   fields(  1,2) = 'ETAN    ',
 #
-  filename( 3) = 'NO3',
-  frequency(3) = -1200.,
-  timephase(3) = 0.,
+  filename( 3) = 'cons',
+  frequency(3) = 4800.,
   fileflags(3) = 'D       ',
-  fields(  1,3) = 'TRAC02  ',
+  fields( 1,3) = 'scvLosFe',
+  fields( 2,3) = 'scavRate',
 #
   filename( 4) = '2d',
-  frequency(4) = -1200.,
-  timephase(4) = 0.,
-# frequency(4) = 31104000.,
-# frequency(4) = 155520000.,
+  frequency(4) = 4800.,
   fileflags(4) = 'D       ',
   fields( 1,4) = 'fluxCO2 ',
   fields( 2,4) = 'pH      ',
   fields( 3,4) = 'pCO2    ',
   fields( 4,4) = 'fugfCO2 ',
   fields( 5,4) = 'surfpCO2',
+  fields( 6,4) = 'sedFlxFe',
 #
   filename( 5) = 'carbon',
   frequency(5) = -1200.,
@@ -273,7 +271,7 @@
   fields(100,13) = 'Tp_gTr0a',
   fields(101,13) = 'Tp_gTr0b',
 #---
-   filename(14)= 'diags/PP',
+   filename(14)= 'PP',
   frequency(14) = 1200.,
   fields( 1,14) = 'PP0001  ',
   fields( 2,14) = 'PP0002  ',
@@ -326,7 +324,7 @@
   fields(49,14) = 'PP0049  ',
   fields(50,14) = 'PP0050  ',
 #---
-   filename(15)= 'diags/PC',
+   filename(15)= 'PC',
   frequency(15) = 1200.,
   fields( 1,15) = 'PC0001  ',
   fields( 2,15) = 'PC0002  ',
@@ -379,7 +377,7 @@
   fields(49,15) = 'PC0049  ',
   fields(50,15) = 'PC0050  ',
 #---
-   filename(16)= 'diags/HP',
+   filename(16)= 'HP',
   frequency(16) = 1200.,
   fields( 1,16) = 'HP0001  ',
   fields( 2,16) = 'HP0002  ',
@@ -432,7 +430,7 @@
   fields(49,16) = 'HP0049  ',
   fields(50,16) = 'HP0050  ',
 #---
-   filename(17)= 'diags/HC',
+   filename(17)= 'HC',
   frequency(17) = 1200.,
   fields( 1,17) = 'HC0001  ',
   fields( 2,17) = 'HC0002  ',
@@ -485,7 +483,7 @@
   fields(49,17) = 'HC0049  ',
   fields(50,17) = 'HC0050  ',
 #---
-   filename(18)= 'diags/GrGn',
+   filename(18)= 'GrGn',
   frequency(18) = 1200.,
   fields( 1,18) = 'GrGn0001',
   fields( 2,18) = 'GrGn0002',
@@ -538,7 +536,7 @@
   fields(49,18) = 'GrGn0049',
   fields(50,18) = 'GrGn0050',
 #---
-   filename(19)= 'diags/GrGC',
+   filename(19)= 'GrGC',
   frequency(19) = 1200.,
   fields( 1,19) = 'GrGC0001',
   fields( 2,19) = 'GrGC0002',
