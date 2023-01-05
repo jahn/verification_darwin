@@ -7,9 +7,7 @@
  PTRACERS_diffKr(:)= 101*1D-05,
  PTRACERS_useGMRedi(:)= 101*.TRUE.,
 #
- PTRACERS_EvPrRn(1:4)= 4*0.,
  PTRACERS_EvPrRn(5)= 1.,
- PTRACERS_EvPrRn(6:101)= 96*0.,
 #
  PTRACERS_names(  1)= 'DIC',
  PTRACERS_names(  2)= 'NO3',
