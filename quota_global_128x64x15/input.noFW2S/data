@@ -22,6 +22,7 @@
  rhonil=1035.,
  rigidLid=.FALSE.,
  implicitFreeSurface=.TRUE.,
+ convertFW2Salt=-1,
  eosType='POLY3',
  implicitDiffusion=.TRUE.,
  implicitViscosity=.TRUE.,

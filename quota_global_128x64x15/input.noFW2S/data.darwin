@@ -15,7 +15,7 @@
  /
  &DARWIN_PARAMS
  darwin_seed= 56,
-#darwin_linFSConserve= .TRUE.,
+ darwin_linFSConserve= .TRUE.,
  KDOC=  2.3148148148148148e-07,  ! .02/day
  KDON=  2.3148148148148148e-07,
  KDOP=  2.3148148148148148e-07,
