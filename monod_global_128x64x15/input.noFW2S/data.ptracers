@@ -6,6 +6,9 @@
  PTRACERS_diffKh(:)= 97*0.0,
  PTRACERS_diffKr(:)= 97*1D-05,
  PTRACERS_useGMRedi(:)= 97*.TRUE.,
+ PTRACERS_EvPrRn(1:4)= 4*0.,
+ PTRACERS_EvPrRn(5)= 0.,
+ PTRACERS_EvPrRn(6:97)= 92*0.,
 #
  ptracers_units( 1)= 'mmol C/m^3',
  ptracers_units( 2)= 'mmol N/m^3',

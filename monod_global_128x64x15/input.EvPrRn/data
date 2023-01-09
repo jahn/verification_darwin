@@ -74,8 +74,8 @@
  &PARM04
  usingCartesianGrid=.FALSE.,
  usingSphericalPolarGrid=.TRUE.,
- delZ= 50., 70., 100., 140., 190., 
-       240., 290., 340., 390., 440., 
+ delZ= 50., 70., 100., 140., 190.,
+       240., 290., 340., 390., 440.,
        490., 540., 590., 640., 690.,
  ygOrigin=-90.,
  delX=128*2.8125,

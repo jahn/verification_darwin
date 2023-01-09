@@ -6,6 +6,9 @@
  PTRACERS_diffKh(:)= 97*0.0,
  PTRACERS_diffKr(:)= 97*1D-05,
  PTRACERS_useGMRedi(:)= 97*.TRUE.,
+ PTRACERS_EvPrRn(1:4)= 4*0.,
+ PTRACERS_EvPrRn(5)= 50.,
+ PTRACERS_EvPrRn(6:97)= 92*0.,
 #
  ptracers_units( 1)= 'mmol C/m^3',
  ptracers_units( 2)= 'mmol N/m^3',
@@ -24,6 +27,7 @@
  ptracers_units(16)= 'mmol Si/m^3',
  ptracers_units(15)= 'mmol Fe/m^3',
 #ptracers_ref(:, 1)= 15*2000.0,
+#ptracers_ref(:, 5)= 15*10.0,
  ptracers_ref(:, 8)= 15*0.0,
  ptracers_ref(:,12)= 15*0.0,
  ptracers_ref(:,17)= 15*0.0,
