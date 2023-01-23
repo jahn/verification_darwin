@@ -43,6 +43,9 @@ C enable air-sea carbon exchange and Alk and O2 tracers
 C consistently use the total pH scale for carbon chemistry coefficients
 #undef  DARWIN_TOTALPHSCALE
 
+C this needs to be defined for coupling to atmospheric model:
+#undef  DARWIN_USE_PLOAD
+
 
 C optional bits
 
@@ -66,6 +69,9 @@ C allow organic matter to sink into bottom (sedimentize)
 
 C CDOM is in carbon units and follows POC
 #define DARWIN_CDOM_UNITS_CARBON
+
+C include code for reading nutrient runoff from files
+#undef  DARWIN_NUTRIENT_RUNOFF
 
 
 C light
@@ -128,6 +134,9 @@ C enable variable iron sediment source
 C revert to old variable iron sediment source in terms of POP
 #undef  DARWIN_IRON_SED_SOURCE_POP
 
+C add iron source from hydrothermal vents
+#undef  DARWIN_ALLOW_HYDROTHERMAL_VENTS
+
 
 C diagnostics
 
@@ -169,7 +178,6 @@ C set traits for darwin2 9-species setup (requires DARWIN_RANDOM_TRAITS)
 
 C enable diazotrophy when using (requires DARWIN_RANDOM_TRAITS)
 #undef  DARWIN_ALLOW_DIAZ
-
 
 #endif /* ALLOW_DARWIN */
 #endif /* DARWIN_OPTIONS_H */

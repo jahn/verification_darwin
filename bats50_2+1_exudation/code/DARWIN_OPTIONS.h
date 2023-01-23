@@ -43,6 +43,9 @@ C enable air-sea carbon exchange and Alk and O2 tracers
 C consistently use the total pH scale for carbon chemistry coefficients
 #undef  DARWIN_TOTALPHSCALE
 
+C this needs to be defined for coupling to atmospheric model:
+#undef  DARWIN_USE_PLOAD
+
 
 C optional bits
 
@@ -56,6 +59,9 @@ C enable old virtualflux code for DIC and Alk
 #define ALLOW_OLD_VIRTUALFLUX
 
 C reduce nitrate uptake by iron limitation factor
+C only effective with both nitrogen and iron quota
+C this option was used pre-2015 in the quota model, together with Geider,
+C so the iron limitation factor is also applied to alpha_I
 #undef DARWIN_NITRATE_FELIMIT
 
 C allow organic matter to sink into bottom (sedimentize)
@@ -64,11 +70,14 @@ C allow organic matter to sink into bottom (sedimentize)
 C CDOM is in carbon units and follows POC
 #undef  DARWIN_CDOM_UNITS_CARBON
 
+C include code for reading nutrient runoff from files
+#undef  DARWIN_NUTRIENT_RUNOFF
+
 
 C light
 
 C compute average PAR in layer, assuming exponential decay
-C (ignored if ALLOW_RADTRANS)
+C (ignored when radtrans package is used)
 #undef  DARWIN_AVPAR
 
 C enable GEIDER light code
@@ -77,10 +86,10 @@ C enable GEIDER light code
 C use rho instead of acclimated Chl:C for chlorophyll synthesis
 #define DARWIN_GEIDER_RHO_SYNTH
 
-C initialize chl as in darwin2 (if DARWIN_ALLOW_RADTRANS)
+C initialize chl as in darwin2 (with radtrans package)
 #undef  DARWIN_CHL_INIT_LEGACY
 
-C scattering coefficients are per Chlorophyll (if DARWIN_ALLOW_RADTRANS)
+C scattering coefficients are per Chlorophyll (with radtrans package)
 #undef  DARWIN_SCATTER_CHL
 
 C make diagnostics for instrinsic optical properties available
@@ -125,6 +134,9 @@ C enable variable iron sediment source
 C revert to old variable iron sediment source in terms of POP
 #undef  DARWIN_IRON_SED_SOURCE_POP
 
+C add iron source from hydrothermal vents
+#undef  DARWIN_ALLOW_HYDROTHERMAL_VENTS
+
 
 C diagnostics
 
@@ -166,7 +178,6 @@ C set traits for darwin2 9-species setup (requires DARWIN_RANDOM_TRAITS)
 
 C enable diazotrophy when using (requires DARWIN_RANDOM_TRAITS)
 #undef  DARWIN_ALLOW_DIAZ
-
 
 #endif /* ALLOW_DARWIN */
 #endif /* DARWIN_OPTIONS_H */

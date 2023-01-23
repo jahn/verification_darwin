@@ -1,0 +1,4 @@
+#!/bin/sh
+ln -sf ../data_darwin/* .
+ln -sf ../data_darwin/exp18binav/* .
+mkdir -p diags diags/3hourly diags/daily diags/monthly diags/budget diags/steply
