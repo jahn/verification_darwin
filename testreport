@@ -766,11 +766,11 @@ testoutput_diags()
   # default list of output variables to be checked:
   #  1rst : main variable used to decide if it pass or FAIL
   #  others : number of matching digits to be printed in summary.txt
-  GLUEMNC=../utils/python/MITgcmutils/scripts/gluemncbig
-  $GLUEMNC -q -o $1/$2/grid.nc $1/$2/mnc_test_*/grid.*.nc >$1/$2/gluemncbig.log && rm $1/$2/gluemncbig.log
-  listChk=
   #  load experiment-specific list from file "tr_checklist" (if it exist)
   if test -r $1/$2/tr_diaglist ; then
+    GLUEMNC=../utils/python/MITgcmutils/scripts/gluemncbig
+    $GLUEMNC -q -o $1/$2/grid.nc $1/$2/mnc_test_*/grid.*.nc >$1/$2/gluemncbig.log && rm $1/$2/gluemncbig.log
+    listChk=
     cat $1/$2/tr_diaglist | while read listChk; do
       # first word is name of diagnostics file
       df=`echo $listChk | awk '{print $1}'`
