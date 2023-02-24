@@ -44,6 +44,11 @@ C consistently use the total pH scale for carbon chemistry coefficients
 C (does not apply to DARWIN_SOLVESAPHE)
 #define DARWIN_TOTALPHSCALE
 
+C Compile Munhoven (2013) "Solvesaphe" package for pH/pCO2
+C  can still select Follows et al (2006) solver in data.darwin,
+C  but will use solvesaphe dissociation coefficient options.
+#define DARWIN_SOLVESAPHE
+
 C this needs to be defined for coupling to atmospheric model:
 #undef  DARWIN_USE_PLOAD
 
