@@ -1,4 +1,5 @@
  &diagnostics_list
+  dumpatlast = .TRUE.,
 #
  frequency(1)=   4*2592000.,
  filename(1)= '3d',

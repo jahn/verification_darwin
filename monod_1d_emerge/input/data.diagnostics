@@ -1,6 +1,7 @@
 # Darwin diagnostics
 # ==================
  &diagnostics_list
+ dumpatlast = .TRUE.,
 #
   frequency(1) = 3600.,
   fields( 1,1) = 'TRAC01  ',

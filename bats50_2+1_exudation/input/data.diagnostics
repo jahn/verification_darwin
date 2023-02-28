@@ -2,6 +2,7 @@
 # ==================
 #
  &diagnostics_list
+  dumpatlast = .TRUE.,
 #
   filename( 1) = 'rates',
   frequency(1) = 2592000.,

@@ -10,6 +10,7 @@
 # Diver4              # Phy species over threshold for ratio to maximum species'
 #
  &diagnostics_list
+ dumpatlast = .TRUE.,
 #
   frequency(1) = 86400.,
   fields( 1,1) = 'TRAC01  ',

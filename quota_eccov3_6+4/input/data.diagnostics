@@ -10,6 +10,7 @@
 # Diver4              # Phy species over threshold for ratio to maximum species'
 #
  &diagnostics_list
+ dumpatlast = .TRUE.,
 #
   filename( 1) = '3d',
   frequency(1) = 2592000.,
