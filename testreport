@@ -74,6 +74,7 @@ usage()
     echo "  (-r)                     force rerun even if output.txt exists"
     echo "  (-indiv|-i)              use per-variable results files"
     echo "  (-write|-w)              write per-variable results files"
+    echo "  (-diags|-d)              Check diagnostics"
     echo
     echo "and where STRING can be a whitespace-delimited list"
     echo "such as:"
@@ -195,6 +196,93 @@ testoutput_var()
     if [ $digits_of_similarity -eq 99 ]; then
 	if [ $verbose -gt 0 ]; then
 	    echo testoutput_var: No comparison was available for \"$3\" 1>&2
+	fi
+	digits_of_similarity=99
+    else
+	if [ $verbose -gt 0 ]; then
+	    echo There were $digits_of_similarity decimal places of similarity for \"$3\" 1>&2
+	fi
+    fi
+    if [ "$WRITEINDIV" = "t" ]; then
+        cp -p ${TMP}a.txt $1/$4/var_$2.txt
+    fi
+    rm -f ${TMP}a.txt ${TMP}b.txt ${TMP}c.txt
+
+    return $digits_of_similarity
+}
+
+testoutput_diag_var()
+{
+    # testoutput_diag_var dir s1 label subdir reference_output
+    #
+    #  compares 1 variable output selected from file $dir/$subdir/$OUTPUTFILE
+    #     with same output from reference file $dir/$reference_output
+    #  using search strings s1 and text label
+
+    if [ $debug -gt 0 ]; then
+	echo testoutput_diag_var: grep "'$2'" $1/$4/$OUTPUTFILE 1>&2
+    fi
+    if [ -r $1/$4/$OUTPUTFILE ]; then
+	grep "$2" $1/$4/$OUTPUTFILE | sed 's/.*=//' | nl > ${TMP}a.txt
+	lncntA=`wc -l ${TMP}a.txt | awk '{print $1}' `
+	if [ $lncntA -lt 1 ]; then
+	    if [ $verbose -gt 0 ]; then
+		echo Not enough lines of output when searching for "$2" 1>&2
+	    fi
+	    rm -f ${TMP}a.txt ; return 99
+	fi
+    else
+	echo testoutput_diag_var: $OUTPUTFILE from model run was not readable 1>&2
+	return 99
+    fi
+    if [ $debug -gt 0 ]; then
+	echo testoutput_diag_var: grep "'$2'" $1/$5 1>&2
+    fi
+    if [ "$INDIV" = "t" ]; then
+        cp -p $1/results/var_$2.txt ${TMP}b.txt || return 99
+    else
+        grep "$2" $1/$5 | sed 's/.*=//' | nl > ${TMP}b.txt
+
+    fi
+    lncntB=`wc -l ${TMP}b.txt | awk '{print $1}' `
+    if [ $lncntB -lt 1 ]; then
+	if [ $verbose -gt 0 ]; then
+	    echo Not enough lines of output when searching for "$2" 1>&2
+	fi
+	rm -f ${TMP}a.txt ${TMP}b.txt ; return 99
+    fi
+    if [ $lncntA -ne $lncntB ]; then
+	if [ $verbose -gt 0 ]; then
+	    echo Not same Nb of lines when searching for "$2" ":" $lncntA $lncntB 1>&2
+	fi
+	rm -f ${TMP}a.txt ${TMP}b.txt ; return 99
+    fi
+    has_nan=`cat ${TMP}a.txt | grep -i nan | wc -l`
+    if [ $has_nan -gt 0  ] ; then
+	echo testoutput_diag_var: $OUTPUTFILE contains $has_nan NaN values  1>&2
+	rm -f ${TMP}a.txt ${TMP}b.txt ; return 99
+    fi
+    has_inf=`cat ${TMP}a.txt | grep -i inf | wc -l`
+    if [ $has_inf -gt 0  ] ; then
+	echo testoutput_diag_var: $OUTPUTFILE contains $has_inf Inf values  1>&2
+	rm -f ${TMP}a.txt ${TMP}b.txt ; return 99
+    fi
+    if [ $debug -gt 0 ]; then
+	echo testoutput_diag_var: join ${TMP}a.txt ${TMP}b.txt 1>&2
+    fi
+    # On the SGI O3K (*not* the O2K), "cat -n" inserts a ":" after the line number
+    join ${TMP}a.txt ${TMP}b.txt | awk '{print $1 " " $2 " " $3}' | sed -e 's|:||g' > ${TMP}c.txt
+    if [ $debug -gt 0 ]; then
+	echo testoutput_diag_var: compare_lines 1>&2
+    fi
+    if [ $verbose -gt 1 ]; then
+	cat ${TMP}c.txt 1>&2
+    fi
+    echo "-1" >> ${TMP}c.txt
+    digits_of_similarity=`./tr_cmpnum < ${TMP}c.txt`
+    if [ $digits_of_similarity -eq 99 ]; then
+	if [ $verbose -gt 0 ]; then
+	    echo testoutput_diag_var: No comparison was available for \"$3\" 1>&2
 	fi
 	digits_of_similarity=99
     else
@@ -767,7 +855,7 @@ testoutput_diags()
   #  1rst : main variable used to decide if it pass or FAIL
   #  others : number of matching digits to be printed in summary.txt
   #  load experiment-specific list from file "tr_checklist" (if it exist)
-  if test -r $1/$2/tr_diaglist ; then
+  if [ $CHECKDIAGS != f ] && test -r $1/$2/tr_diaglist ; then
     GLUEMNC=../utils/python/MITgcmutils/scripts/gluemncbig
     $GLUEMNC -q -o $1/$2/grid.nc $1/$2/mnc_test_*/grid.*.nc >$1/$2/gluemncbig.log && rm $1/$2/gluemncbig.log
     listChk=
@@ -786,8 +874,8 @@ testoutput_diags()
       if [ $debug -gt 0 ]; then echo "testoutput_run: listVar='$listVar'" 1>&2 ; fi
       echo "listVar='$listVar'" >> $locDIR"/summary.txt"
       #---
-      $GLUEMNC -q -o $1/$2/$df.nc $1/$2/mnc_test_*/$df.*.nc > $1/$2/gluemncbig.log && rm $1/$2/gluemncbig.log
-      ./ncstats -g $1/$2/grid.nc $1/$2/$df.nc > $1/$2/diags_$df.txt
+      $GLUEMNC -q -o $1/$2/diags_$df.nc $1/$2/mnc_test_*/$df.*.nc > $1/$2/gluemncbig.log && rm $1/$2/gluemncbig.log
+      ./ncstats -g $1/$2/grid.nc $1/$2/diags_$df.nc > $1/$2/diags_$df.txt
       #---
       allargs=
       for xx in $listVar
@@ -795,11 +883,11 @@ testoutput_diags()
         dd=`echo $xx | sed 's/..$//'`
         ii="${xx: -2}"
         case $ii in
-        'mn') testoutput_var $1 "${df}_${dd}_min"  "${df}_${dd}_min"  $2 $refoutp ; yy=$? ;;
-        'mx') testoutput_var $1 "${df}_${dd}_max"  "${df}_${dd}_max"  $2 $refoutp ; yy=$? ;;
-        'av') testoutput_var $1 "${df}_${dd}_mean" "${df}_${dd}_mean" $2 $refoutp ; yy=$? ;;
-        'sd') testoutput_var $1 "${df}_${dd}_sd"   "${df}_${dd}_StDv" $2 $refoutp ; yy=$? ;;
-        'd2') testoutput_var $1 "${df}_${dd}_del2" "${df}_${dd}_Del2" $2 $refoutp ; yy=$? ;;
+        'mn') testoutput_diag_var $1 "${df}_${dd}_min"  "${df}_${dd}_min"  $2 $refoutp ; yy=$? ;;
+        'mx') testoutput_diag_var $1 "${df}_${dd}_max"  "${df}_${dd}_max"  $2 $refoutp ; yy=$? ;;
+        'av') testoutput_diag_var $1 "${df}_${dd}_mean" "${df}_${dd}_mean" $2 $refoutp ; yy=$? ;;
+        'sd') testoutput_diag_var $1 "${df}_${dd}_sd"   "${df}_${dd}_StDv" $2 $refoutp ; yy=$? ;;
+        'd2') testoutput_diag_var $1 "${df}_${dd}_del2" "${df}_${dd}_Del2" $2 $refoutp ; yy=$? ;;
         esac
         allargs="$allargs $yy"
       done
@@ -942,6 +1030,8 @@ run_clean()
 	find . -name "*.data" -exec rm {} \;
 	find . -name "*.tmp"  -exec rm {} \;
 	find . -name "fort.*" -exec rm {} \;
+	find . -name "diags_*.nc" -exec rm {} \;
+	find . -name "diags_*.txt" -exec rm {} \;
 	find . -type l -exec rm {} \;
 	#- should remove executable only if sym-link (already done above)
 	rm -f $RUNLOG *.txt STDOUT.* STDERR.* *diagnostics.log *.[0-9][0-9][0-9][0-9].log
@@ -1520,10 +1610,15 @@ formatdiagres()
     # formatdiagres expt diagname results*
 
     nm=$1
-    printf '%-7s' $2
+    if [ ${#2} -gt 7 ]; then
+        n=$(( (${#2}+1)/3*3+1 ))
+        printf "%-${n}s" $2
+    else
+        printf '%-7s' $2
+    fi
     shift; shift
     listPrt=$@
-    printf '%3s' $listPrt
+    printf '%3s' ${listPrt//99/x}
     printf '  %s' $nm
     printf '\n'
 }
@@ -1604,6 +1699,7 @@ POSTCLEAN=0
 
 INDIV=f
 WRITEINDIV=f
+CHECKDIAGS=f
 BASH=
 OPTFILE=NONE
 ADDRESSES=
@@ -1671,6 +1767,8 @@ for ac_option ; do
 	-indiv | --indiv | -i )  INDIV=t ;;
 
 	-write | --write | -w )  WRITEINDIV=t ;;
+
+	-diags | --diags | -d )  CHECKDIAGS=t ;;
 
 	-addr | --addr | -a | --a) ac_prev=ADDRESSES ;;
 	-addr=* | --addr=* | -a=* | --a=*) ADDRESSES=$ac_optarg ;;
@@ -2097,7 +2195,9 @@ SUMDIAG=tr_tmp_diag.txt
 cat /dev/null > $SUMHEAD
 cat /dev/null > $SUMREST
 cat /dev/null > $SUMCONS
-cat /dev/null > $SUMDIAG
+if [ $CHECKDIAGS != f ]; then
+    cat /dev/null > $SUMDIAG
+fi
 
 #  ...and each test directory...
 for dir in $TESTDIRS ; do
@@ -2412,7 +2512,10 @@ fi
 echo "     $conselems" >> $SUMMARY
 cat $SUMCONS >> $SUMMARY
 echo >> $SUMMARY
-rm $SUMHEAD $SUMREST $SUMDIAG $SUMCONS
+rm $SUMHEAD $SUMREST $SUMCONS
+if [ $CHECKDIAGS != f ]; then
+    rm $SUMDIAG
+fi
 
 printf "Start time:  " >> $SUMMARY
 echo "$start_date" >> $SUMMARY

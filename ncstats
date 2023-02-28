@@ -1254,7 +1254,10 @@ if __name__ == '__main__':
                     mx = b.max()
                     av = b.mean()
                     sd = b.std()
-                    d2 = np.sqrt(np.mean(del2(a)))
+                    if a.shape[-2] >= 2 and a.shape[-1] >= 2:
+                        d2 = np.sqrt(np.mean(del2(a)))
+                    else:
+                        d2 = 0.
                     for s, f in [('max',mx),('min',mn),('mean',av),('sd',sd),('del2',d2)]:
                         print('(PID.TID 0000.0001) %MON {:<28s} = {:21.13E}'.format(
                               name+'_'+k+'_'+s, f))
