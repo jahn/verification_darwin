@@ -1,0 +1,6 @@
+(PID.TID 0000.0001) %MON surface_tsnumber             =                 92424
+(PID.TID 0000.0001) %MON surface_surfPAR_max          =   1.9523072327820E+02
+(PID.TID 0000.0001) %MON surface_surfPAR_min          =   1.9523072327820E+02
+(PID.TID 0000.0001) %MON surface_surfPAR_mean         =   1.9523072327820E+02
+(PID.TID 0000.0001) %MON surface_surfPAR_sd           =   0.0000000000000E+00
+(PID.TID 0000.0001) %MON surface_surfPAR_del2         =   0.0000000000000E+00

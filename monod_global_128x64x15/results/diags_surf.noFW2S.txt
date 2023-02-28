@@ -1,0 +1,6 @@
+(PID.TID 0000.0001) %MON surf_tsnumber                =               5644804
+(PID.TID 0000.0001) %MON surf_surfPAR_max             =   7.0335000311886E+02
+(PID.TID 0000.0001) %MON surf_surfPAR_min             =   2.0833334161176E+01
+(PID.TID 0000.0001) %MON surf_surfPAR_mean            =   4.4786654744779E+02
+(PID.TID 0000.0001) %MON surf_surfPAR_sd              =   1.8355202488757E+02
+(PID.TID 0000.0001) %MON surf_surfPAR_del2            =   2.0260106032101E+02
