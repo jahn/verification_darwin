@@ -228,13 +228,13 @@
    filename(63)= 'diags/monthly/Chl4',
    filename(64)= 'diags/monthly/Chl5',
 #---  
-  frequency(65) = 2635200.,
+  frequency(65) = 1200.,
    fields(1,65) = 'PAR     ',
-   filename(65) = 'diags/monthly/PAR',
+   filename(65) = 'diags/steply/PAR',
 #--- 
-  frequency(66) = 2635200.,
+  frequency(66) = 1200.,
    fields(1,66) = 'PP      ',
-   filename(66) = 'diags/monthly/PP',
+   filename(66) = 'diags/steply/PP',
 #--- 
   frequency(67) = 2635200.,
    fields(1,67) = 'fluxCO2 ',
@@ -385,6 +385,14 @@
    fields(1:6,92) = 'TRAC01  ','THETA   ','SALT    ',
                     'TRAC18  ','TRAC05  ','TRAC07  ',
   filename(92) = 'diags/budget/CO2_flux_budget_3d',
+#---
+  frequency(93) = 1200.0,
+   fields(1,93) = 'rmud    ',
+   filename(93) = 'diags/steply/rmud',
+#---
+  frequency(94) = 1200.0,
+   fields(1,94) = 'Chl     ',
+   filename(94) = 'diags/steply/totChl',
 #---
  /
 
