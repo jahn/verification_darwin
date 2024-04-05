@@ -39,9 +39,6 @@
  hollexp = 2.E0,
  /
 ########################
- &DARWIN_RADTRANS_PARAMS
- /
-########################
  &DARWIN_CDOM_PARAMS
   fracCDOM = 0.02,
   cdomdegrd= 3.8580e-08,
@@ -51,6 +48,9 @@
   R_FeP_CDOM = 1.e-3,
   R_CP_CDOM  = 120.,
   CDOMcoeff = 21.,
+ /
+########################
+ &DARWIN_RADTRANS_PARAMS
  /
 ########################
  &DARWIN_RANDOM_PARAMS
