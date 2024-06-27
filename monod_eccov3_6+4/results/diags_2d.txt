@@ -19,3 +19,13 @@
 (PID.TID 0000.0001) %MON diags_2d_gO2surf_mean        =  -1.8425009343329E-05
 (PID.TID 0000.0001) %MON diags_2d_gO2surf_sd          =   6.6115137128328E-05
 (PID.TID 0000.0001) %MON diags_2d_gO2surf_del2        =   3.8936146426063E-05
+(PID.TID 0000.0001) %MON diags_2d_VfluxCO2_max        =   2.5007936012174E-03
+(PID.TID 0000.0001) %MON diags_2d_VfluxCO2_min        =  -1.6471002388262E-03
+(PID.TID 0000.0001) %MON diags_2d_VfluxCO2_mean       =   3.4705907665664E-06
+(PID.TID 0000.0001) %MON diags_2d_VfluxCO2_sd         =   1.4373852684281E-04
+(PID.TID 0000.0001) %MON diags_2d_VfluxCO2_del2       =   1.5036518572831E-04
+(PID.TID 0000.0001) %MON diags_2d_VfluxAlk_max        =   2.8514951052875E-03
+(PID.TID 0000.0001) %MON diags_2d_VfluxAlk_min        =  -1.8781969466602E-03
+(PID.TID 0000.0001) %MON diags_2d_VfluxAlk_mean       =   3.9573839100058E-06
+(PID.TID 0000.0001) %MON diags_2d_VfluxAlk_sd         =   1.6390013035940E-04
+(PID.TID 0000.0001) %MON diags_2d_VfluxAlk_del2       =   1.7146055913881E-04

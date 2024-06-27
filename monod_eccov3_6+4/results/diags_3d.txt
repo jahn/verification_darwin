@@ -194,6 +194,11 @@
 (PID.TID 0000.0001) %MON diags_3d_Denit_mean          =   5.4776361858789E-11
 (PID.TID 0000.0001) %MON diags_3d_Denit_sd            =   2.4820675407415E-09
 (PID.TID 0000.0001) %MON diags_3d_Denit_del2          =   2.8705889487487E-09
+(PID.TID 0000.0001) %MON diags_3d_DenitN_max          =   3.0065991772363E-07
+(PID.TID 0000.0001) %MON diags_3d_DenitN_min          =   0.0000000000000E+00
+(PID.TID 0000.0001) %MON diags_3d_DenitN_mean         =   5.4934742022097E-11
+(PID.TID 0000.0001) %MON diags_3d_DenitN_sd           =   2.4900309011653E-09
+(PID.TID 0000.0001) %MON diags_3d_DenitN_del2         =   2.8828366887555E-09
 (PID.TID 0000.0001) %MON diags_3d_pH_max              =   8.5591507108685E+00
 (PID.TID 0000.0001) %MON diags_3d_pH_min              =   7.5135977942406E+00
 (PID.TID 0000.0001) %MON diags_3d_pH_mean             =   7.9463669026301E+00

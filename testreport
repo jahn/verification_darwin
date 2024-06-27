@@ -847,7 +847,6 @@ testoutput_run()
 
 testoutput_diags()
 {
-  # testoutput_run directory subdir diagfile reference_output
   # testoutput_diags directory subdir sfx
   #
   #  test output from 1 run in "directory"

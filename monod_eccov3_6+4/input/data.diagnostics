@@ -53,8 +53,9 @@
   fields(37,1) = 'PP      ',
   fields(38,1) = 'Nfix    ',
   fields(39,1) = 'Denit   ',
-  fields(40,1) = 'pH      ',
-  fields(41,1) = 'pCO2    ',
+  fields(40,1) = 'DenitN  ',
+  fields(41,1) = 'pH      ',
+  fields(42,1) = 'pCO2    ',
 #
   filename( 2) = '2d',
   frequency(2) = 2592000.,
@@ -62,6 +63,8 @@
   fields( 2,2) = 'gDICsurf',
   fields( 3,2) = 'gALKsurf',
   fields( 4,2) = 'gO2surf ',
+  fields( 5,2) = 'VfluxCO2',
+  fields( 6,2) = 'VfluxAlk',
 #
  &
 
