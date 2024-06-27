@@ -4,4 +4,3 @@ if ! test -e forcing; then
 fi
 ln -sf forcing/MITgcm/darwin/verification/3deg/* .
 ln -sf forcing/MITgcm/darwin/verification/3deg/exp18binav/* .
-mkdir -p diags diags/3hourly diags/daily diags/monthly diags/budget
