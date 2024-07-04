@@ -26,7 +26,7 @@
  PTRACERS_initialFile(POSi)= 'forcing/MITgcm/darwin/DARWIN_ECCO_run17/posi_y2000.data',
  PTRACERS_initialFile(PIC )= 'forcing/MITgcm/darwin/DARWIN_ECCO_run17/pic_y2000.data',
  PTRACERS_initialFile(ALK )= 'forcing/MITgcm/darwin/input_ecco/glodap_alk_ann-3d.bin',
- PTRACERS_initialFile(O2  )= 'forcing/MITgcm/darwin/input_ecco/lev01_oxygen_ann-3d.bin',
+ PTRACERS_initialFile(O2  )= 'forcing/MITgcm/darwin/input_ecco/lev01_oxygen_micromolar_ann-3d.bin',
  PTRACERS_initialFile(CDOM)= 'forcing/MITgcm/darwin/input_ecco/CDOM_run129abb4.bin',
  PTRACERS_initialFile(c01:c51)= 51*'forcing/MITgcm/darwin/DARWIN_ECCO_run17/phy_6species_y2000.data',
  /
