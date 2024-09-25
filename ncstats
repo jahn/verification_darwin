@@ -1226,9 +1226,13 @@ if __name__ == '__main__':
 
     if '-g' in opts:
         g = netcdf_file(opts['-g'], 'r')
-        sm = g.variables['HFacC'][:] != 0
+        smC = g.variables['HFacC'][:] != 0
+        smW = g.variables['HFacW'][:] != 0
+        smS = g.variables['HFacS'][:] != 0
     else:
-        sm = np.s_[:]
+        smC = np.s_[:]
+        smW = np.s_[:]
+        smS = np.s_[:]
 
     ncfile, = fnames
     pdir, name = psplit(ncfile)
@@ -1244,10 +1248,18 @@ if __name__ == '__main__':
             if k not in diml:
                 v = nc.variables[k]
                 if v.isrec:
+                    if 'Xp1' in v.dimensions:
+                        sm = smW
+                    elif 'Yp1' in v.dimensions:
+                        sm = smS
+                    else:
+                        sm = smC
+
                     if v.shape[-3] == 1 and isinstance(sm, np.ndarray):
                         mysm = sm[0]
                     else:
                         mysm = sm
+
                     a = v[t]
                     b = a[...,mysm]
                     mn = b.min()
