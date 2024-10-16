@@ -3,6 +3,7 @@
 #
  frequency(1)=   4*2592000.,
  filename(1)= '3d',
+ fileflags(1)= 'D       ',
  fields(  1, 1)= 'TRAC01  ',
  fields(  2, 1)= 'TRAC02  ',
  fields(  3, 1)= 'TRAC03  ',
@@ -176,6 +177,7 @@
 #
  frequency(2)=   4*2592000.,
  filename(2)= '2d',
+ fileflags(2)= 'D       ',
  levels(1, 2)=   1,
  fields( 1, 2)= 'Rirr001 ',
  fields( 2, 2)= 'Rirr002 ',
@@ -193,6 +195,7 @@
 #
  frequency(3)=   4*2592000.,
  filename(3)= 'darwin',
+ fileflags(3)= 'D       ',
  fields(1, 3)= 'PP      ',
  fields(2, 3)= 'Nfix    ',
  fields(3, 3)= 'Denit   ',
@@ -201,6 +204,7 @@
 #
  frequency(4)=   4*2592000.,
  filename(4)= 'rt',
+ fileflags(4)= 'D       ',
  fields( 1, 4)= 'PAR001  ',
  fields( 2, 4)= 'PAR002  ',
  fields( 3, 4)= 'PAR003  ',
