@@ -1,0 +1,47 @@
+#######################
+ &RADTRANS_FORCING_PARAMS
+ RT_EdFile( 1)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEd01.R4_360x180x12.bin',
+ RT_EdFile( 2)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEd02.R4_360x180x12.bin',
+ RT_EdFile( 3)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEd03.R4_360x180x12.bin',
+ RT_EdFile( 4)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEd04.R4_360x180x12.bin',
+ RT_EdFile( 5)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEd05.R4_360x180x12.bin',
+ RT_EdFile( 6)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEd06.R4_360x180x12.bin',
+ RT_EdFile( 7)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEd07.R4_360x180x12.bin',
+ RT_EdFile( 8)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEd08.R4_360x180x12.bin',
+ RT_EdFile( 9)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEd09.R4_360x180x12.bin',
+ RT_EdFile(10)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEd10.R4_360x180x12.bin',
+ RT_EdFile(11)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEd11.R4_360x180x12.bin',
+ RT_EdFile(12)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEd12.R4_360x180x12.bin',
+ RT_EdFile(13)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEd13.R4_360x180x12.bin',
+ RT_EsFile( 1)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEs01.R4_360x180x12.bin',
+ RT_EsFile( 2)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEs02.R4_360x180x12.bin',
+ RT_EsFile( 3)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEs03.R4_360x180x12.bin',
+ RT_EsFile( 4)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEs04.R4_360x180x12.bin',
+ RT_EsFile( 5)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEs05.R4_360x180x12.bin',
+ RT_EsFile( 6)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEs06.R4_360x180x12.bin',
+ RT_EsFile( 7)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEs07.R4_360x180x12.bin',
+ RT_EsFile( 8)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEs08.R4_360x180x12.bin',
+ RT_EsFile( 9)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEs09.R4_360x180x12.bin',
+ RT_EsFile(10)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEs10.R4_360x180x12.bin',
+ RT_EsFile(11)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEs11.R4_360x180x12.bin',
+ RT_EsFile(12)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEs12.R4_360x180x12.bin',
+ RT_EsFile(13)='forcing/MITgcm/darwin/oasim/C61extrap/below/clim/climEs13.R4_360x180x12.bin',
+ RT_E_period= -12.,
+#
+# use seaice pkg for area
+ /
+ &RADTRANS_INTERP_PARAMS
+ RT_E_lon0    = -179.5,
+ RT_E_lon_inc = 1.,
+ RT_E_lat0    = -89.5,
+ RT_E_lat_inc = 179*1.,
+ RT_E_nlon    = 360,
+ RT_E_nlat    = 180,
+ /
+########################
+ &RADTRANS_PARAMS
+ RT_useMeanCosSolz=.TRUE.,
+ RT_kmax=22,
+ RT_wbEdges=400,412.5,437.5,462.5,487.5,512.5,537.5,562.5,587.5,612.5,637.5,662.5,687.5,700,
+ RT_wbRefWLs=400,425,450,475,500,525,550,575,600,625,650,675,700,
+ /
