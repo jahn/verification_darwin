@@ -12,11 +12,11 @@
 (PID.TID 0000.0001) %MON diags_cons_tsnumber          =                     8
 (PID.TID 0000.0001) %MON diags_cons_scvLosFe_max      =   2.2169290621928E-11
 (PID.TID 0000.0001) %MON diags_cons_scvLosFe_min      =   0.0000000000000E+00
-(PID.TID 0000.0001) %MON diags_cons_scvLosFe_mean     =   1.5256327124553E-13
-(PID.TID 0000.0001) %MON diags_cons_scvLosFe_sd       =   3.0064149888654E-13
-(PID.TID 0000.0001) %MON diags_cons_scvLosFe_del2     =   4.9808413529330E-13
+(PID.TID 0000.0001) %MON diags_cons_scvLosFe_mean     =   1.5256327124554E-13
+(PID.TID 0000.0001) %MON diags_cons_scvLosFe_sd       =   3.0064149888655E-13
+(PID.TID 0000.0001) %MON diags_cons_scvLosFe_del2     =   4.9808413529327E-13
 (PID.TID 0000.0001) %MON diags_cons_scavRate_max      =   2.2607549804630E-07
 (PID.TID 0000.0001) %MON diags_cons_scavRate_min      =   0.0000000000000E+00
 (PID.TID 0000.0001) %MON diags_cons_scavRate_mean     =   1.9619479713840E-08
 (PID.TID 0000.0001) %MON diags_cons_scavRate_sd       =   1.6466538319786E-08
-(PID.TID 0000.0001) %MON diags_cons_scavRate_del2     =   1.5229029992199E-08
+(PID.TID 0000.0001) %MON diags_cons_scavRate_del2     =   1.5229029992196E-08
