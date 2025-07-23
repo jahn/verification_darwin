@@ -44,7 +44,7 @@
  PTRACERS_initialFile( 18: 72)= 55*'forcing/MITgcm/darwin/verification/quota_global_128x64x15/C_bio_even.bin',
  PTRACERS_initialFile( 73:127)= 55*'forcing/MITgcm/darwin/verification/quota_global_128x64x15/N_bio_even.bin',
  PTRACERS_initialFile(128:182)= 55*'forcing/MITgcm/darwin/verification/quota_global_128x64x15/Fe_bio_even.bin',
- PTRACERS_initialFile(183:207)= 25*'forcing/MITgcm/darwin/verification/quota_global_128x64x15/Chl_bio_even.bin',
+# PTRACERS_initialFile(183:207)= 25*'forcing/MITgcm/darwin/verification/quota_global_128x64x15/Chl_bio_even.bin',
 #
  PTRACERS_names(  1)= 'DIC',
  PTRACERS_names(  2)= 'NO3',
