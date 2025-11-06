@@ -59,7 +59,7 @@
  chkptFreq= 311040000.,
 # dumpFreq=  43200.,
  dumpinitandlast=.FALSE.,
- taveFreq=  2592000.,
+# taveFreq=  2592000.,
 #taveFreq=  31104000.,
 #monitorFreq= 31104000.,
  monitorFreq= 43200.0,
