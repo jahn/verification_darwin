@@ -648,6 +648,13 @@
   fields(49,20) = 'GR0049  ',
   fields(50,20) = 'GR0050  ',
 #---
+   filename(21) = 'limit',
+  frequency(21) = -1200.,
+  timephase(21) = 0.,
+   fields(1,21) = 'fIph_avg',
+   fields(2,21) = 'fTph_avg',
+   fields(3,21) = 'fnut_avg',
+#---
  &
 
 # Parameter for Diagnostics of per level statistics:

@@ -151,6 +151,9 @@
    fields(60,3) = 'Resp0008',
    fields(61,3) = 'Resp0009',
    fields(62,3) = 'Resp0010',
+   fields(63,3) = 'fnut_avg',
+   fields(64,3) = 'fIph_avg',
+   fields(65,3) = 'fTph_avg',
  /
 
 # Parameter for Diagnostics of per level statistics:
