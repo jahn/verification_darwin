@@ -1,0 +1,25 @@
+ &OFFLINE_PARM01
+  UvelFile= 'ECCO_Iter3.73daily_360days/DDuvel/DDuvel',
+  VvelFile= 'ECCO_Iter3.73daily_360days/DDvvel/DDvvel',
+  WvelFile= 'ECCO_Iter3.73daily_360days/DDwvel/DDwvel',
+  GMwxFile= 'ECCO_Iter3.73daily_360days/DGMkwx/DGMkwx',
+  GMwyFile= 'ECCO_Iter3.73daily_360days/DGMkwy/DGMkwy',
+  GMwzFile= 'ECCO_Iter3.73daily_360days/DGMkwz/DGMkwz',
+# ConvFile= 'input_off/Convtave',
+  SaltFile= 'ECCO_Iter3.73daily_360days/DDsalt/DDsalt',
+  ThetFile= 'ECCO_Iter3.73daily_360days/DDtheta/DDtheta',
+  SFluxFile='ECCO_Iter3.73daily_360days/DFOSflux/DFOSflux',
+# HFluxFile=' ',
+  KPP_DiffSFile='ECCO_Iter3.73daily_360days/DKPPdiffs/DKPPdiffs',
+  KPP_ghatKFile='ECCO_Iter3.73daily_360days/DKPPghatK/DKPPghatK',
+### offGen2DFile='ECCO_Iter3.73daily_360days/SIarea/SIarea',
+ &end
+
+ &OFFLINE_PARM02
+  offlineIter0=77760,
+  deltaToffline=3600.,
+  offlineForcingPeriod=86400.,
+  offlineForcingCycle=31104000.,
+  offlineLoadPrec=32,
+ &end
+

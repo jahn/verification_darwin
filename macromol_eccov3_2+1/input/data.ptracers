@@ -1,0 +1,92 @@
+ &PTRACERS_PARM01
+ PTRACERS_numInUse= 36,
+ PTRACERS_Iter0= 0,
+#
+ PTRACERS_advScheme=36*33,
+ PTRACERS_diffKh=36*0.E3,
+ PTRACERS_diffKr=36*1.E-5,
+ PTRACERS_useGMRedi=36*.TRUE.,
+ PTRACERS_useKPP=36*.TRUE.,
+#
+       PTRACERS_names(1)= 'DIC',
+       PTRACERS_names(4)= 'NH4',
+       PTRACERS_names(3)= 'NO2',
+       PTRACERS_names(2)= 'NO3',
+       PTRACERS_names(5)= 'PO4',
+       PTRACERS_names(7)= 'SiO2',
+       PTRACERS_names(6)= 'FeT',
+       PTRACERS_names(8)= 'DOC',
+       PTRACERS_names(9)= 'DON',
+       PTRACERS_names(10)= 'DOP',
+       PTRACERS_names(11)= 'DOFe',
+       PTRACERS_names(12)= 'POC',
+       PTRACERS_names(13)= 'PON',
+       PTRACERS_names(14)= 'POP',
+       PTRACERS_names(16)= 'POSi',
+       PTRACERS_names(15)= 'POFe',
+       PTRACERS_names(17)= 'PIC',
+
+# renumber shlomit
+#       PTRACERS_names(17)= 'POO',
+#       PTRACERS_names(17)= 'POH',
+#       PTRACERS_names(17)= 'DOO',
+#       PTRACERS_names(17)= 'DOH',
+
+       PTRACERS_names(18)= 'ALK',
+       PTRACERS_names(19)= 'O2',
+       PTRACERS_names(20)= 'CDOM01',
+       PTRACERS_names(21)= 'c01',
+       PTRACERS_names(22)= 'c02',
+       PTRACERS_names(23)= 'c03',
+       PTRACERS_names(24)= 'c04',
+       PTRACERS_names(25)= 'n01',
+       PTRACERS_names(26)= 'n02',
+       PTRACERS_names(27)= 'n03',
+       PTRACERS_names(28)= 'n04',
+       PTRACERS_names(29)= 'p01',
+       PTRACERS_names(30)= 'p02',
+       PTRACERS_names(31)= 'p03',
+       PTRACERS_names(32)= 'p04',
+       PTRACERS_names(33)= 'fe01',
+       PTRACERS_names(34)= 'fe02',
+       PTRACERS_names(35)= 'fe03',
+       PTRACERS_names(36)= 'fe04',
+
+
+ PTRACERS_initialFile(1)='input_ecco/glodap_tco2_ann-3d.bin',
+ PTRACERS_initialFile(4)='DARWIN_ECCO_run17/nh4_y2000.data',
+ PTRACERS_initialFile(3)='DARWIN_ECCO_run17/no2_y2000.data',
+ PTRACERS_initialFile(2)='input_ecco/lev01_nitrate_ann-3d.bin',
+ PTRACERS_initialFile(5)='input_ecco/lev01_phosphate_ann-3d.bin',
+ PTRACERS_initialFile(7)='input_ecco/lev01_silicate_ann-3d.bin ',
+ PTRACERS_initialFile(6)='DARWIN_ECCO_run17/fet_y2000.data',
+ PTRACERS_initialFile(8)='DARWIN_ECCO_run17/doc_y2000.data',
+ PTRACERS_initialFile(9)='DARWIN_ECCO_run17/don_y2000.data',
+ PTRACERS_initialFile(10)='DARWIN_ECCO_run17/dop_y2000.data',
+ PTRACERS_initialFile(11)='DARWIN_ECCO_run17/dofe_y2000.data',
+ PTRACERS_initialFile(12)='DARWIN_ECCO_run17/poc_y2000.data',
+ PTRACERS_initialFile(13)='DARWIN_ECCO_run17/pon_y2000.data',
+ PTRACERS_initialFile(14)='DARWIN_ECCO_run17/pop_y2000.data',
+ PTRACERS_initialFile(16)='DARWIN_ECCO_run17/posi_y2000.data',
+ PTRACERS_initialFile(15)='DARWIN_ECCO_run17/pofe_y2000.data',
+ PTRACERS_initialFile(17)='DARWIN_ECCO_run17/pic_y2000.data',
+ PTRACERS_initialFile(18)='input_ecco/glodap_alk_ann-3d.bin',
+ PTRACERS_initialFile(19)='input_ecco/lev01_oxygen_micromolar_ann-3d.bin',
+ PTRACERS_initialFile(20)='input_ecco/CDOM_run129abb4.bin',
+ PTRACERS_initialFile(21)='DARWIN_ECCO_run17/phy_6species_y2000.data',
+ PTRACERS_initialFile(22)='DARWIN_ECCO_run17/phy_6species_y2000.data',
+ PTRACERS_initialFile(23)='DARWIN_ECCO_run17/phy_6species_y2000.data',
+ PTRACERS_initialFile(24)='DARWIN_ECCO_run17/phy_6species_y2000.data',
+ PTRACERS_initialFile(25)='DARWIN_ECCO_run17/phy_6speciesn_y2000.data',
+ PTRACERS_initialFile(26)='DARWIN_ECCO_run17/phy_6speciesn_y2000.data',
+ PTRACERS_initialFile(27)='DARWIN_ECCO_run17/phy_6speciesn_y2000.data',
+ PTRACERS_initialFile(28)='DARWIN_ECCO_run17/phy_6speciesn_y2000.data',
+ PTRACERs_initialFile(29)='DARWIN_ECCO_run17/phy_6speciesp_y2000.data'
+ PTRACERs_initialFile(30)='DARWIN_ECCO_run17/phy_6speciesp_y2000.data'
+ PTRACERs_initialFile(31)='DARWIN_ECCO_run17/phy_6speciesp_y2000.data'
+ PTRACERs_initialFile(32)='DARWIN_ECCO_run17/phy_6speciesp_y2000.data'
+ PTRACERs_initialFile(33)='DARWIN_ECCO_run17/phy_6speciesfe_y2000.data'
+ PTRACERs_initialFile(34)='DARWIN_ECCO_run17/phy_6speciesfe_y2000.data'
+ PTRACERs_initialFile(35)='DARWIN_ECCO_run17/phy_6speciesfe_y2000.data'
+ PTRACERs_initialFile(36)='DARWIN_ECCO_run17/phy_6speciesfe_y2000.data'
+ &
