@@ -1,0 +1,95 @@
+ &DARWIN_TRAITS 
+ amminhib(1)= 0.,
+ VmaxNH4(1)= 0.,
+ VmaxNO2(1)= 0.,
+# VmaxNO3(1)= 0., 
+# VmaxPO4(1)= 0.,
+# VmaxFeT(1)= 0.,
+# remove nitrogen uptake regulation
+ hillnumDIN(1)= 0.,
+# Qnmax(1)= 1000,
+# Qnmin(1)= 0.,
+# Qpmax(1)= 1000.,
+# Qpmin(1)= 0.,
+# Qfemax(1)= 1000.,
+# Qfemin(1)= 0.,
+# ksatNO3(1)= 0.225,
+# ksatPO4(1)= 3.65E-00,
+# ksatFeT(1)= 2.85E-04,
+# ksatSiO2(1)= 0.,
+# time scale for excess nitrogen exudation
+
+#Here Qfe_max is 0.00024
+ Qfe_max(1) = 2.4360E-04
+
+#adjusting Qp_max
+#default = 25/(3.097e16) ~8.07E-16
+ Qp_max(1) = 0.0052E-00
+
+
+#
+ amminhib(2)= 0.,
+ VmaxNH4(2)= 0.,
+ VmaxNO2(2)= 0.,
+# VmaxNO3(2)= 0.,
+# VmaxPO4(2)= 0.,
+# VmaxFeT(2)= 0.,
+# remove nitrogen uptake regulation
+ hillnumDIN(2)= 0.,
+# Qnmax(2)= 1000,
+# Qnmin(2)= 0.,
+# Qpmax(2)= 1000.,
+# Qpmin(2)= 0.,
+# Qfemax(2)= 1000.,
+# Qfemin(2)= 0.,
+# ksatNO3(2)= 0.700,
+# ksatPO4(2)= 9.9E-00,
+# ksatFeT(2)= 3.5E-04,
+# ksatSiO2(2)= 0.,
+# time scale for excess nitrogen exudation
+
+#Here Qfe_max is 0.00024
+ Qfe_max(2) = 2.4360E-04
+
+#adjusting Qp_max
+#default = 25/(3.097e16) ~8.07E-16
+ Qp_max(2) = 0.0125E-00
+
+ Sf(2) = 3.0,
+
+
+ EXPORTFRACMORT=   
+1.1260000000000001e-01, 
+3.0040000000000000e-01, 
+4.8820000000000002e-01, 
+4.8820000000000002e-01, 
+#
+ EXPORTFRACMORT2=   
+1.1260000000000001e-01, 
+3.0040000000000000e-01, 
+4.8820000000000002e-01, 
+4.8820000000000002e-01, 
+#
+ PALAT=   9*0.0,
+ PALAT(  1, 3)= 1.0,
+ PALAT(  2, 3)= 0.1,
+#
+ KGRAZESAT(3) = 10.000000000000e+00,
+#
+ ASSEFF=   16*0.32,
+#
+ GRAZEMAX(3:4)=
+ 5.320708902902913e-05
+# 0.0e-5
+ 0.0e-07,
+#
+ EXPORTFRACPREYPRED=  9*0.40000000000000004, 
+# MORT(1:2) = 2*2.5e-7
+ MORT2=   
+1.0e-07, 
+1.0e-07, 
+9.9999999999999995e-07, 
+9.9999999999999995e-07,
+ /
+ &DARWIN_RADTRANS_TRAITS 
+ /

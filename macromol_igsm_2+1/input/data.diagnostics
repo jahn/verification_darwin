@@ -1,0 +1,179 @@
+# Diagnostics
+# ==================
+# PAR                 Photosynthetically active radiation
+# PP                  Primary production
+# Nfix                Nitrogen fixation
+# Rstar01             Rstar^PO4 of Phy01
+# Diver1              # Phy species over absolute threshold'
+# Diver2              # Phy species over threshold for proportion of biomass'
+# Diver3              # Phy species constituting bulk of biomass'
+# Diver4              # Phy species over threshold for ratio to maximum species'
+#
+ &diagnostics_list
+ dumpatlast= .TRUE.,
+#
+  filename( 1) = '3d',
+#  frequency(1) = 2592000.,
+  frequency(1) = 14400.,
+#  fileflags(1) = 'D       ',
+#  frequency(1) = 31104000.,
+#  frequency(1) = 777600000.,
+  fields( 1,1) = 'TRAC01  ',
+  fields( 2,1) = 'TRAC02  ',
+  fields( 3,1) = 'TRAC03  ',
+  fields( 4,1) = 'TRAC04  ',
+  fields( 5,1) = 'TRAC05  ',
+  fields( 6,1) = 'TRAC06  ',
+  fields( 7,1) = 'TRAC07  ',
+  fields( 8,1) = 'TRAC08  ',
+  fields( 9,1) = 'TRAC09  ',
+  fields(10,1) = 'TRAC10  ',
+  fields(11,1) = 'TRAC11  ',
+  fields(12,1) = 'TRAC12  ',
+  fields(13,1) = 'TRAC13  ',
+  fields(14,1) = 'TRAC14  ',
+  fields(15,1) = 'TRAC15  ',
+  fields(16,1) = 'TRAC16  ',
+  fields(17,1) = 'TRAC17  ',
+  fields(18,1) = 'TRAC18  ',
+  fields(19,1) = 'TRAC19  ',
+  fields(20,1) = 'TRAC20  ',
+  fields(21,1) = 'TRAC21  ',
+  fields(22,1) = 'TRAC22  ',
+  fields(23,1) = 'TRAC23  ',
+  fields(24,1) = 'TRAC24  ',
+  fields(25,1) = 'TRAC25  ',
+  fields(26,1) = 'TRAC26  ',
+  fields(27,1) = 'TRAC27  ',
+  fields(28,1) = 'TRAC28  ',
+  fields(29,1) = 'TRAC29  ',
+  fields(30,1) = 'TRAC30  ',
+  fields(31,1) = 'TRAC31  ',
+  fields(32,1) = 'TRAC32  ',
+  fields(33,1) = 'TRAC33  ',
+  fields(34,1) = 'TRAC34  ',
+  fields(35,1) = 'TRAC35  ',
+  fields(36,1) = 'PAR     ',
+  fields(37,1) = 'PP      ',
+  fields(38,1) = 'pH      ',
+  fields(39,1) = 'pCO2    ',
+  fields(40,1) = 'PC0001  ',
+  fields(41,1) = 'PChl0001',
+  fields(42,1) = 'VN0001  ',
+  fields(43,1) = 'MODE0001',
+  fields(44,1) = 'Fe_C0001',
+  fields(45,1) = 'exQc0001',
+  fields(46,1) = 'CChl0001',
+  fields(47,1) = 'NChl0001',
+  fields(48,1) = 'NPho0001',
+  fields(49,1) = 'NSyn0001',
+  fields(50,1) = 'NPrn0001',
+  fields(51,1) = 'NRNA0001',
+  fields(52,1) = 'NDNA0001',
+  fields(53,1) = 'NSTO0001',
+  fields(54,1) = 'NEXC0001',
+  fields(55,1) = 'PRNA0001',
+  fields(56,1) = 'PDNA0001',
+  fields(57,1) = 'PTHY0001',
+  fields(58,1) = 'PCON0001',
+  fields(59,1) = 'PSTO0001',
+  fields(60,1) = 'PEXC0001',
+  fields(61,1) = 'FPHO0001',
+  fields(62,1) = 'FSTO0001',
+  fields(63,1) = 'FEXC0001',
+  fields(64,1) = 'Y_RQ0001',
+  fields(65,1) = 'CChl0002',
+  fields(66,1) = 'NChl0002',
+  fields(67,1) = 'NPho0002',
+  fields(68,1) = 'NSyn0002',
+  fields(69,1) = 'NPrn0002',
+  fields(70,1) = 'NRNA0002',
+  fields(71,1) = 'NDNA0002',
+  fields(72,1) = 'NSTO0002',
+  fields(73,1) = 'NEXC0002',
+  fields(74,1) = 'PRNA0002',
+  fields(75,1) = 'PDNA0002',
+  fields(76,1) = 'PTHY0002',
+  fields(77,1) = 'PCON0002',
+  fields(78,1) = 'PSTO0002',
+  fields(79,1) = 'PEXC0002',
+  fields(80,1) = 'FPHO0002',
+  fields(81,1) = 'FSTO0002',
+  fields(82,1) = 'FEXC0002',
+  fields(83,1) = 'Y_RQ0002',
+  fields(84,1) = 'PC0002  ', 
+  fields(85,1) = 'PChl0002', 
+  fields(86,1) = 'VN0002  ', 
+  fields(87,1) = 'MODE0002', 
+  fields(88,1) = 'Fe_C0002', 
+  fields(89,1) = 'exQc0002',   
+  fields(90,1) = 'THETA   ',  
+#  fields(91,1) = 'VP0001  ',
+#  fields(92,1) = 'VP0002  ',
+# fields(93,1) = 'SALT    ',
+#  fields(94,1) = 'LIMP0001',
+#  fields(95,1) = 'LIMP0002',
+#  fields(96,1) = 'LIMN0001',
+#  fields(97,1) = 'LIMN0002',
+#  fields(98,1) = 'LIMF0001',
+#  fields(99,1) = 'LIMF0002',
+#  fields(100,1) = 'LIMC0001',
+#  fields(101,1) = 'LIMC0002',
+#  fields(102,1) = 'LIML0001',
+#  fields(103,1) = 'LIML0002',
+
+#
+
+  filename( 2) = 'General',
+#  frequency(2) = 777600000.,
+  frequency(2) = 311040000.,
+  fields(1,2) = 'PP      ',
+  fields(2,2) = 'Nfix    ',
+  fields(3,2) = 'Denit   ',
+  fields(4,2) = 'pH      ',
+  fields(5,2) = 'pCO2    ',
+  fields(6,2) = 'PAR     ',
+  fields(7,2) = 'Chl     ',
+  fields(8,2) = 'plankC  ',
+  fields(9,2) = 'THETA   ',
+  fields(10,2) = 'SALT    ',
+  fields(11,2) = 'surfPAR ',
+  fields(12,2) = 'DARice  ',
+  fields(13,2) = 'MXLDEPTH',
+
+  filename( 8) = '2d',
+#  frequency(8) = 2592000.,
+#  frequency(8) = 777600000.,
+  frequency(8) = 311040000.,
+  fields( 1,8) = 'fluxCO2 ',
+  fields( 2,8) = 'gDICsurf',
+  fields( 3,8) = 'gALKsurf',
+  fields( 4,8) = 'gO2surf ',
+#
+ &
+
+# Parameter for Diagnostics of per level statistics:
+#-----------------
+# for each output-stream:
+#  stat_fname(n) : prefix of the output file name (only 8.c long) for
+#outp.stream n
+#  stat_freq(n):< 0 : write snap-shot output every |stat_freq| seconds
+#               > 0 : write time-average output every stat_freq seconds
+#  stat_phase(n)    : write at time = stat_phase + multiple of |stat_freq|
+#  stat_region(:,n) : list of "regions" (default: 1 region only=global)
+#  stat_fields(:,n) : list of diagnostics fields (8.c) (see
+#"available_diagnostics.log"
+#                 file for the list of all available diag. in this particular
+#config)
+#-----------------
+ &DIAG_STATIS_PARMS
+ diagst_mnc=.FALSE.,
+     stat_freq(1:3)= 3*10800.,
+    stat_phase(1:3)= 3*0.,
+ stat_fields(1,1)= 'PP      '
+ stat_fields(1,2)= 'Nfix    '
+ stat_fields(1,3)= 'Denit   '
+    stat_fname(1)= 'statsPP',
+    stat_fname(2)= 'statsNfix',
+    stat_fname(3)= 'statsDenit',
+ &
