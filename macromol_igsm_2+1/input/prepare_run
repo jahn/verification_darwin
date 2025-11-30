@@ -1,0 +1,2 @@
+#!/bin/sh
+ln -sf /orcd/data/mick/007/jahn/forcing/igsm/shlomit/thSIce_tave.bin .
