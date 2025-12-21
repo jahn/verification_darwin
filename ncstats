@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """Usage: ncstats [-g <gridfile>] [--help] <file>
 
- -g <gridfile>  netCDF file with grid info (HFacC)
+ -g <gridfile>  netCDF file with grid info (hFacC)
  --help         show this help text
 """
 from __future__ import print_function
@@ -1226,9 +1226,9 @@ if __name__ == '__main__':
 
     if '-g' in opts:
         g = netcdf_file(opts['-g'], 'r')
-        smC = g.variables['HFacC'][:] != 0
-        smW = g.variables['HFacW'][:] != 0
-        smS = g.variables['HFacS'][:] != 0
+        smC = g.variables['hFacC'][:] != 0
+        smW = g.variables['hFacW'][:] != 0
+        smS = g.variables['hFacS'][:] != 0
     else:
         smC = np.s_[:]
         smW = np.s_[:]
