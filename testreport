@@ -312,11 +312,19 @@ testoutput_heading()
 	listChk=$DEF_CHECK_LIST
 	#  load experiment-specific list from file "tr_checklist" (if it exist)
 	if test -r $1/$2/tr_checklist ; then listChk=`cat $1/$2/tr_checklist` ; fi
-	sVar=`echo $listChk | awk '{print $1}'`
+	if test $KIND = 1 -o $KIND = 4 ; then kd='g_';
+	  #  TLM use same input_ad/tr_checklist --> convert
+	  listChk=`echo $listChk | sed 's/^adm/tlm/' | sed 's/ adm/ tlm/g'`
+	  if test -r $1/$2/tr_checklist.tlm ; then listChk=`cat $1/$2/tr_checklist.tlm` ; fi
+	elif test $KIND = 2 -o $KIND = 5 ; then kd='ad';
+	  if test -r $1/$2/tr_checklist.adm ; then listChk=`cat $1/$2/tr_checklist.adm` ; fi
+	elif test $KIND = 6 ; then kd='ad';
+        else kd=''; fi
+	if [ $debug -gt 0 ]; then echo "testoutput_run: listChk='$listChk'" 1>&2 ; fi
 	# remove 1rst var and expand the list: + => min max mean s.d
+	sVar=`echo $listChk | awk '{print $1}'`
 	listVar=`echo $listChk | sed 's/ [a-zA-Z0-9]*+/&mn &mx &av &sd/g' \
 			       | sed 's/+//g' | sed "s/^$sVar//"`
-	if [ $debug -gt 0 ]; then echo "testoutput_run: listVar(I)='$listVar'" 1>&2 ; fi
 	# set ref.outp file-name and, if compressed, uncompress it into subdir
 	refoutp=results/$3
 	if test ! -r $1/results/$3 ; then
@@ -365,7 +373,7 @@ testoutput_heading()
 	#- put it back once:
 	  listVar=" $sVar "`echo "$listVar " | sed "s/ $sVar / /g"`
 	fi
-	if [ $debug -gt 0 ]; then echo "testoutput_run: listVar(M)='$listVar'" 1>&2 ; fi
+	if [ $debug -gt 0 ]; then echo "testoutput_run: listVar='$listVar'" 1>&2 ; fi
 	echo "listVar='$listVar'" >> $locDIR"/summary.txt"
 	#---
 	allargs=""
@@ -385,13 +393,13 @@ testoutput_heading()
          else
 
 	  case $xx in
-	   'PS')  ;;
-	  'Cost') ;;
-	 'AdGrd') ;;
-	 'FDGrd') ;;
+	   'PS') ;;
+	'admCst') ;;
+	'admGrd') ;;
+	'admFwd') ;;
 	'tlmCst') ;;
 	'tlmGrd') ;;
-	'fwdGrd') ;;
+	'tlmFwd') ;;
 	   'Tmn') ;;
 	   'Tmx') ;;
 	   'Tav') ;;
@@ -408,6 +416,43 @@ testoutput_heading()
 	   'Vmx') ;;
 	   'Vav') ;;
 	   'Vsd') ;;
+	 'Etamn') ;;
+	 'Etamx') ;;
+	 'Etaav') ;;
+	 'Etasd') ;;
+	 'Qntmn') ;;
+	 'Qntmx') ;;
+	 'Qntav') ;;
+	 'Qntsd') ;;
+	 'aSImn') ;;
+	 'aSImx') ;;
+	 'aSIav') ;;
+	 'aSIsd') ;;
+	 'hSImn') ;;
+	 'hSImx') ;;
+	 'hSIav') ;;
+	 'hSIsd') ;;
+	 'uSImn') ;;
+	 'uSImx') ;;
+	 'uSIav') ;;
+	 'uSIsd') ;;
+	 'vSImn') ;;
+	 'vSImx') ;;
+	 'vSIav') ;;
+	 'vSIsd') ;;
+	'AthSiG') ;;
+	'AthSiS') ;;
+	'AthSiN') ;;
+	'HthSiG') ;;
+	'HthSiS') ;;
+	'HthSiN') ;;
+	'HthMxS') ;;
+	'HthMxN') ;;
+	 'sbo_M') ;;
+	 'sboFW') ;;
+	 'sboAc') ;;
+	 'sboAp') ;;
+	'StrmIc') ;;
 	'solzmn') hh="sn" ;;
 	'solzmx') hh="sx" ;;
 	'solzav') hh="sa" ;;
@@ -416,26 +461,6 @@ testoutput_heading()
 	'rmudmx') hh="rx" ;;
 	'rmudav') hh="ra" ;;
 	'rmudsd') hh="rs" ;;
-	'Edb1mn'|'Edb2mn'|'Edb3mn'|'Edb4mn'|'Edb5mn'|'Edb6mn'|'Edb7mn'|'Edb8mn'|'Edb9mn'|\
-        'Edb10mn'|'Edb11mn'|'Edb12mn'|'Edb13mn'|'Edb14mn'|'Edb15mn'|'Edb16mn'|'Edb17mn'|'Edb18mn'|'Edb19mn'|\
-        'Edb20mn'|'Edb21mn'|'Edb22mn'|'Edb23mn'|'Edb24mn'|'Edb25mn'|'Edb26mn'|'Edb27mn'|'Edb28mn'|'Edb29mn'|\
-        'Edb30mn'|'Edb31mn'|'Edb32mn'|'Edb33mn'|'Edb34mn'|'Edb35mn'|'Edb36mn'|'Edb37mn'|'Edb38mn'|'Edb39mn')
-           hh="dn" ;;
-	'Edb1mx'|'Edb2mx'|'Edb3mx'|'Edb4mx'|'Edb5mx'|'Edb6mx'|'Edb7mx'|'Edb8mx'|'Edb9mx'|\
-        'Edb10mx'|'Edb11mx'|'Edb12mx'|'Edb13mx'|'Edb14mx'|'Edb15mx'|'Edb16mx'|'Edb17mx'|'Edb18mx'|'Edb19mx'|\
-        'Edb20mx'|'Edb21mx'|'Edb22mx'|'Edb23mx'|'Edb24mx'|'Edb25mx'|'Edb26mx'|'Edb27mx'|'Edb28mx'|'Edb29mx'|\
-        'Edb30mx'|'Edb31mx'|'Edb32mx'|'Edb33mx'|'Edb34mx'|'Edb35mx'|'Edb36mx'|'Edb37mx'|'Edb38mx'|'Edb39mx')
-           hh="dx" ;;
-	'Esb1mn'|'Esb2mn'|'Esb3mn'|'Esb4mn'|'Esb5mn'|'Esb6mn'|'Esb7mn'|'Esb8mn'|'Esb9mn'|\
-        'Esb10mn'|'Esb11mn'|'Esb12mn'|'Esb13mn'|'Esb14mn'|'Esb15mn'|'Esb16mn'|'Esb17mn'|'Esb18mn'|'Esb19mn'|\
-        'Esb20mn'|'Esb21mn'|'Esb22mn'|'Esb23mn'|'Esb24mn'|'Esb25mn'|'Esb26mn'|'Esb27mn'|'Esb28mn'|'Esb29mn'|\
-        'Esb30mn'|'Esb31mn'|'Esb32mn'|'Esb33mn'|'Esb34mn'|'Esb35mn'|'Esb36mn'|'Esb37mn'|'Esb38mn'|'Esb39mn')
-           hh="sn" ;;
-	'Esb1mx'|'Esb2mx'|'Esb3mx'|'Esb4mx'|'Esb5mx'|'Esb6mx'|'Esb7mx'|'Esb8mx'|'Esb9mx'|\
-        'Esb10mx'|'Esb11mx'|'Esb12mx'|'Esb13mx'|'Esb14mx'|'Esb15mx'|'Esb16mx'|'Esb17mx'|'Esb18mx'|'Esb19mx'|\
-        'Esb20mx'|'Esb21mx'|'Esb22mx'|'Esb23mx'|'Esb24mx'|'Esb25mx'|'Esb26mx'|'Esb27mx'|'Esb28mx'|'Esb29mx'|\
-        'Esb30mx'|'Esb31mx'|'Esb32mx'|'Esb33mx'|'Esb34mx'|'Esb35mx'|'Esb36mx'|'Esb37mx'|'Esb38mx'|'Esb39mx')
-           hh="sx" ;;
 	'Eda1av'|'Eda2av'|'Eda3av'|'Eda4av'|'Eda5av'|'Eda6av'|'Eda7av'|'Eda8av'|'Eda9av'|\
         'Eda10av'|'Eda11av'|'Eda12av'|'Eda13av'|'Eda14av'|'Eda15av'|'Eda16av'|'Eda17av'|'Eda18av'|'Eda19av'|\
         'Eda20av'|'Eda21av'|'Eda22av'|'Eda23av'|'Eda24av'|'Eda25av'|'Eda26av'|'Eda27av'|'Eda28av'|'Eda29av'|\
@@ -462,6 +487,26 @@ testoutput_heading()
              hh=$ii
            fi
            ;;
+	'Edb1mn'|'Edb2mn'|'Edb3mn'|'Edb4mn'|'Edb5mn'|'Edb6mn'|'Edb7mn'|'Edb8mn'|'Edb9mn'|\
+        'Edb10mn'|'Edb11mn'|'Edb12mn'|'Edb13mn'|'Edb14mn'|'Edb15mn'|'Edb16mn'|'Edb17mn'|'Edb18mn'|'Edb19mn'|\
+        'Edb20mn'|'Edb21mn'|'Edb22mn'|'Edb23mn'|'Edb24mn'|'Edb25mn'|'Edb26mn'|'Edb27mn'|'Edb28mn'|'Edb29mn'|\
+        'Edb30mn'|'Edb31mn'|'Edb32mn'|'Edb33mn'|'Edb34mn'|'Edb35mn'|'Edb36mn'|'Edb37mn'|'Edb38mn'|'Edb39mn')
+           hh="dn" ;;
+	'Edb1mx'|'Edb2mx'|'Edb3mx'|'Edb4mx'|'Edb5mx'|'Edb6mx'|'Edb7mx'|'Edb8mx'|'Edb9mx'|\
+        'Edb10mx'|'Edb11mx'|'Edb12mx'|'Edb13mx'|'Edb14mx'|'Edb15mx'|'Edb16mx'|'Edb17mx'|'Edb18mx'|'Edb19mx'|\
+        'Edb20mx'|'Edb21mx'|'Edb22mx'|'Edb23mx'|'Edb24mx'|'Edb25mx'|'Edb26mx'|'Edb27mx'|'Edb28mx'|'Edb29mx'|\
+        'Edb30mx'|'Edb31mx'|'Edb32mx'|'Edb33mx'|'Edb34mx'|'Edb35mx'|'Edb36mx'|'Edb37mx'|'Edb38mx'|'Edb39mx')
+           hh="dx" ;;
+	'Esb1mn'|'Esb2mn'|'Esb3mn'|'Esb4mn'|'Esb5mn'|'Esb6mn'|'Esb7mn'|'Esb8mn'|'Esb9mn'|\
+        'Esb10mn'|'Esb11mn'|'Esb12mn'|'Esb13mn'|'Esb14mn'|'Esb15mn'|'Esb16mn'|'Esb17mn'|'Esb18mn'|'Esb19mn'|\
+        'Esb20mn'|'Esb21mn'|'Esb22mn'|'Esb23mn'|'Esb24mn'|'Esb25mn'|'Esb26mn'|'Esb27mn'|'Esb28mn'|'Esb29mn'|\
+        'Esb30mn'|'Esb31mn'|'Esb32mn'|'Esb33mn'|'Esb34mn'|'Esb35mn'|'Esb36mn'|'Esb37mn'|'Esb38mn'|'Esb39mn')
+           hh="sn" ;;
+	'Esb1mx'|'Esb2mx'|'Esb3mx'|'Esb4mx'|'Esb5mx'|'Esb6mx'|'Esb7mx'|'Esb8mx'|'Esb9mx'|\
+        'Esb10mx'|'Esb11mx'|'Esb12mx'|'Esb13mx'|'Esb14mx'|'Esb15mx'|'Esb16mx'|'Esb17mx'|'Esb18mx'|'Esb19mx'|\
+        'Esb20mx'|'Esb21mx'|'Esb22mx'|'Esb23mx'|'Esb24mx'|'Esb25mx'|'Esb26mx'|'Esb27mx'|'Esb28mx'|'Esb29mx'|\
+        'Esb30mx'|'Esb31mx'|'Esb32mx'|'Esb33mx'|'Esb34mx'|'Esb35mx'|'Esb36mx'|'Esb37mx'|'Esb38mx'|'Esb39mx')
+           hh="sx" ;;
 	'Edb1av'|'Edb2av'|'Edb3av'|'Edb4av'|'Edb5av'|'Edb6av'|'Edb7av'|'Edb8av'|'Edb9av'|\
         'Edb10av'|'Edb11av'|'Edb12av'|'Edb13av'|'Edb14av'|'Edb15av'|'Edb16av'|'Edb17av'|'Edb18av'|'Edb19av'|\
         'Edb20av'|'Edb21av'|'Edb22av'|'Edb23av'|'Edb24av'|'Edb25av'|'Edb26av'|'Edb27av'|'Edb28av'|'Edb29av'|\
@@ -514,32 +559,6 @@ testoutput_heading()
              hh=$ii
            fi
 	   ;;
-	 'Qntmn') ;;
-	 'Qntmx') ;;
-	 'Qntav') ;;
-	 'Qntsd') ;;
-	 'aSImn') ;;
-	 'aSImx') ;;
-	 'aSIav') ;;
-	 'aSIsd') ;;
-	 'hSImn') ;;
-	 'hSImx') ;;
-	 'hSIav') ;;
-	 'hSIsd') ;;
-	 'uSImn') ;;
-	 'uSImx') ;;
-	 'uSIav') ;;
-	 'uSIsd') ;;
-	 'vSImn') ;;
-	 'vSImx') ;;
-	 'vSIav') ;;
-	 'vSIsd') ;;
-	'AthSiG') ;;
-	'AthSiS') ;;
-	'AthSiN') ;;
-	'HthSiG') ;;
-	'HthSiS') ;;
-	'HthSiN') ;;
 	      *) yy=99; echo "WARNING: asking for var=$xx : not recognized !" 1>&2 ;;
 	  esac
          fi
@@ -724,6 +743,17 @@ testoutput_run()
              hh=$ii
            fi
 	   testoutput_var $1 "OASIM_Edabove"$hh"_mean" "Eda"$hh"_mean" $2 $refoutp ; yy=$? ;;
+	'Esa1av'|'Esa2av'|'Esa3av'|'Esa4av'|'Esa5av'|'Esa6av'|'Esa7av'|'Esa8av'|'Esa9av'|\
+        'Esa10av'|'Esa11av'|'Esa12av'|'Esa13av'|'Esa14av'|'Esa15av'|'Esa16av'|'Esa17av'|'Esa18av'|'Esa19av'|\
+        'Esa20av'|'Esa21av'|'Esa22av'|'Esa23av'|'Esa24av'|'Esa25av'|'Esa26av'|'Esa27av'|'Esa28av'|'Esa29av'|\
+        'Esa30av'|'Esa31av'|'Esa32av'|'Esa33av'|'Esa34av'|'Esa35av'|'Esa36av'|'Esa37av'|'Esa38av'|'Esa39av')
+           ii=`echo $xx | sed 's/Esa//' | sed 's/..$//'`
+           if [ ${#ii} = 1 ]; then
+             hh=$(printf "%02d" $ii)
+           else
+             hh=$ii
+           fi
+	   testoutput_var $1 "OASIM_Esabove"$hh"_mean" "Esa"$hh"_mean" $2 $refoutp ; yy=$? ;;
 	'Edb1mn'|'Edb2mn'|'Edb3mn'|'Edb4mn'|'Edb5mn'|'Edb6mn'|'Edb7mn'|'Edb8mn'|'Edb9mn'|\
         'Edb10mn'|'Edb11mn'|'Edb12mn'|'Edb13mn'|'Edb14mn'|'Edb15mn'|'Edb16mn'|'Edb17mn'|'Edb18mn'|'Edb19mn'|\
         'Edb20mn'|'Edb21mn'|'Edb22mn'|'Edb23mn'|'Edb24mn'|'Edb25mn'|'Edb26mn'|'Edb27mn'|'Edb28mn'|'Edb29mn'|\
