@@ -1,0 +1,6 @@
+#!/bin/sh
+if ! test -e forcing; then
+  ln -s "$MITGCM_DATA_DIR" forcing
+fi
+ln -sf forcing/MITgcm/darwin/verification/3deg/* .
+ln -sf forcing/MITgcm/darwin/verification/3deg/exp18binav/* .
