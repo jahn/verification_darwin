@@ -30,7 +30,7 @@
  depthfesed= 7000.,
  scav_tau= .015,
  scav_POC_wgt= 1.,
- scav_POSi_wgt= 0.,
+ scav_PSi_wgt= 0.,
  scav_PIC_wgt= 0.,
  kdoc=  3.8580246913580247E-7,  ! 1/30day
  kdop=  3.8580246913580247E-7,  ! 1/30day
