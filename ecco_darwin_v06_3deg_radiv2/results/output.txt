@@ -5,10 +5,10 @@
 (PID.TID 0000.0001) // ======================================================
 (PID.TID 0000.0001) // execution environment starting up...
 (PID.TID 0000.0001) 
-(PID.TID 0000.0001) // MITgcmUV version:  checkpoint69n
+(PID.TID 0000.0001) // MITgcmUV version:  checkpoint69r
 (PID.TID 0000.0001) // Build user:        jahn
-(PID.TID 0000.0001) // Build host:        node669
-(PID.TID 0000.0001) // Build date:        Mon May 11 09:04:41 EDT 2026
+(PID.TID 0000.0001) // Build host:        node1627
+(PID.TID 0000.0001) // Build date:        Mon Oct 26 17:30:46 EDT 2026
 (PID.TID 0000.0001) 
 (PID.TID 0000.0001) // =======================================================
 (PID.TID 0000.0001) // Execution Environment parameter file "eedata"
@@ -58,7 +58,7 @@
 (PID.TID 0000.0001) maxLengthPrt1D=   65 /* maxLength of 1D array printed to StdOut */
 (PID.TID 0000.0001) 
 (PID.TID 0000.0001) ======= Starting MPI parallel Run =========
-(PID.TID 0000.0001)  My Processor Name (len:  7 ) = node669
+(PID.TID 0000.0001)  My Processor Name (len:  8 ) = node1627
 (PID.TID 0000.0001)  Located at (  0,  0) on processor grid (0:  7,0:  3)
 (PID.TID 0000.0001)  Origin at  (     1,     1) on global grid (1:   128,1:    64)
 (PID.TID 0000.0001)  North neighbor = processor 0001
@@ -5954,6 +5954,9 @@
 (PID.TID 0000.0001) // DARWIN_ALLOW_CDOM:                    defined
 (PID.TID 0000.0001) // DARWIN_ALLOW_CARBON:                  defined
 (PID.TID 0000.0001) // DARWIN_TOTALPHSCALE:                  defined
+(PID.TID 0000.0001) // DARWIN_SOLVESAPHE:                    defined
+(PID.TID 0000.0001) // DARWIN_USE_PLOAD:                 NOT defined
+(PID.TID 0000.0001) // DARWIN_MACROMOLECULAR_GROWTH:     NOT defined
 (PID.TID 0000.0001) // DARWIN_ALLOW_DENIT:                   defined
 (PID.TID 0000.0001) // DARWIN_ALLOW_EXUDE:               NOT defined
 (PID.TID 0000.0001) // ALLOW_OLD_VIRTUALFLUX:            NOT defined
@@ -5961,6 +5964,9 @@
 (PID.TID 0000.0001) // DARWIN_BOTTOM_SINK:                   defined
 (PID.TID 0000.0001) // DARWIN_CDOM_UNITS_CARBON:         NOT defined
 (PID.TID 0000.0001) // DARWIN_NUTRIENT_RUNOFF:               defined
+(PID.TID 0000.0001) // DARWIN_ALLOW_RADIv1:              NOT defined
+(PID.TID 0000.0001) // DARWIN_ALLOW_RADIv2:                  defined
+(PID.TID 0000.0001) // DARWIN_ALLOW_DVM:                 NOT defined
 (PID.TID 0000.0001) // DARWIN_AVPAR:                     NOT defined
 (PID.TID 0000.0001) // DARWIN_ALLOW_GEIDER:                  defined
 (PID.TID 0000.0001) // DARWIN_GEIDER_RHO_SYNTH:              defined
@@ -5977,6 +5983,7 @@
 (PID.TID 0000.0001) // DARWIN_PART_SCAV:                     defined
 (PID.TID 0000.0001) // DARWIN_IRON_SED_SOURCE_VARIABLE:      defined
 (PID.TID 0000.0001) // DARWIN_IRON_SED_SOURCE_POP:       NOT defined
+(PID.TID 0000.0001) // DARWIN_HYDROTHERMAL_VENTS:        NOT defined
 (PID.TID 0000.0001) // DARWIN_DIAG_PERTYPE:                  defined
 (PID.TID 0000.0001) // DARWIN_DEBUG:                         defined
 (PID.TID 0000.0001) // DARWIN_ALLOW_CONS:                    defined
@@ -7093,7 +7100,7 @@
 (PID.TID 0000.0001)     2 @  4.909078761526029E+02,
 (PID.TID 0000.0001)                 5.211947111050803E+03,
 (PID.TID 0000.0001)                 5.533501092157367E+04,
-(PID.TID 0000.0001)                 5.874893525297766E+05
+(PID.TID 0000.0001)                 5.874893525297767E+05
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) qcarbon = /* cellular carbon content (mmol C/cell) */
 (PID.TID 0000.0001)                 7.789193721295913E-12,
@@ -7102,7 +7109,7 @@
 (PID.TID 0000.0001)     2 @  6.092738029662399E-09,
 (PID.TID 0000.0001)                 5.613742723010094E-08,
 (PID.TID 0000.0001)                 5.172404788573357E-07,
-(PID.TID 0000.0001)                 4.765763701139333E-06
+(PID.TID 0000.0001)                 4.765763701139335E-06
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) aptype = /* optical type (for absorption/scattering spectra) */
 (PID.TID 0000.0001)                       4,
@@ -7577,203 +7584,203 @@
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bphy_mgC(:,   1) = /* carbon-specific total scattering coefficient (m^2 (mg C)^-1)' */
 (PID.TID 0000.0001)                 5.552782298628591E-03,
-(PID.TID 0000.0001)                 6.071463791042653E-03,
+(PID.TID 0000.0001)                 6.071463791042648E-03,
 (PID.TID 0000.0001)                 7.449409039404127E-03,
 (PID.TID 0000.0001)                 4.712064297368252E-03,
 (PID.TID 0000.0001)                 3.819298225007035E-02,
-(PID.TID 0000.0001)                 2.598830807891905E-03,
-(PID.TID 0000.0001)                 2.764414750881535E-03,
+(PID.TID 0000.0001)                 2.598830807891904E-03,
+(PID.TID 0000.0001)                 2.764414750881534E-03,
 (PID.TID 0000.0001)                 1.033131320115999E-03,
-(PID.TID 0000.0001)                 3.861071585818514E-04,
-(PID.TID 0000.0001)                 1.442979561314748E-04
+(PID.TID 0000.0001)                 3.861071585818512E-04,
+(PID.TID 0000.0001)                 1.442979561314747E-04
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bphy_mgC(:,   2) = /* carbon-specific total scattering coefficient (m^2 (mg C)^-1)' */
 (PID.TID 0000.0001)                 5.200712427163824E-03,
-(PID.TID 0000.0001)                 5.863008856737853E-03,
+(PID.TID 0000.0001)                 5.863008856737848E-03,
 (PID.TID 0000.0001)                 7.294112399128063E-03,
 (PID.TID 0000.0001)                 4.331231928622252E-03,
 (PID.TID 0000.0001)                 3.680400801383574E-02,
-(PID.TID 0000.0001)                 2.575474021699531E-03,
-(PID.TID 0000.0001)                 2.604532270442627E-03,
-(PID.TID 0000.0001)                 9.695793441878101E-04,
-(PID.TID 0000.0001)                 3.609416229332804E-04,
-(PID.TID 0000.0001)                 1.343663682056278E-04
+(PID.TID 0000.0001)                 2.575474021699530E-03,
+(PID.TID 0000.0001)                 2.604532270442626E-03,
+(PID.TID 0000.0001)                 9.695793441878098E-04,
+(PID.TID 0000.0001)                 3.609416229332801E-04,
+(PID.TID 0000.0001)                 1.343663682056277E-04
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bphy_mgC(:,   3) = /* carbon-specific total scattering coefficient (m^2 (mg C)^-1)' */
 (PID.TID 0000.0001)                 5.503275905191136E-03,
-(PID.TID 0000.0001)                 5.706821625608748E-03,
+(PID.TID 0000.0001)                 5.706821625608744E-03,
 (PID.TID 0000.0001)                 7.342016356030604E-03,
 (PID.TID 0000.0001)                 4.088005821791930E-03,
 (PID.TID 0000.0001)                 3.812747869406566E-02,
 (PID.TID 0000.0001)                 2.512951261625777E-03,
-(PID.TID 0000.0001)                 2.512809806634793E-03,
-(PID.TID 0000.0001)                 9.218906075444779E-04,
-(PID.TID 0000.0001)                 3.382199042819344E-04,
+(PID.TID 0000.0001)                 2.512809806634792E-03,
+(PID.TID 0000.0001)                 9.218906075444775E-04,
+(PID.TID 0000.0001)                 3.382199042819342E-04,
 (PID.TID 0000.0001)                 1.240848997878112E-04
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bphy_mgC(:,   4) = /* carbon-specific total scattering coefficient (m^2 (mg C)^-1)' */
 (PID.TID 0000.0001)                 5.590150280885808E-03,
-(PID.TID 0000.0001)                 5.776221691206763E-03,
+(PID.TID 0000.0001)                 5.776221691206758E-03,
 (PID.TID 0000.0001)                 7.761376983287330E-03,
 (PID.TID 0000.0001)                 3.719391709568712E-03,
 (PID.TID 0000.0001)                 4.111058962371714E-02,
-(PID.TID 0000.0001)                 2.582787003465274E-03,
+(PID.TID 0000.0001)                 2.582787003465273E-03,
 (PID.TID 0000.0001)                 2.450242726248301E-03,
-(PID.TID 0000.0001)                 8.903881975720878E-04,
-(PID.TID 0000.0001)                 3.235561660413768E-04,
-(PID.TID 0000.0001)                 1.175763480118673E-04
+(PID.TID 0000.0001)                 8.903881975720877E-04,
+(PID.TID 0000.0001)                 3.235561660413766E-04,
+(PID.TID 0000.0001)                 1.175763480118672E-04
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bphy_mgC(:,   5) = /* carbon-specific total scattering coefficient (m^2 (mg C)^-1)' */
 (PID.TID 0000.0001)                 5.540164889662501E-03,
-(PID.TID 0000.0001)                 5.747474964738009E-03,
+(PID.TID 0000.0001)                 5.747474964738005E-03,
 (PID.TID 0000.0001)                 8.664061653138280E-03,
 (PID.TID 0000.0001)                 3.510683360740665E-03,
 (PID.TID 0000.0001)                 4.021947460272739E-02,
-(PID.TID 0000.0001)                 2.743783509547516E-03,
-(PID.TID 0000.0001)                 2.518712228073458E-03,
-(PID.TID 0000.0001)                 9.321466918644505E-04,
-(PID.TID 0000.0001)                 3.449768677299236E-04,
-(PID.TID 0000.0001)                 1.276720073218424E-04
+(PID.TID 0000.0001)                 2.743783509547515E-03,
+(PID.TID 0000.0001)                 2.518712228073457E-03,
+(PID.TID 0000.0001)                 9.321466918644503E-04,
+(PID.TID 0000.0001)                 3.449768677299234E-04,
+(PID.TID 0000.0001)                 1.276720073218423E-04
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bphy_mgC(:,   6) = /* carbon-specific total scattering coefficient (m^2 (mg C)^-1)' */
 (PID.TID 0000.0001)                 4.924623921701061E-03,
-(PID.TID 0000.0001)                 5.469778357947174E-03,
+(PID.TID 0000.0001)                 5.469778357947170E-03,
 (PID.TID 0000.0001)                 9.201047787129851E-03,
 (PID.TID 0000.0001)                 3.271103946464463E-03,
 (PID.TID 0000.0001)                 3.924270237791923E-02,
 (PID.TID 0000.0001)                 2.864499714639502E-03,
 (PID.TID 0000.0001)                 2.494516352473527E-03,
-(PID.TID 0000.0001)                 9.389600598239330E-04,
-(PID.TID 0000.0001)                 3.534336397796452E-04,
-(PID.TID 0000.0001)                 1.330358372765199E-04
+(PID.TID 0000.0001)                 9.389600598239327E-04,
+(PID.TID 0000.0001)                 3.534336397796450E-04,
+(PID.TID 0000.0001)                 1.330358372765198E-04
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bphy_mgC(:,   7) = /* carbon-specific total scattering coefficient (m^2 (mg C)^-1)' */
 (PID.TID 0000.0001)                 4.256993600465941E-03,
-(PID.TID 0000.0001)                 5.061226600080865E-03,
+(PID.TID 0000.0001)                 5.061226600080860E-03,
 (PID.TID 0000.0001)                 9.500176348374101E-03,
 (PID.TID 0000.0001)                 3.050806545602550E-03,
 (PID.TID 0000.0001)                 3.659602793140030E-02,
 (PID.TID 0000.0001)                 2.984832592708229E-03,
 (PID.TID 0000.0001)                 2.422552815746016E-03,
-(PID.TID 0000.0001)                 9.343148857141224E-04,
-(PID.TID 0000.0001)                 3.603406703841761E-04,
+(PID.TID 0000.0001)                 9.343148857141221E-04,
+(PID.TID 0000.0001)                 3.603406703841759E-04,
 (PID.TID 0000.0001)                 1.389739163083901E-04
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bphy_mgC(:,   8) = /* carbon-specific total scattering coefficient (m^2 (mg C)^-1)' */
 (PID.TID 0000.0001)                 3.759607773490803E-03,
-(PID.TID 0000.0001)                 4.668591845571972E-03,
+(PID.TID 0000.0001)                 4.668591845571968E-03,
 (PID.TID 0000.0001)                 9.453579502727115E-03,
 (PID.TID 0000.0001)                 2.957923365095352E-03,
 (PID.TID 0000.0001)                 3.291429168045058E-02,
-(PID.TID 0000.0001)                 3.039135406704217E-03,
-(PID.TID 0000.0001)                 2.433739109944258E-03,
-(PID.TID 0000.0001)                 9.750441101080228E-04,
-(PID.TID 0000.0001)                 3.906380157066715E-04,
-(PID.TID 0000.0001)                 1.565037496594280E-04
+(PID.TID 0000.0001)                 3.039135406704216E-03,
+(PID.TID 0000.0001)                 2.433739109944257E-03,
+(PID.TID 0000.0001)                 9.750441101080224E-04,
+(PID.TID 0000.0001)                 3.906380157066712E-04,
+(PID.TID 0000.0001)                 1.565037496594279E-04
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bphy_mgC(:,   9) = /* carbon-specific total scattering coefficient (m^2 (mg C)^-1)' */
 (PID.TID 0000.0001)                 3.384167234925151E-03,
-(PID.TID 0000.0001)                 4.293010227904116E-03,
+(PID.TID 0000.0001)                 4.293010227904113E-03,
 (PID.TID 0000.0001)                 9.217997680071770E-03,
 (PID.TID 0000.0001)                 2.672572298524759E-03,
 (PID.TID 0000.0001)                 3.078956520747226E-02,
-(PID.TID 0000.0001)                 2.999512719661906E-03,
-(PID.TID 0000.0001)                 2.364837215900672E-03,
-(PID.TID 0000.0001)                 9.648836544903528E-04,
-(PID.TID 0000.0001)                 3.936848001388024E-04,
-(PID.TID 0000.0001)                 1.606284044081902E-04
+(PID.TID 0000.0001)                 2.999512719661904E-03,
+(PID.TID 0000.0001)                 2.364837215900671E-03,
+(PID.TID 0000.0001)                 9.648836544903525E-04,
+(PID.TID 0000.0001)                 3.936848001388022E-04,
+(PID.TID 0000.0001)                 1.606284044081901E-04
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bphy_mgC(:,  10) = /* carbon-specific total scattering coefficient (m^2 (mg C)^-1)' */
 (PID.TID 0000.0001)                 3.041251380444501E-03,
-(PID.TID 0000.0001)                 3.916328640073042E-03,
+(PID.TID 0000.0001)                 3.916328640073039E-03,
 (PID.TID 0000.0001)                 8.989140771840964E-03,
 (PID.TID 0000.0001)                 2.439042091565662E-03,
 (PID.TID 0000.0001)                 2.829084207104360E-02,
-(PID.TID 0000.0001)                 2.941526286080435E-03,
+(PID.TID 0000.0001)                 2.941526286080434E-03,
 (PID.TID 0000.0001)                 2.293016525302570E-03,
-(PID.TID 0000.0001)                 9.573551913090485E-04,
-(PID.TID 0000.0001)                 3.997044732180662E-04,
-(PID.TID 0000.0001)                 1.668802419006864E-04
+(PID.TID 0000.0001)                 9.573551913090483E-04,
+(PID.TID 0000.0001)                 3.997044732180659E-04,
+(PID.TID 0000.0001)                 1.668802419006863E-04
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bphy_mgC(:,  11) = /* carbon-specific total scattering coefficient (m^2 (mg C)^-1)' */
 (PID.TID 0000.0001)                 2.715232380239004E-03,
-(PID.TID 0000.0001)                 3.582553460349522E-03,
+(PID.TID 0000.0001)                 3.582553460349519E-03,
 (PID.TID 0000.0001)                 8.646222198243915E-03,
 (PID.TID 0000.0001)                 2.255720645483399E-03,
 (PID.TID 0000.0001)                 2.514083754326756E-02,
-(PID.TID 0000.0001)                 2.841121123192905E-03,
-(PID.TID 0000.0001)                 2.194606355065007E-03,
-(PID.TID 0000.0001)                 9.407266999967230E-04,
-(PID.TID 0000.0001)                 4.032462231981965E-04,
-(PID.TID 0000.0001)                 1.728530895574413E-04
+(PID.TID 0000.0001)                 2.841121123192904E-03,
+(PID.TID 0000.0001)                 2.194606355065006E-03,
+(PID.TID 0000.0001)                 9.407266999967227E-04,
+(PID.TID 0000.0001)                 4.032462231981962E-04,
+(PID.TID 0000.0001)                 1.728530895574412E-04
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bphy_mgC(:,  12) = /* carbon-specific total scattering coefficient (m^2 (mg C)^-1)' */
 (PID.TID 0000.0001)                 2.762021675935473E-03,
-(PID.TID 0000.0001)                 3.476817167604389E-03,
+(PID.TID 0000.0001)                 3.476817167604386E-03,
 (PID.TID 0000.0001)                 8.184780698468392E-03,
 (PID.TID 0000.0001)                 2.069638918071394E-03,
 (PID.TID 0000.0001)                 2.489973575902023E-02,
-(PID.TID 0000.0001)                 2.725689944999038E-03,
+(PID.TID 0000.0001)                 2.725689944999037E-03,
 (PID.TID 0000.0001)                 1.996032031414608E-03,
-(PID.TID 0000.0001)                 8.320696444351264E-04,
-(PID.TID 0000.0001)                 3.468581076325358E-04,
+(PID.TID 0000.0001)                 8.320696444351262E-04,
+(PID.TID 0000.0001)                 3.468581076325356E-04,
 (PID.TID 0000.0001)                 1.445919192402458E-04
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bphy_mgC(:,  13) = /* carbon-specific total scattering coefficient (m^2 (mg C)^-1)' */
 (PID.TID 0000.0001)                 2.837033004251907E-03,
-(PID.TID 0000.0001)                 3.477923976559170E-03,
+(PID.TID 0000.0001)                 3.477923976559167E-03,
 (PID.TID 0000.0001)                 8.860262207091279E-03,
 (PID.TID 0000.0001)                 2.139994507676083E-03,
 (PID.TID 0000.0001)                 2.359318309637990E-02,
-(PID.TID 0000.0001)                 2.932477291354710E-03,
-(PID.TID 0000.0001)                 2.141075745635968E-03,
-(PID.TID 0000.0001)                 9.250933216845258E-04,
-(PID.TID 0000.0001)                 3.997045202952921E-04,
-(PID.TID 0000.0001)                 1.727000939251965E-04
+(PID.TID 0000.0001)                 2.932477291354709E-03,
+(PID.TID 0000.0001)                 2.141075745635967E-03,
+(PID.TID 0000.0001)                 9.250933216845256E-04,
+(PID.TID 0000.0001)                 3.997045202952917E-04,
+(PID.TID 0000.0001)                 1.727000939251964E-04
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bbphy_mgC(:,   1) = /* carbon-specific backscattering coefficient (m^2 (mg C)^-1) */
 (PID.TID 0000.0001)                 1.866798776809378E-05,
-(PID.TID 0000.0001)                 6.311869910875232E-06,
+(PID.TID 0000.0001)                 6.311869910875228E-06,
 (PID.TID 0000.0001)                 2.874150008217532E-06,
 (PID.TID 0000.0001)                 6.853273831128741E-06,
 (PID.TID 0000.0001)                 4.305228233622300E-05,
-(PID.TID 0000.0001)                 2.503323836646902E-05,
-(PID.TID 0000.0001)                 2.494168537148370E-06,
-(PID.TID 0000.0001)                 2.956937346343257E-07,
+(PID.TID 0000.0001)                 2.503323836646903E-05,
+(PID.TID 0000.0001)                 2.494168537148369E-06,
+(PID.TID 0000.0001)                 2.956937346343258E-07,
 (PID.TID 0000.0001)                 3.505568424897256E-08,
-(PID.TID 0000.0001)                 4.155992685078036E-09
+(PID.TID 0000.0001)                 4.155992685078034E-09
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bbphy_mgC(:,   2) = /* carbon-specific backscattering coefficient (m^2 (mg C)^-1) */
 (PID.TID 0000.0001)                 1.748435842688192E-05,
-(PID.TID 0000.0001)                 6.095160979899958E-06,
+(PID.TID 0000.0001)                 6.095160979899954E-06,
 (PID.TID 0000.0001)                 2.814233062112864E-06,
 (PID.TID 0000.0001)                 6.299387393664078E-06,
 (PID.TID 0000.0001)                 4.148658865499699E-05,
 (PID.TID 0000.0001)                 2.480825411799360E-05,
 (PID.TID 0000.0001)                 2.349915996090701E-06,
 (PID.TID 0000.0001)                 2.775044485874300E-07,
-(PID.TID 0000.0001)                 3.277083909123754E-08,
-(PID.TID 0000.0001)                 3.869948392576610E-09
+(PID.TID 0000.0001)                 3.277083909123753E-08,
+(PID.TID 0000.0001)                 3.869948392576608E-09
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bbphy_mgC(:,   3) = /* carbon-specific backscattering coefficient (m^2 (mg C)^-1) */
 (PID.TID 0000.0001)                 1.850155143087935E-05,
-(PID.TID 0000.0001)                 5.932789347859405E-06,
+(PID.TID 0000.0001)                 5.932789347859403E-06,
 (PID.TID 0000.0001)                 2.832715489027107E-06,
 (PID.TID 0000.0001)                 5.945636891168059E-06,
 (PID.TID 0000.0001)                 4.297844475086043E-05,
-(PID.TID 0000.0001)                 2.420600361692099E-05,
-(PID.TID 0000.0001)                 2.267160221724255E-06,
-(PID.TID 0000.0001)                 2.638553989811550E-07,
+(PID.TID 0000.0001)                 2.420600361692100E-05,
+(PID.TID 0000.0001)                 2.267160221724254E-06,
+(PID.TID 0000.0001)                 2.638553989811549E-07,
 (PID.TID 0000.0001)                 3.070787450503001E-08,
-(PID.TID 0000.0001)                 3.573827028963019E-09
+(PID.TID 0000.0001)                 3.573827028963017E-09
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bbphy_mgC(:,   4) = /* carbon-specific backscattering coefficient (m^2 (mg C)^-1) */
 (PID.TID 0000.0001)                 1.879361578629798E-05,
-(PID.TID 0000.0001)                 6.004937383479273E-06,
+(PID.TID 0000.0001)                 6.004937383479269E-06,
 (PID.TID 0000.0001)                 2.994514276541726E-06,
 (PID.TID 0000.0001)                 5.409520809200533E-06,
 (PID.TID 0000.0001)                 4.634109742727958E-05,
-(PID.TID 0000.0001)                 2.487869641656709E-05,
+(PID.TID 0000.0001)                 2.487869641656708E-05,
 (PID.TID 0000.0001)                 2.210709631843898E-06,
 (PID.TID 0000.0001)                 2.548390570376431E-07,
 (PID.TID 0000.0001)                 2.937651514987421E-08,
@@ -7781,91 +7788,91 @@
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bbphy_mgC(:,   5) = /* carbon-specific backscattering coefficient (m^2 (mg C)^-1) */
 (PID.TID 0000.0001)                 1.862556909875351E-05,
-(PID.TID 0000.0001)                 5.975052399548054E-06,
+(PID.TID 0000.0001)                 5.975052399548051E-06,
 (PID.TID 0000.0001)                 3.342790379726077E-06,
 (PID.TID 0000.0001)                 5.105973282024343E-06,
 (PID.TID 0000.0001)                 4.533660567990813E-05,
 (PID.TID 0000.0001)                 2.642949529915947E-05,
-(PID.TID 0000.0001)                 2.272485628789390E-06,
+(PID.TID 0000.0001)                 2.272485628789389E-06,
 (PID.TID 0000.0001)                 2.667908049806137E-07,
 (PID.TID 0000.0001)                 3.132135698482802E-08,
-(PID.TID 0000.0001)                 3.677140984833874E-09
+(PID.TID 0000.0001)                 3.677140984833872E-09
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bbphy_mgC(:,   6) = /* carbon-specific backscattering coefficient (m^2 (mg C)^-1) */
 (PID.TID 0000.0001)                 1.655617205729148E-05,
-(PID.TID 0000.0001)                 5.686360097810022E-06,
+(PID.TID 0000.0001)                 5.686360097810018E-06,
 (PID.TID 0000.0001)                 3.549971740456945E-06,
 (PID.TID 0000.0001)                 4.757526565952733E-06,
 (PID.TID 0000.0001)                 4.423555854707932E-05,
 (PID.TID 0000.0001)                 2.759229417301712E-05,
-(PID.TID 0000.0001)                 2.250655115972578E-06,
+(PID.TID 0000.0001)                 2.250655115972577E-06,
 (PID.TID 0000.0001)                 2.687408670667685E-07,
 (PID.TID 0000.0001)                 3.208916955745540E-08,
-(PID.TID 0000.0001)                 3.831627151189072E-09
+(PID.TID 0000.0001)                 3.831627151189070E-09
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bbphy_mgC(:,   7) = /* carbon-specific backscattering coefficient (m^2 (mg C)^-1) */
 (PID.TID 0000.0001)                 1.431165498456131E-05,
-(PID.TID 0000.0001)                 5.261631294960866E-06,
+(PID.TID 0000.0001)                 5.261631294960862E-06,
 (PID.TID 0000.0001)                 3.665382285402270E-06,
 (PID.TID 0000.0001)                 4.437123804633061E-06,
 (PID.TID 0000.0001)                 4.125214722880265E-05,
 (PID.TID 0000.0001)                 2.875140064923332E-05,
-(PID.TID 0000.0001)                 2.185726657219982E-06,
+(PID.TID 0000.0001)                 2.185726657219981E-06,
 (PID.TID 0000.0001)                 2.674113663016553E-07,
 (PID.TID 0000.0001)                 3.271627702901784E-08,
-(PID.TID 0000.0001)                 4.002652532847164E-09
+(PID.TID 0000.0001)                 4.002652532847162E-09
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bbphy_mgC(:,   8) = /* carbon-specific backscattering coefficient (m^2 (mg C)^-1) */
 (PID.TID 0000.0001)                 1.263948560448525E-05,
-(PID.TID 0000.0001)                 4.853449746286428E-06,
+(PID.TID 0000.0001)                 4.853449746286425E-06,
 (PID.TID 0000.0001)                 3.647404171488699E-06,
 (PID.TID 0000.0001)                 4.302033570257968E-06,
 (PID.TID 0000.0001)                 3.710198300424533E-05,
 (PID.TID 0000.0001)                 2.927447251778420E-05,
-(PID.TID 0000.0001)                 2.195819391324965E-06,
+(PID.TID 0000.0001)                 2.195819391324964E-06,
 (PID.TID 0000.0001)                 2.790685256920411E-07,
 (PID.TID 0000.0001)                 3.546705268184047E-08,
-(PID.TID 0000.0001)                 4.507537433026698E-09
+(PID.TID 0000.0001)                 4.507537433026696E-09
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bbphy_mgC(:,   9) = /* carbon-specific backscattering coefficient (m^2 (mg C)^-1) */
 (PID.TID 0000.0001)                 1.137728604313721E-05,
-(PID.TID 0000.0001)                 4.462996571694000E-06,
+(PID.TID 0000.0001)                 4.462996571693997E-06,
 (PID.TID 0000.0001)                 3.556511391411888E-06,
 (PID.TID 0000.0001)                 3.887016101522420E-06,
 (PID.TID 0000.0001)                 3.470692719522322E-05,
-(PID.TID 0000.0001)                 2.889280697555724E-05,
+(PID.TID 0000.0001)                 2.889280697555723E-05,
 (PID.TID 0000.0001)                 2.133653272359407E-06,
 (PID.TID 0000.0001)                 2.761604896963481E-07,
 (PID.TID 0000.0001)                 3.574367825236800E-08,
-(PID.TID 0000.0001)                 4.626333536754664E-09
+(PID.TID 0000.0001)                 4.626333536754661E-09
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bbphy_mgC(:,  10) = /* carbon-specific backscattering coefficient (m^2 (mg C)^-1) */
 (PID.TID 0000.0001)                 1.022443173827617E-05,
-(PID.TID 0000.0001)                 4.071399872440134E-06,
+(PID.TID 0000.0001)                 4.071399872440132E-06,
 (PID.TID 0000.0001)                 3.468213234981909E-06,
 (PID.TID 0000.0001)                 3.547367413573757E-06,
 (PID.TID 0000.0001)                 3.189029105915973E-05,
 (PID.TID 0000.0001)                 2.833425264048536E-05,
 (PID.TID 0000.0001)                 2.068853695252199E-06,
-(PID.TID 0000.0001)                 2.740057593626603E-07,
-(PID.TID 0000.0001)                 3.629022020078406E-08,
-(PID.TID 0000.0001)                 4.806395622065401E-09
+(PID.TID 0000.0001)                 2.740057593626604E-07,
+(PID.TID 0000.0001)                 3.629022020078404E-08,
+(PID.TID 0000.0001)                 4.806395622065397E-09
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bbphy_mgC(:,  11) = /* carbon-specific backscattering coefficient (m^2 (mg C)^-1) */
 (PID.TID 0000.0001)                 9.128383238498768E-06,
-(PID.TID 0000.0001)                 3.724408506535593E-06,
+(PID.TID 0000.0001)                 3.724408506535590E-06,
 (PID.TID 0000.0001)                 3.335907515708271E-06,
 (PID.TID 0000.0001)                 3.280742853755689E-06,
 (PID.TID 0000.0001)                 2.833951088173734E-05,
 (PID.TID 0000.0001)                 2.736709988542527E-05,
-(PID.TID 0000.0001)                 1.980063997445937E-06,
+(PID.TID 0000.0001)                 1.980063997445936E-06,
 (PID.TID 0000.0001)                 2.692464992359574E-07,
 (PID.TID 0000.0001)                 3.661178499499372E-08,
-(PID.TID 0000.0001)                 4.978422391092826E-09
+(PID.TID 0000.0001)                 4.978422391092824E-09
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bbphy_mgC(:,  12) = /* carbon-specific backscattering coefficient (m^2 (mg C)^-1) */
 (PID.TID 0000.0001)                 9.285684921288515E-06,
-(PID.TID 0000.0001)                 3.614485471887816E-06,
+(PID.TID 0000.0001)                 3.614485471887814E-06,
 (PID.TID 0000.0001)                 3.157872978558218E-06,
 (PID.TID 0000.0001)                 3.010103712936625E-06,
 (PID.TID 0000.0001)                 2.806773367357854E-05,
@@ -7873,19 +7880,19 @@
 (PID.TID 0000.0001)                 1.800902086167463E-06,
 (PID.TID 0000.0001)                 2.381476351053351E-07,
 (PID.TID 0000.0001)                 3.149215970256256E-08,
-(PID.TID 0000.0001)                 4.164459253576220E-09
+(PID.TID 0000.0001)                 4.164459253576219E-09
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) bbphy_mgC(:,  13) = /* carbon-specific backscattering coefficient (m^2 (mg C)^-1) */
 (PID.TID 0000.0001)                 9.537866707674324E-06,
-(PID.TID 0000.0001)                 3.615636106130101E-06,
+(PID.TID 0000.0001)                 3.615636106130099E-06,
 (PID.TID 0000.0001)                 3.418488978201937E-06,
 (PID.TID 0000.0001)                 3.112429591932110E-06,
 (PID.TID 0000.0001)                 2.659494807776317E-05,
 (PID.TID 0000.0001)                 2.824708819666773E-05,
 (PID.TID 0000.0001)                 1.931766482838292E-06,
 (PID.TID 0000.0001)                 2.647720515756486E-07,
-(PID.TID 0000.0001)                 3.629022447504919E-08,
-(PID.TID 0000.0001)                 4.974015892584428E-09
+(PID.TID 0000.0001)                 3.629022447504917E-08,
+(PID.TID 0000.0001)                 4.974015892584426E-09
 (PID.TID 0000.0001)     ;
 (PID.TID 0000.0001) alphachl(:,   1) = /* Chlorophyll-specific initial slope for photosynthesis */
 (PID.TID 0000.0001)                 8.261216993854332E-07,
@@ -8045,13 +8052,13 @@
 (PID.TID 0000.0001) DARWIN_CHECK: iPtr iPlk                      ESD  grp                         grp_name
 (PID.TID 0000.0001) DARWIN_CHECK:   21    1   0.1350155376340479E+01    1 PicoCynao
 (PID.TID 0000.0001) DARWIN_CHECK:   22    2   0.2967452323683433E+01    2 PicoEuk
-(PID.TID 0000.0001) DARWIN_CHECK:   23    3   0.6522044386625905E+01    3 Cocco
-(PID.TID 0000.0001) DARWIN_CHECK:   24    4   0.6522044386625905E+01    4 Diazo
-(PID.TID 0000.0001) DARWIN_CHECK:   25    5   0.6522044386625905E+01    5 Diatom
+(PID.TID 0000.0001) DARWIN_CHECK:   23    3   0.6522044386625904E+01    3 Cocco
+(PID.TID 0000.0001) DARWIN_CHECK:   24    4   0.6522044386625904E+01    4 Diazo
+(PID.TID 0000.0001) DARWIN_CHECK:   25    5   0.6522044386625904E+01    5 Diatom
 (PID.TID 0000.0001) DARWIN_CHECK:   26    6   0.1433453964588659E+02    6 Dino
 (PID.TID 0000.0001) DARWIN_CHECK:   27    7   0.1433453964588659E+02    7 Zoo
-(PID.TID 0000.0001) DARWIN_CHECK:   28    8   0.3150530948253733E+02    7 Zoo
-(PID.TID 0000.0001) DARWIN_CHECK:   29    9   0.6924425549133603E+02    7 Zoo
+(PID.TID 0000.0001) DARWIN_CHECK:   28    8   0.3150530948253732E+02    7 Zoo
+(PID.TID 0000.0001) DARWIN_CHECK:   29    9   0.6924425549133601E+02    7 Zoo
 (PID.TID 0000.0001) DARWIN_CHECK:   30   10   0.1521891705652677E+03    7 Zoo
 (PID.TID 0000.0001) 
 (PID.TID 0000.0001) DARWIN_DEBUG: iG jG         1         1
@@ -8475,7 +8482,7 @@
 (PID.TID 0000.0001) %MON exf_aqh_sd                   =   5.1804447890857E-03
 (PID.TID 0000.0001) %MON exf_aqh_del2                 =   8.0814990524806E-05
 (PID.TID 0000.0001) %MON exf_lwflux_max               =   1.5496547424105E+02
-(PID.TID 0000.0001) %MON exf_lwflux_min               =   4.3012168101764E+00
+(PID.TID 0000.0001) %MON exf_lwflux_min               =   4.3012168101765E+00
 (PID.TID 0000.0001) %MON exf_lwflux_mean              =   4.1308763542328E+01
 (PID.TID 0000.0001) %MON exf_lwflux_sd                =   1.3587283248759E+01
 (PID.TID 0000.0001) %MON exf_lwflux_del2              =   3.0960623740726E-01
@@ -8888,10 +8895,10 @@
 (PID.TID 0000.0001) // Begin MONITOR ptracer field statistics
 (PID.TID 0000.0001) // =======================================================
 (PID.TID 0000.0001) %MON trcstat_ptracer01_max        =   2.4832838677687E+03
-(PID.TID 0000.0001) %MON trcstat_ptracer01_min        =   1.7860251200555E+03
-(PID.TID 0000.0001) %MON trcstat_ptracer01_mean       =   2.3359385951891E+03
-(PID.TID 0000.0001) %MON trcstat_ptracer01_sd         =   8.6357595118662E+01
-(PID.TID 0000.0001) %MON trcstat_ptracer01_del2       =   6.4189729798021E-02
+(PID.TID 0000.0001) %MON trcstat_ptracer01_min        =   1.7860251196049E+03
+(PID.TID 0000.0001) %MON trcstat_ptracer01_mean       =   2.3359385951489E+03
+(PID.TID 0000.0001) %MON trcstat_ptracer01_sd         =   8.6357595231189E+01
+(PID.TID 0000.0001) %MON trcstat_ptracer01_del2       =   6.4189729733498E-02
 (PID.TID 0000.0001) %MON trcstat_ptracer02_max        =   4.7750822254998E+01
 (PID.TID 0000.0001) %MON trcstat_ptracer02_min        =  -3.1306104916250E+00
 (PID.TID 0000.0001) %MON trcstat_ptracer02_mean       =   3.2011978863565E+01
@@ -9121,7 +9128,7 @@
 (PID.TID 0000.0001) %MON exf_aqh_sd                   =   5.1803565377553E-03
 (PID.TID 0000.0001) %MON exf_aqh_del2                 =   8.0814770208999E-05
 (PID.TID 0000.0001) %MON exf_lwflux_max               =   1.5496918837976E+02
-(PID.TID 0000.0001) %MON exf_lwflux_min               =   4.3028118395500E+00
+(PID.TID 0000.0001) %MON exf_lwflux_min               =   4.3028118395501E+00
 (PID.TID 0000.0001) %MON exf_lwflux_mean              =   4.1309947035734E+01
 (PID.TID 0000.0001) %MON exf_lwflux_sd                =   1.3587666910429E+01
 (PID.TID 0000.0001) %MON exf_lwflux_del2              =   3.0960815487734E-01
@@ -9532,10 +9539,10 @@
 (PID.TID 0000.0001) // Begin MONITOR ptracer field statistics
 (PID.TID 0000.0001) // =======================================================
 (PID.TID 0000.0001) %MON trcstat_ptracer01_max        =   2.4832852706257E+03
-(PID.TID 0000.0001) %MON trcstat_ptracer01_min        =   1.7860269625271E+03
-(PID.TID 0000.0001) %MON trcstat_ptracer01_mean       =   2.3359386502082E+03
-(PID.TID 0000.0001) %MON trcstat_ptracer01_sd         =   8.6357027657343E+01
-(PID.TID 0000.0001) %MON trcstat_ptracer01_del2       =   6.4425337776450E-02
+(PID.TID 0000.0001) %MON trcstat_ptracer01_min        =   1.7860269616251E+03
+(PID.TID 0000.0001) %MON trcstat_ptracer01_mean       =   2.3359386501278E+03
+(PID.TID 0000.0001) %MON trcstat_ptracer01_sd         =   8.6357027882473E+01
+(PID.TID 0000.0001) %MON trcstat_ptracer01_del2       =   6.4425337710596E-02
 (PID.TID 0000.0001) %MON trcstat_ptracer02_max        =   4.7750762093769E+01
 (PID.TID 0000.0001) %MON trcstat_ptracer02_min        =  -3.1303844644448E+00
 (PID.TID 0000.0001) %MON trcstat_ptracer02_mean       =   3.2011964681357E+01
@@ -9548,8 +9555,8 @@
 (PID.TID 0000.0001) %MON trcstat_ptracer03_del2       =   1.3990057417405E-04
 (PID.TID 0000.0001) %MON trcstat_ptracer04_max        =   2.2789897471794E-01
 (PID.TID 0000.0001) %MON trcstat_ptracer04_min        =  -2.6117984962912E-04
-(PID.TID 0000.0001) %MON trcstat_ptracer04_mean       =   6.5654690019995E-04
-(PID.TID 0000.0001) %MON trcstat_ptracer04_sd         =   4.9863106229267E-03
+(PID.TID 0000.0001) %MON trcstat_ptracer04_mean       =   6.5654690019987E-04
+(PID.TID 0000.0001) %MON trcstat_ptracer04_sd         =   4.9863106229264E-03
 (PID.TID 0000.0001) %MON trcstat_ptracer04_del2       =   2.8770272951365E-05
 (PID.TID 0000.0001) %MON trcstat_ptracer05_max        =   3.5572060924911E+00
 (PID.TID 0000.0001) %MON trcstat_ptracer05_min        =  -9.7355654439295E-02
@@ -10176,10 +10183,10 @@
 (PID.TID 0000.0001) // Begin MONITOR ptracer field statistics
 (PID.TID 0000.0001) // =======================================================
 (PID.TID 0000.0001) %MON trcstat_ptracer01_max        =   2.4832866781341E+03
-(PID.TID 0000.0001) %MON trcstat_ptracer01_min        =   1.7860287210880E+03
-(PID.TID 0000.0001) %MON trcstat_ptracer01_mean       =   2.3359387052401E+03
-(PID.TID 0000.0001) %MON trcstat_ptracer01_sd         =   8.6356589580829E+01
-(PID.TID 0000.0001) %MON trcstat_ptracer01_del2       =   6.4453470618300E-02
+(PID.TID 0000.0001) %MON trcstat_ptracer01_min        =   1.7860287197346E+03
+(PID.TID 0000.0001) %MON trcstat_ptracer01_mean       =   2.3359387051195E+03
+(PID.TID 0000.0001) %MON trcstat_ptracer01_sd         =   8.6356589918443E+01
+(PID.TID 0000.0001) %MON trcstat_ptracer01_del2       =   6.4453470599055E-02
 (PID.TID 0000.0001) %MON trcstat_ptracer02_max        =   4.7750700850647E+01
 (PID.TID 0000.0001) %MON trcstat_ptracer02_min        =  -3.1301596626497E+00
 (PID.TID 0000.0001) %MON trcstat_ptracer02_mean       =   3.2011950540807E+01
@@ -10192,9 +10199,9 @@
 (PID.TID 0000.0001) %MON trcstat_ptracer03_del2       =   1.4008874231138E-04
 (PID.TID 0000.0001) %MON trcstat_ptracer04_max        =   2.2859902947427E-01
 (PID.TID 0000.0001) %MON trcstat_ptracer04_min        =  -3.9620075818374E-04
-(PID.TID 0000.0001) %MON trcstat_ptracer04_mean       =   6.6420151105965E-04
-(PID.TID 0000.0001) %MON trcstat_ptracer04_sd         =   5.0210515649606E-03
-(PID.TID 0000.0001) %MON trcstat_ptracer04_del2       =   2.9017872794596E-05
+(PID.TID 0000.0001) %MON trcstat_ptracer04_mean       =   6.6420151105945E-04
+(PID.TID 0000.0001) %MON trcstat_ptracer04_sd         =   5.0210515649597E-03
+(PID.TID 0000.0001) %MON trcstat_ptracer04_del2       =   2.9017872794595E-05
 (PID.TID 0000.0001) %MON trcstat_ptracer05_max        =   3.5571974759250E+00
 (PID.TID 0000.0001) %MON trcstat_ptracer05_min        =  -9.7291963420947E-02
 (PID.TID 0000.0001) %MON trcstat_ptracer05_mean       =   2.2488609678085E+00
@@ -10409,7 +10416,7 @@
 (PID.TID 0000.0001) %MON exf_aqh_sd                   =   5.1801801405127E-03
 (PID.TID 0000.0001) %MON exf_aqh_del2                 =   8.0814330005973E-05
 (PID.TID 0000.0001) %MON exf_lwflux_max               =   1.5497580103913E+02
-(PID.TID 0000.0001) %MON exf_lwflux_min               =   4.3058438512247E+00
+(PID.TID 0000.0001) %MON exf_lwflux_min               =   4.3058438512246E+00
 (PID.TID 0000.0001) %MON exf_lwflux_mean              =   4.1312284225974E+01
 (PID.TID 0000.0001) %MON exf_lwflux_sd                =   1.3588494968100E+01
 (PID.TID 0000.0001) %MON exf_lwflux_del2              =   3.0961347346013E-01
@@ -10820,10 +10827,10 @@
 (PID.TID 0000.0001) // Begin MONITOR ptracer field statistics
 (PID.TID 0000.0001) // =======================================================
 (PID.TID 0000.0001) %MON trcstat_ptracer01_max        =   2.4832880856914E+03
-(PID.TID 0000.0001) %MON trcstat_ptracer01_min        =   1.7860303961248E+03
-(PID.TID 0000.0001) %MON trcstat_ptracer01_mean       =   2.3359387604845E+03
-(PID.TID 0000.0001) %MON trcstat_ptracer01_sd         =   8.6356177837720E+01
-(PID.TID 0000.0001) %MON trcstat_ptracer01_del2       =   6.4439492072804E-02
+(PID.TID 0000.0001) %MON trcstat_ptracer01_min        =   1.7860303943195E+03
+(PID.TID 0000.0001) %MON trcstat_ptracer01_mean       =   2.3359387603237E+03
+(PID.TID 0000.0001) %MON trcstat_ptracer01_sd         =   8.6356178287839E+01
+(PID.TID 0000.0001) %MON trcstat_ptracer01_del2       =   6.4439492075334E-02
 (PID.TID 0000.0001) %MON trcstat_ptracer02_max        =   4.7750638676667E+01
 (PID.TID 0000.0001) %MON trcstat_ptracer02_min        =  -3.1299361626727E+00
 (PID.TID 0000.0001) %MON trcstat_ptracer02_mean       =   3.2011936465543E+01
@@ -10836,9 +10843,9 @@
 (PID.TID 0000.0001) %MON trcstat_ptracer03_del2       =   1.4008964512016E-04
 (PID.TID 0000.0001) %MON trcstat_ptracer04_max        =   2.2932538505111E-01
 (PID.TID 0000.0001) %MON trcstat_ptracer04_min        =  -5.3113669870685E-04
-(PID.TID 0000.0001) %MON trcstat_ptracer04_mean       =   6.7179946296461E-04
-(PID.TID 0000.0001) %MON trcstat_ptracer04_sd         =   5.0563539208481E-03
-(PID.TID 0000.0001) %MON trcstat_ptracer04_del2       =   2.9245401487044E-05
+(PID.TID 0000.0001) %MON trcstat_ptracer04_mean       =   6.7179946296423E-04
+(PID.TID 0000.0001) %MON trcstat_ptracer04_sd         =   5.0563539208464E-03
+(PID.TID 0000.0001) %MON trcstat_ptracer04_del2       =   2.9245401487042E-05
 (PID.TID 0000.0001) %MON trcstat_ptracer05_max        =   3.5571888575533E+00
 (PID.TID 0000.0001) %MON trcstat_ptracer05_min        =  -9.7228400724289E-02
 (PID.TID 0000.0001) %MON trcstat_ptracer05_mean       =   2.2488604289063E+00
@@ -11004,261 +11011,261 @@
 (PID.TID 0000.0001) // =======================================================
 (PID.TID 0000.0001) %CHECKPOINT         4 ckptA
 (PID.TID 0000.0001)   Seconds in section "ALL                    [THE_MODEL_MAIN]":
-(PID.TID 0000.0001)           User time:   8.26636046171188
+(PID.TID 0000.0001)           User time:   1.64759802818298
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:   9.48599100112915
+(PID.TID 0000.0001)     Wall clock time:   2.83693504333496
 (PID.TID 0000.0001)          No. starts:           1
 (PID.TID 0000.0001)           No. stops:           1
 (PID.TID 0000.0001)   Seconds in section "INITIALISE_FIXED       [THE_MODEL_MAIN]":
-(PID.TID 0000.0001)           User time:   1.23925292491913
+(PID.TID 0000.0001)           User time:  0.368877023458481
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:   1.61347699165344
+(PID.TID 0000.0001)     Wall clock time:  0.821628093719482
 (PID.TID 0000.0001)          No. starts:           1
 (PID.TID 0000.0001)           No. stops:           1
 (PID.TID 0000.0001)   Seconds in section "THE_MAIN_LOOP          [THE_MODEL_MAIN]":
-(PID.TID 0000.0001)           User time:   7.02706038951874
+(PID.TID 0000.0001)           User time:   1.27825903892517
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:   7.83061885833740
+(PID.TID 0000.0001)     Wall clock time:   1.90657186508179
 (PID.TID 0000.0001)          No. starts:           1
 (PID.TID 0000.0001)           No. stops:           1
 (PID.TID 0000.0001)   Seconds in section "INITIALISE_VARIA    [THE_MAIN_LOOP]":
-(PID.TID 0000.0001)           User time:  0.646577954292297
+(PID.TID 0000.0001)           User time:  0.209083974361420
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  0.705623149871826
+(PID.TID 0000.0001)     Wall clock time:  0.306097984313965
 (PID.TID 0000.0001)          No. starts:           1
 (PID.TID 0000.0001)           No. stops:           1
 (PID.TID 0000.0001)   Seconds in section "MAIN LOOP           [THE_MAIN_LOOP]":
-(PID.TID 0000.0001)           User time:   6.38043165206909
+(PID.TID 0000.0001)           User time:   1.06916999816895
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:   7.12493991851807
+(PID.TID 0000.0001)     Wall clock time:   1.60046482086182
 (PID.TID 0000.0001)          No. starts:           1
 (PID.TID 0000.0001)           No. stops:           1
 (PID.TID 0000.0001)   Seconds in section "MAIN_DO_LOOP        [THE_MAIN_LOOP]":
-(PID.TID 0000.0001)           User time:   6.38035392761230
+(PID.TID 0000.0001)           User time:   1.06916004419327
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:   7.12485194206238
+(PID.TID 0000.0001)     Wall clock time:   1.60045099258423
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "FORWARD_STEP        [MAIN_DO_LOOP]":
-(PID.TID 0000.0001)           User time:   6.38024139404297
+(PID.TID 0000.0001)           User time:   1.06914395093918
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:   7.12472915649414
+(PID.TID 0000.0001)     Wall clock time:   1.60042691230774
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DO_STATEVARS_DIAGS  [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  3.182172775268555E-003
+(PID.TID 0000.0001)           User time:  6.770491600036621E-004
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  3.237724304199219E-003
+(PID.TID 0000.0001)     Wall clock time:  7.302761077880859E-004
 (PID.TID 0000.0001)          No. starts:          12
 (PID.TID 0000.0001)           No. stops:          12
 (PID.TID 0000.0001)   Seconds in section "LOAD_FIELDS_DRIVER  [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  0.126811265945435
+(PID.TID 0000.0001)           User time:  7.113307714462280E-002
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  0.135401248931885
+(PID.TID 0000.0001)     Wall clock time:  9.155511856079102E-002
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "EXF_GETFORCING     [LOAD_FLDS_DRIVER]":
-(PID.TID 0000.0001)           User time:  7.901358604431152E-002
+(PID.TID 0000.0001)           User time:  5.266499519348145E-002
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  8.631086349487305E-002
+(PID.TID 0000.0001)     Wall clock time:  7.273745536804199E-002
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "EXTERNAL_FLDS_LOAD [LOAD_FLDS_DRIVER]":
-(PID.TID 0000.0001)           User time:  8.192062377929688E-004
+(PID.TID 0000.0001)           User time:  3.049969673156738E-004
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  9.717941284179688E-004
+(PID.TID 0000.0001)     Wall clock time:  3.247261047363281E-004
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DO_ATMOSPHERIC_PHYS [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  5.388259887695312E-005
+(PID.TID 0000.0001)           User time:  1.001358032226562E-005
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  5.626678466796875E-005
+(PID.TID 0000.0001)     Wall clock time:  1.215934753417969E-005
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DO_OCEANIC_PHYS     [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  0.168981075286865
+(PID.TID 0000.0001)           User time:  1.905393600463867E-002
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  0.172154188156128
+(PID.TID 0000.0001)     Wall clock time:  1.933097839355469E-002
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "SEAICE_MODEL    [DO_OCEANIC_PHYS]":
-(PID.TID 0000.0001)           User time:  9.205651283264160E-002
+(PID.TID 0000.0001)           User time:  8.377969264984131E-003
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  9.401988983154297E-002
+(PID.TID 0000.0001)     Wall clock time:  8.561849594116211E-003
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "SEAICE_DYNSOLVER   [SEAICE_MODEL]":
-(PID.TID 0000.0001)           User time:  8.294391632080078E-002
+(PID.TID 0000.0001)           User time:  6.945013999938965E-003
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  8.475589752197266E-002
+(PID.TID 0000.0001)     Wall clock time:  7.061719894409180E-003
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "GGL90_CALC [DO_OCEANIC_PHYS]":
-(PID.TID 0000.0001)           User time:  3.033113479614258E-002
+(PID.TID 0000.0001)           User time:  3.669023513793945E-003
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  3.040003776550293E-002
+(PID.TID 0000.0001)     Wall clock time:  3.687620162963867E-003
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DYNAMICS            [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  0.162783622741699
+(PID.TID 0000.0001)           User time:  1.765698194503784E-002
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  0.163169860839844
+(PID.TID 0000.0001)     Wall clock time:  1.777291297912598E-002
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "UPDATE_R_STAR       [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  4.971981048583984E-003
+(PID.TID 0000.0001)           User time:  6.279945373535156E-004
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  4.985809326171875E-003
+(PID.TID 0000.0001)     Wall clock time:  6.258487701416016E-004
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "UPDATE_CG2D         [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  6.007194519042969E-003
+(PID.TID 0000.0001)           User time:  1.130938529968262E-003
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  6.021976470947266E-003
+(PID.TID 0000.0001)     Wall clock time:  1.131057739257812E-003
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "SOLVE_FOR_PRESSURE  [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  1.355886459350586E-002
+(PID.TID 0000.0001)           User time:  3.407001495361328E-003
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  1.363778114318848E-002
+(PID.TID 0000.0001)     Wall clock time:  3.436326980590820E-003
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "MOM_CORRECTION_STEP [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  3.721475601196289E-003
+(PID.TID 0000.0001)           User time:  4.098415374755859E-004
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  3.731966018676758E-003
+(PID.TID 0000.0001)     Wall clock time:  4.110336303710938E-004
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "INTEGR_CONTINUITY   [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  5.120038986206055E-003
+(PID.TID 0000.0001)           User time:  4.601478576660156E-004
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  5.133628845214844E-003
+(PID.TID 0000.0001)     Wall clock time:  4.739761352539062E-004
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "CALC_R_STAR         [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  1.345157623291016E-003
+(PID.TID 0000.0001)           User time:  2.221465110778809E-004
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  1.349210739135742E-003
+(PID.TID 0000.0001)     Wall clock time:  2.412796020507812E-004
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "BLOCKING_EXCHANGES  [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  6.430435180664062E-002
+(PID.TID 0000.0001)           User time:  2.363765239715576E-002
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  6.449985504150391E-002
+(PID.TID 0000.0001)     Wall clock time:  2.375745773315430E-002
 (PID.TID 0000.0001)          No. starts:           8
 (PID.TID 0000.0001)           No. stops:           8
 (PID.TID 0000.0001)   Seconds in section "THERMODYNAMICS      [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:   2.23553752899170
+(PID.TID 0000.0001)           User time:  0.294953048229218
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:   2.24082779884338
+(PID.TID 0000.0001)     Wall clock time:  0.297927856445312
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "TRC_CORRECTION_STEP [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  5.602836608886719E-005
+(PID.TID 0000.0001)           User time:  1.013278961181641E-005
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  5.388259887695312E-005
+(PID.TID 0000.0001)     Wall clock time:  1.502037048339844E-005
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "GCHEM_FORCING_SEP  [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  0.766205310821533
+(PID.TID 0000.0001)           User time:  0.129212975502014
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  0.771568298339844
+(PID.TID 0000.0001)     Wall clock time:  0.132285356521606
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DARWIN_FORCING [GCHEM_FORCING_SEP]":
-(PID.TID 0000.0001)           User time:  0.503720998764038
+(PID.TID 0000.0001)           User time:  8.322584629058838E-002
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  0.508106708526611
+(PID.TID 0000.0001)     Wall clock time:  8.518099784851074E-002
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DARWIN_LIGHT [DARWIN_FORCING]":
-(PID.TID 0000.0001)           User time:  0.179425239562988
+(PID.TID 0000.0001)           User time:  2.912211418151855E-002
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  0.180167913436890
+(PID.TID 0000.0001)     Wall clock time:  2.950525283813477E-002
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DARWIN_SURFFORCING [DARWIN_FORCING]":
-(PID.TID 0000.0001)           User time:  3.322148323059082E-002
+(PID.TID 0000.0001)           User time:  6.513953208923340E-003
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  3.335237503051758E-002
+(PID.TID 0000.0001)     Wall clock time:  6.557226181030273E-003
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DARWIN_FE_CHEM [DARWIN_FORCING]":
-(PID.TID 0000.0001)           User time:  1.914501190185547E-003
+(PID.TID 0000.0001)           User time:  7.019042968750000E-004
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  1.920223236083984E-003
+(PID.TID 0000.0001)     Wall clock time:  7.092952728271484E-004
 (PID.TID 0000.0001)          No. starts:           8
 (PID.TID 0000.0001)           No. stops:           8
 (PID.TID 0000.0001)   Seconds in section "DARWIN_FE_SCAV [DARWIN_FORCING]":
-(PID.TID 0000.0001)           User time:  2.032279968261719E-003
+(PID.TID 0000.0001)           User time:  3.689527511596680E-004
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  2.037763595581055E-003
+(PID.TID 0000.0001)     Wall clock time:  3.688335418701172E-004
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DARWIN_FE_DUST [DARWIN_FORCING]":
-(PID.TID 0000.0001)           User time:  1.451969146728516E-004
+(PID.TID 0000.0001)           User time:  2.503395080566406E-005
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  1.440048217773438E-004
+(PID.TID 0000.0001)     Wall clock time:  2.384185791015625E-005
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DARWIN_FE_SED [DARWIN_FORCING]":
-(PID.TID 0000.0001)           User time:  1.241683959960938E-003
+(PID.TID 0000.0001)           User time:  1.800060272216797E-004
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  1.246213912963867E-003
+(PID.TID 0000.0001)     Wall clock time:  1.785755157470703E-004
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DARWIN_PLANKTON [DARWIN_FORCING]":
-(PID.TID 0000.0001)           User time:  0.132302761077881
+(PID.TID 0000.0001)           User time:  2.282416820526123E-002
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  0.132618904113770
+(PID.TID 0000.0001)     Wall clock time:  2.294516563415527E-002
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DARWIN_DVM [DARWIN_FORCING]":
-(PID.TID 0000.0001)           User time:  2.425193786621094E-003
+(PID.TID 0000.0001)           User time:  5.290508270263672E-004
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  2.434253692626953E-003
+(PID.TID 0000.0001)     Wall clock time:  5.369186401367188E-004
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DIAGS_FILL [DARWIN_FORCING]":
-(PID.TID 0000.0001)           User time:  5.993723869323730E-002
+(PID.TID 0000.0001)           User time:  7.813811302185059E-003
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  6.008028984069824E-002
+(PID.TID 0000.0001)     Wall clock time:  7.862567901611328E-003
 (PID.TID 0000.0001)          No. starts:           8
 (PID.TID 0000.0001)           No. stops:           8
 (PID.TID 0000.0001)   Seconds in section "DARWIN_SINKING [DARWIN_FORCING]":
-(PID.TID 0000.0001)           User time:  2.537965774536133E-002
+(PID.TID 0000.0001)           User time:  2.819895744323730E-003
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  2.544808387756348E-002
+(PID.TID 0000.0001)     Wall clock time:  2.842903137207031E-003
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DARWIN_STEP [DARWIN_FORCING]":
-(PID.TID 0000.0001)           User time:  2.442574501037598E-002
+(PID.TID 0000.0001)           User time:  2.784967422485352E-003
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  2.448701858520508E-002
+(PID.TID 0000.0001)     Wall clock time:  2.795219421386719E-003
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "MONITOR             [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  3.366160392761230E-002
+(PID.TID 0000.0001)           User time:  8.531808853149414E-003
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  3.374361991882324E-002
+(PID.TID 0000.0001)     Wall clock time:  8.574962615966797E-003
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DO_THE_MODEL_IO     [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:   2.28503036499023
+(PID.TID 0000.0001)           User time:  0.306915998458862
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:   2.76261591911316
+(PID.TID 0000.0001)     Wall clock time:  0.716145038604736
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "PTRACERS_RESET      [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  6.413459777832031E-005
+(PID.TID 0000.0001)           User time:  1.096725463867188E-005
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  6.985664367675781E-005
+(PID.TID 0000.0001)     Wall clock time:  1.716613769531250E-005
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001)   Seconds in section "DO_WRITE_PICKUP     [FORWARD_STEP]":
-(PID.TID 0000.0001)           User time:  0.449745178222656
+(PID.TID 0000.0001)           User time:  0.185444951057434
 (PID.TID 0000.0001)         System time:  0.000000000000000E+000
-(PID.TID 0000.0001)     Wall clock time:  0.691627979278564
+(PID.TID 0000.0001)     Wall clock time:  0.279636383056641
 (PID.TID 0000.0001)          No. starts:           4
 (PID.TID 0000.0001)           No. stops:           4
 (PID.TID 0000.0001) // ======================================================
