@@ -82,6 +82,8 @@
   fields( 2,2) = 'gDICsurf',
   fields( 3,2) = 'gALKsurf',
   fields( 4,2) = 'gO2surf ',
+  fields( 5,2) = 'pHsurf  ',
+  fields( 6,2) = 'pCO2surf',
 #
  &
 
