@@ -33,7 +33,7 @@
  katten_chl= .03D0,
  PARmin= 0.1D0,
  PAR_oxi = 0.0,
- phygrazmin= 0.,
+ phygrazmin= 120E-10,
 #knita=0.,
  synthcost= 2.33D0,
  inhib_graz_exp= 1.0,
