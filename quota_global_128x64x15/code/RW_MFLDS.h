@@ -14,7 +14,7 @@ C     \ev
 
 C     sizFldList :: dimension of field-list arrays
       INTEGER  sizFldList
-      PARAMETER( sizFldList = 200 )
+      PARAMETER( sizFldList = 300 )
 
 C--   COMMON / RW_MFLDS_I / Integer valued MFLDS variables.
 C     glob_File :: =1 : reading a global file ; =-1 : tiled files ; =0 : unknown
